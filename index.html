@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DX Manager Portfolio | Practical Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        pro: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7', 
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-pro-200 selection:text-pro-900">
+
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div class="absolute inset-0 bg-grid-pattern opacity-[0.4]"></div>
+        <div class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        
+        <!-- Header -->
+        <header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 animate-fade-in-up">
+            <div>
+                <p class="text-pro-600 font-bold tracking-wider text-sm uppercase mb-2">Portfolio</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                    Practical DX Manager<br>
+                    <span class="text-slate-500 text-2xl md:text-3xl font-medium">Solving Business Problems</span>
+                </h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <span class="text-sm font-medium text-slate-600 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+                    Open to Work (社内SE / DX推進)
+                </span>
+            </div>
+        </header>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-5">
+
+            <!-- 1. Profile Card -->
+            <div class="bento-card col-span-1 md:col-span-2 lg:col-span-2 row-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-soft flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-pro-50 rounded-full group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+                
+                <div class="relative z-10">
+                    <div class="inline-flex items-center justify-center p-3 bg-pro-100 text-pro-600 rounded-2xl mb-6">
+                        <i data-lucide="user-check" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-snug">
+                        現場の課題を技術で解決する、<br>実戦型DXマネージャー
+                    </h2>
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-6">
+                        高額なシステムは不要です。<br>
+                        <span class="font-semibold text-pro-600">AppSheet</span> と <span class="font-semibold text-pro-600">GAS</span> を活用し、追加コストゼロで業務効率を最大化します。
+                    </p>
+                </div>
+
+                <div class="relative z-10 flex flex-wrap gap-3 mt-auto">
+                    <!-- [LINK 1] Email Link -->
+                    <a href="mailto:your.email@example.com" class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full font-medium text-sm hover:bg-slate-700 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        Contact Me
+                    </a>
+                    
+                    <!-- [LINK 2] Resume Download Link -->
+                    <!-- href에 실제 PDF 파일 경로를 입력하세요 (예: ./resume.pdf) -->
+                    <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-full font-medium text-sm hover:bg-slate-50 transition-colors">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        Resume (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Stats Card (No Link needed usually, but selectable) -->
+            <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 bg-pro-600 rounded-3xl p-6 text-white shadow-soft flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-4 translate-y-4">
+                    <i data-lucide="trending-up" class="w-32 h-32"></i>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-2 text-pro-100 text-sm font-medium uppercase tracking-wide">
+                        <i data-lucide="banknote" class="w-4 h-4"></i>
+                        Cost Reduction
+                    </div>
+                    <div class="text-4xl lg:text-5xl font-bold tracking-tight mb-2">
+                        ¥1,000<span class="text-2xl">万+</span>
+                    </div>
+                    <p class="text-pro-100 text-sm leading-relaxed">
+                        システム内製化(In-house Dev)による<br>年間外注費削減実績
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Philosophy Card -->
+            <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 bg-white rounded-3xl p-6 border border-slate-100 shadow-soft flex flex-col">
+                <div class="mb-4">
+                    <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center">
+                        <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">My Philosophy</h3>
+                <blockquote class="italic text-slate-600 mb-3 border-l-2 border-orange-300 pl-3">
+                    "技術は「手段」、目的は「解決」"
+                </blockquote>
+                <p class="text-xs text-slate-500 mt-auto leading-relaxed">
+                    コードを書くこと以上に、現場の声を聞き、最適なROIを出すことを重視しています。
+                </p>
+            </div>
+
+            <!-- 4. Tech Stack Card (Can link individual items if desired) -->
+            <div class="bento-card col-span-1 md:col-span-2 lg:col-span-1 bg-slate-900 rounded-3xl p-6 text-slate-300 shadow-soft flex flex-col justify-between">
+                <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                    <i data-lucide="layers" class="w-5 h-5 text-pro-400"></i>
+                    Tech Stack
+                </h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center justify-between group cursor-default">
+                        <span class="flex items-center gap-2 group-hover:text-white transition-colors">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i> AppSheet
+                        </span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">No-Code</span>
+                    </li>
+                    <li class="flex items-center justify-between group cursor-default">
+                        <span class="flex items-center gap-2 group-hover:text-white transition-colors">
+                            <i data-lucide="file-code-2" class="w-4 h-4 text-blue-400"></i> Apps Script
+                        </span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Automation</span>
+                    </li>
+                    <li class="flex items-center justify-between group cursor-default">
+                        <span class="flex items-center gap-2 group-hover:text-white transition-colors">
+                            <i data-lucide="bot" class="w-4 h-4 text-purple-400"></i> Vibe Coding
+                        </span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">AI-Driven</span>
+                    </li>
+                    <li class="flex items-center justify-between group cursor-default">
+                        <span class="flex items-center gap-2 group-hover:text-white transition-colors">
+                            <i data-lucide="message-square" class="w-4 h-4 text-green-400"></i> Slack/LINE
+                        </span>
+                        <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Chat Ops</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- [LINK 3] Project A (Inventory) - Changed <div> to <a> -->
+            <!-- href에 프로젝트 상세 페이지나 GitHub 링크를 넣으세요 -->
+            <a href="https://example.com/project-a" target="_blank" class="bento-card col-span-1 md:col-span-2 lg:col-span-2 bg-gradient-to-br from-indigo-50 to-white rounded-3xl p-0 border border-slate-100 shadow-soft relative overflow-hidden flex flex-col md:flex-row group block text-left">
+                <div class="p-8 md:w-1/2 flex flex-col justify-center z-10">
+                    <div class="flex items-center gap-2 mb-2">
+                        <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Project A</div>
+                        <i data-lucide="external-link" class="w-3 h-3 text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">在庫管理・発注自動化</h3>
+                    <p class="text-sm text-slate-600 mb-4">
+                        バーコードスキャン機能を搭載したAppSheetアプリ。
+                        在庫切れアラートから発注書作成までをワンストップで自動化。
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="text-xs border border-indigo-200 text-indigo-700 px-2 py-1 rounded bg-indigo-50">AppSheet</span>
+                        <span class="text-xs border border-slate-200 text-slate-600 px-2 py-1 rounded bg-white">Automation</span>
+                    </div>
+                </div>
+                
+                <!-- Mockup Area -->
+                <div class="md:w-1/2 relative bg-indigo-100/50 min-h-[200px] md:min-h-auto flex items-end justify-center pb-0 md:pb-0 overflow-hidden">
+                    <div class="w-32 h-64 bg-slate-900 rounded-t-3xl border-4 border-slate-900 shadow-xl transform translate-y-8 group-hover:translate-y-4 transition-transform duration-500 relative">
+                        <!-- Screen -->
+                        <div class="w-full h-full bg-white rounded-t-xl overflow-hidden p-2">
+                            <div class="h-8 bg-indigo-600 w-full mb-2 rounded flex items-center px-2">
+                                <div class="w-3 h-3 bg-white/30 rounded-full"></div>
+                            </div>
+                            <div class="w-full h-16 bg-indigo-50 rounded mb-2 flex items-center justify-center">
+                                <i data-lucide="scan-barcode" class="text-indigo-300 w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="h-2 w-3/4 bg-slate-100 rounded"></div>
+                                <div class="h-2 w-1/2 bg-slate-100 rounded"></div>
+                            </div>
+                            <div class="mt-4 w-full h-8 bg-indigo-600 rounded text-[6px] text-white flex items-center justify-center">ORDER NOW</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- [LINK 4] Project B (Report) - Changed <div> to <a> -->
+            <a href="https://example.com/project-b" target="_blank" class="bento-card col-span-1 md:col-span-2 lg:col-span-1 bg-white rounded-3xl p-6 border border-slate-100 shadow-soft flex flex-col group block text-left">
+                <div class="mb-4 flex items-center justify-between">
+                     <div class="flex items-center gap-2">
+                        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Project B</div>
+                        <i data-lucide="external-link" class="w-3 h-3 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                     </div>
+                     <div class="flex gap-1">
+                         <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                         <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                         <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                     </div>
+                </div>
+                
+                <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">日報・承認システム</h3>
+                <p class="text-xs text-slate-500 mb-4 flex-grow">
+                    GAS Web Appを活用し、Gmailと連携。スマホから送信した日報が即座に管理シートへ反映、承認フローも自動化。
+                </p>
+
+                <div class="w-full bg-slate-50 rounded-lg border border-slate-200 p-2 space-y-2 mt-auto">
+                    <div class="flex gap-2 border-b border-slate-200 pb-2">
+                        <div class="w-4 h-4 rounded bg-emerald-100 flex items-center justify-center"><i data-lucide="check" class="w-2 h-2 text-emerald-600"></i></div>
+                        <div class="h-2 w-20 bg-slate-200 rounded my-auto"></div>
+                    </div>
+                    <div class="flex gap-2">
+                         <div class="w-4 h-4 rounded bg-slate-100"></div>
+                         <div class="h-2 w-16 bg-slate-200 rounded my-auto"></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- [LINK 5] Project C (Attendance) - Changed <div> to <a> -->
+            <a href="https://example.com/project-c" target="_blank" class="bento-card col-span-1 lg:col-span-1 bg-slate-50 rounded-3xl p-6 border border-slate-100 shadow-soft flex flex-col items-center text-center justify-center group block">
+                <div class="relative mb-4">
+                    <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="qr-code" class="w-8 h-8 text-slate-800 group-hover:text-pro-600 transition-colors"></i>
+                    </div>
+                    <div class="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-slate-50 flex items-center justify-center">
+                        <i data-lucide="bell" class="w-2 h-2 text-white"></i>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-1 mb-1">
+                    <div class="text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-pro-600">Project C</div>
+                    <i data-lucide="external-link" class="w-3 h-3 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">勤怠管理QR</h3>
+                <p class="text-xs text-slate-500">
+                    出退勤時にQRをスキャン。<br>LINEに即時通知＆スプレッドシートへ自動記録。
+                </p>
+            </a>
+
+        </div>
+
+        <footer class="mt-12 md:mt-20 border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+            <p>&copy; 2024 Practical DX Manager Portfolio.</p>
+            <p class="flex items-center gap-1 mt-2 md:mt-0">
+                Designed for <span class="text-slate-900 font-semibold">Business Impact</span>
+                <i data-lucide="briefcase" class="w-4 h-4 ml-1"></i>
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
