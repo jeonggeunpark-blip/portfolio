@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical DX Manager | Portfolio</title>
+    
+    <!-- === OGP Tags (링크 공유 시 신뢰도 상승) === -->
+    <meta property="og:title" content="Practical DX Manager Portfolio">
+    <meta property="og:description" content="現場視点の徹底的な実利主義。AppSheetとGASによる業務改革ポートフォリオ。">
+    <meta property="og:type" content="website">
+    <!-- 실제 배포 후 본인의 대표 프로젝트 스크린샷 URL을 넣으세요 -->
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/0ea5e9/ffffff?text=Practical+DX+Portfolio">
+
+    <meta name="description" content="現場の課題を技術で解決する実戦型DXマネージャーのポートフォリオ。AppSheet, GAS, Dashboard開発による業務効率化。">
+    
+    <!-- 1. Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. CSS Framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 3. Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        pro: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7', 
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 30px rgba(0, 0, 0, 0.03)',
+                        'glow': '0 0 20px rgba(14, 165, 233, 0.3)', // Main Project Glow
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #f8fafc; 
+            /* 일본어 가독성 튜닝: 자간 조정 및 프로포셔널 메트릭스 */
+            letter-spacing: 0.03em;
+            font-feature-settings: "palt";
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bento-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            z-index: 10;
+        }
+        
+        .slide-image { transition: opacity 0.5s ease-in-out; }
+        #modal-overlay { backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased selection:bg-pro-200 selection:text-pro-900">
+
+    <!-- Background -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none bg-slate-50">
+        <div class="absolute inset-0 bg-grid-pattern opacity-[0.3]"></div>
+        <div class="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-white via-white/90 to-transparent"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-3xl opacity-60"></div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative">
+        
+        <!-- Header -->
+        <header class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal active">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pro-50 border border-pro-100 text-pro-700 text-xs font-bold tracking-wider uppercase mb-4 shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pro-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-pro-600"></span>
+                    </span>
+                    Available for New Opportunities
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                    Practical DX Manager<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 font-medium text-3xl md:text-5xl">
+                        Ending the "Excel Hell"
+                    </span>
+                </h1>
+                <!-- Copywriting Upgrade: Professional & Impactful -->
+                <p class="mt-4 text-slate-600 max-w-2xl text-lg leading-relaxed font-medium">
+                    「現場視点の徹底的な実利主義」<br>
+                    現場の痛みを誰よりも知る元センター長として、<br>
+                    使われないシステムではなく、<span class="text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2">利益を生む業務フロー</span>を構築します。
+                </p>
+            </div>
+            
+            <div class="flex flex-col items-start md:items-end gap-3">
+                <a href="mailto:your.email@example.com" class="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-slate-800 transition-all hover:scale-105 active:scale-95">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Contact Me</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12">
+
+            <!-- 1. KPI Card -->
+            <div class="reveal bento-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute -right-6 -bottom-6 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform duration-500">
+                    <i data-lucide="zap" class="w-32 h-32"></i>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-4 text-pro-100 text-xs font-bold uppercase tracking-wider">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                        Impact
+                    </div>
+                    <div>
+                        <div class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-1">
+                            95<span class="text-2xl">%</span>
+                            <span class="text-xl">UP</span>
+                        </div>
+                        <p class="text-pro-100 text-sm font-medium opacity-90">
+                            在庫確認レスポンス向上<br>破損率 95% 削減
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Philosophy Card -->
+            <div class="reveal bento-card col-span-1 md:col-span-3 bg-white rounded-3xl p-8 border border-slate-200 shadow-soft flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-slate-50 to-transparent opacity-50"></div>
+                <div class="relative z-10 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 text-pro-600 font-bold mb-3">
+                        <i data-lucide="user-check" class="w-5 h-5"></i>
+                        <span class="uppercase text-xs tracking-wider">Core Value</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-snug">
+                        技術は「手段」に過ぎません。<br>
+                        目的は「現場が楽になり、会社が儲かること」。
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        華やかな最新技術よりも、現場のアパート・パート社員が迷わず使えるUI/UXを最優先します。
+                        <span class="font-bold text-slate-800">AppSheet, GAS</span> 等、ROI（費用対効果）の高いツールを適材適所で組み合わせ、
+                        <span class="font-bold text-pro-700 bg-pro-50 px-1">「明日から現場が変わる」</span>ソリューションを提供します。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Tech Stack Card (Updated with 'Code' evidence hint) -->
+            <div class="reveal bento-card col-span-1 md:col-span-4 bg-slate-900 rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <h3 class="text-white font-bold text-lg flex items-center gap-2 shrink-0 border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
+                        <i data-lucide="layers" class="w-5 h-5 text-pro-400"></i>
+                        Skills & Tools
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 w-full">
+                        <!-- AppSheet -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-emerald-400 mb-1">
+                                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">AppSheet</span>
+                            </div>
+                            <span class="text-xs text-slate-400 block">Gold相当 / Advanced UI</span>
+                        </div>
+                        <!-- GAS/Web -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-blue-400 mb-1">
+                                <i data-lucide="code-2" class="w-4 h-4"></i> <!-- Changed Icon -->
+                                <span class="font-bold text-sm">GAS / JS</span>
+                            </div>
+                            <span class="text-xs text-slate-400 block">API連携 / SPA開発</span>
+                        </div>
+                        <!-- Analytics -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-amber-400 mb-1">
+                                <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Data Viz</span>
+                            </div>
+                            <span class="text-xs text-slate-400 block">Looker Studio / SQL</span>
+                        </div>
+                        <!-- Field Management -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-rose-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-rose-400 mb-1">
+                                <i data-lucide="package" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Logistics</span>
+                            </div>
+                            <span class="text-xs text-slate-400 block">倉庫運営 / 在庫管理</span>
+                        </div>
+                        <!-- BPR -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-colors col-span-2 md:col-span-1">
+                            <div class="flex items-center gap-2 text-purple-400 mb-1">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Kaizen</span>
+                            </div>
+                            <span class="text-xs text-slate-400 block">業務フロー設計 / BPR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Header -->
+            <div class="col-span-1 md:col-span-4 mt-8 mb-2 flex items-end justify-between border-b border-slate-200 pb-4 reveal">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">System Portfolio</h2>
+                    <p class="text-slate-500 text-sm mt-1">実課題を解決した自動化・効率化の実績</p>
+                </div>
+                <div class="hidden md:flex gap-1">
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                </div>
+            </div>
+
+            <!-- === Section 2: Projects Grid === -->
+
+            <!-- 4. [Main Project] AppSheet (Visual Emphasis Added) -->
+            <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-2 md:row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-indigo-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none" aria-label="View Project: AppSheet">
+                <!-- Image Container -->
+                <div class="absolute inset-0 z-0">
+                    <!-- IMPORTANT: Replace with Real App Screenshot -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Process Automation Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
+                </div>
+
+                <!-- Main Project Badge (Pulsing) -->
+                <div class="absolute top-4 right-4 z-20">
+                    <span class="relative inline-flex">
+                        <span class="absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-40 animate-pulse-slow"></span>
+                        <span class="relative bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-indigo-400/50">
+                            ★ Main Project
+                        </span>
+                    </span>
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
+                    <div class="flex items-center gap-2 mb-2 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+                        <i data-lucide="smartphone" class="w-4 h-4"></i>
+                        AppSheet / No-Code
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+                        業務プロセス自動化アプリ
+                    </h3>
+                    <p class="text-slate-300 text-sm mb-4 max-w-lg leading-relaxed">
+                        「紙・ハンコ・Excel」を撤廃。現場のアナログ業務をスマホ1つで完結させる統合プラットフォーム。
+                        <span class="text-white font-bold">承認スピード 5倍向上。</span>
+                    </p>
+                    <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
+                        View Details & Voice <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            </button>
+
+            <!-- 5. Sub: GAS Automation -->
+            <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-rose-200">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                            <i data-lucide="bot" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-medium text-slate-400">GAS / Gmail API</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors">
+                        滞留在庫一掃・自動督促
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        人間がやるべきでない「催促」をボットに一任。回答率 30% → 95% 達成。
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span>Automation</span>
+                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-rose-500"></i>
+                </div>
+            </button>
+
+            <!-- 6. Sub: Dashboard -->
+            <button onclick="openModal('project-3')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-medium text-slate-400">Looker Studio</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
+                        リアルタイム在庫可視化
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        「昨日のデータ」ではなく「今」を見る。BigQuery連携による高速ダッシュボード。
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span>BI / Analytics</span>
+                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i>
+                </div>
+            </button>
+
+            <!-- 7. Sub: Field DX (SPA) -->
+            <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-emerald-200">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                            <i data-lucide="image-plus" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-medium text-slate-400">Canvas API</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                        現場写真・報告 SPA
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        写真への手書き注釈機能をWebで実装。現場完結型レポートアプリ。
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span>Frontend Dev</span>
+                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-emerald-500"></i>
+                </div>
+            </button>
+
+            <!-- 8. Sub: Gamification -->
+            <button onclick="openModal('project-5')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-orange-200">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <i data-lucide="trophy" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-medium text-slate-400">Gamification</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
+                        カイゼン提案ボード
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        業務改善を「ゲーム」に。ランキング表示で自発的な提案文化を醸成。
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                    <span>Culture Design</span>
+                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-orange-500"></i>
+                </div>
+            </button>
+
+        </div>
+
+        <!-- Career History -->
+        <section class="mt-16 reveal">
+            <h3 class="font-bold text-slate-900 mb-8 flex items-center gap-2 text-xl">
+                <i data-lucide="briefcase" class="w-6 h-6 text-slate-500"></i> Career Highlight
+            </h3>
+            
+            <div class="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
+                <div class="relative">
+                    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200 md:hidden"></div>
+                    <div class="hidden md:block absolute top-[2.25rem] left-0 right-0 h-0.5 bg-slate-200"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Current Role -->
+                        <div class="relative pl-12 md:pl-0">
+                            <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-pro-600 rounded-full border-4 border-white shadow-sm z-10 md:static md:mx-auto md:mb-6"></div>
+                            
+                            <div class="md:text-center">
+                                <div class="inline-block px-3 py-1 rounded-full bg-pro-50 text-pro-700 text-sm font-bold mb-2">
+                                    2022.01 - Present
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-xl mb-1">業務フロー改善 / システム企画</h4>
+                                <p class="text-base text-slate-600 font-medium mb-4">株式会社LIXIL (業務改善G)</p>
+                                
+                                <div class="text-left bg-slate-50 rounded-xl p-5 border border-slate-100">
+                                    <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
+                                            <span>AppSheetによる社内アプリ設計・運用（300名規模）</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
+                                            <span>GAS/API活用による年間400時間の工数削減</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Previous Role -->
+                        <div class="relative pl-12 md:pl-0">
+                            <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm z-10 md:static md:mx-auto md:mb-6"></div>
+                            
+                            <div class="md:text-center">
+                                <div class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm font-bold mb-2">
+                                    2015.11 - 2021.08
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-xl mb-1">センター長（物流倉庫長）</h4>
+                                <p class="text-base text-slate-600 font-medium mb-4">有利株式会社</p>
+                                
+                                <div class="text-left bg-slate-50 rounded-xl p-5 border border-slate-100">
+                                    <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
+                                            <span>スタッフ25名のマネジメントと現場指揮</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
+                                            <span>アナログ業務（Excel/紙）の限界とDXの必要性を痛感</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-24 text-center border-t border-slate-200 pt-8 pb-8">
+            <p class="text-slate-400 text-xs mb-2">
+                &copy; 2024 Practical DX Manager Portfolio.
+            </p>
+            <p class="text-slate-300 text-[10px]">
+                Built with HTML5, Tailwind CSS & Vanilla JS. <br class="md:hidden">Designed for Performance.
+            </p>
+        </footer>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div id="modal-overlay" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-0 md:p-4 bg-slate-900/70" aria-modal="true" role="dialog">
+        
+        <div id="modal-content" class="bg-white w-full h-full md:h-auto md:max-w-5xl md:max-h-[90vh] md:rounded-2xl shadow-2xl overflow-y-auto transform scale-95 transition-transform duration-300 flex flex-col relative">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-50 p-2 bg-black/20 hover:bg-black/30 text-white rounded-full transition-colors hidden md:flex backdrop-blur-md">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Image Carousel -->
+            <div class="relative w-full h-64 md:h-[450px] bg-slate-900 shrink-0 group">
+                <div id="carousel-container" class="w-full h-full relative overflow-hidden"></div>
+                <!-- Controls -->
+                <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <button onclick="moveCarousel(-1)" class="pointer-events-auto p-2 rounded-full bg-white/80 hover:bg-white text-slate-800 shadow-lg backdrop-blur-sm transition-transform hover:scale-110">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button onclick="moveCarousel(1)" class="pointer-events-auto p-2 rounded-full bg-white/80 hover:bg-white text-slate-800 shadow-lg backdrop-blur-sm transition-transform hover:scale-110">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div id="carousel-indicators" class="absolute bottom-4 left-0 w-full flex justify-center gap-2"></div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-6 md:p-8 flex-grow bg-white">
+                <div class="flex flex-col gap-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span id="modal-tag" class="text-xs font-bold text-pro-600 bg-pro-50 px-2 py-1 rounded uppercase tracking-wider"></span>
+                        </div>
+                        <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-slate-900"></h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Left: Main Content -->
+                        <div class="md:col-span-2 space-y-8">
+                            
+                            <!-- Problem & Solution -->
+                            <div class="grid gap-6">
+                                <div class="bg-rose-50/50 p-5 rounded-xl border border-rose-100">
+                                    <h4 class="font-bold text-rose-700 text-sm mb-2 flex items-center gap-2">
+                                        <i data-lucide="alert-circle" class="w-4 h-4"></i> Before (課題)
+                                    </h4>
+                                    <p id="modal-problem" class="text-slate-700 text-sm leading-relaxed"></p>
+                                </div>
+                                <div class="bg-emerald-50/50 p-5 rounded-xl border border-emerald-100">
+                                    <h4 class="font-bold text-emerald-700 text-sm mb-2 flex items-center gap-2">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> After (解決策)
+                                    </h4>
+                                    <p id="modal-solution" class="text-slate-700 text-sm leading-relaxed"></p>
+                                </div>
+                            </div>
+
+                            <!-- [New] User Voice: Credibility Booster -->
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm mb-3 flex items-center gap-2">
+                                    <i data-lucide="message-circle" class="w-4 h-4 text-slate-400"></i> User Voice (現場の声)
+                                </h4>
+                                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 relative italic text-slate-600 text-sm leading-relaxed">
+                                    <i data-lucide="quote" class="absolute top-4 left-4 w-4 h-4 text-slate-300 fill-slate-200"></i>
+                                    <p id="modal-voice" class="pl-6"></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Right: Side Info -->
+                        <div class="md:col-span-1 space-y-6">
+                            <!-- Tech Stack -->
+                            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                                <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3">Technology</h4>
+                                <div id="modal-stack" class="flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <!-- [New] Code Evidence / Links -->
+                            <div class="flex flex-col gap-3">
+                                <a id="modal-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full bg-slate-900 text-white text-sm font-bold py-3.5 rounded-xl hover:bg-slate-800 transition-all shadow-md hover:shadow-lg">
+                                    View Project Demo
+                                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                                
+                                <!-- Placeholder for GitHub or Logic Screenshot -->
+                                <button class="flex items-center justify-center gap-2 w-full bg-white text-slate-600 border border-slate-300 text-sm font-bold py-3.5 rounded-xl hover:bg-slate-50 transition-all">
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                    Code / Logic Structure
+                                </button>
+                                <p class="text-[10px] text-center text-slate-400 mt-1">※ ソースコードは面談時に開示可能です</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Close Button -->
+            <div class="md:hidden sticky bottom-0 w-full bg-white border-t border-slate-100 p-4 shrink-0 z-50">
+                <button onclick="closeModal()" class="w-full bg-slate-100 text-slate-700 font-bold py-3 rounded-xl hover:bg-slate-200 transition-colors">
+                    Close Project
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // [USER DATA]
+        const projects = {
+            'project-2': { // AppSheet (Main)
+                tag: 'AppSheet Mobile App',
+                title: '業務プロセス自動化統合アプリ',
+                problem: '承認フローが紙・FAX・メールで分散。承認待ちで業務が3日間止まることも頻発し、どこで止まっているか不明だった。',
+                solution: 'AppSheetで全フローを電子化。スマホ通知で承認リードタイムを平均3日→0.5日に短縮。承認状況の可視化により、問い合わせ工数もゼロに。',
+                voice: '「正直、スマホ操作は不安でしたが、ボタンを押すだけの画面なので私でも使えました。もう紙には戻れません。」（物流現場 リーダー 50代）',
+                stack: ['AppSheet', 'Google Sheets', 'Process Automation'],
+                link: '#',
+                images: [
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'
+                ]
+            },
+            'project-1': { // GAS Automation
+                tag: 'GAS Automation',
+                title: '滞留在庫一掃・自動督促ボット',
+                problem: '各部署への在庫確認メール送信と集計に、毎月20時間の事務工数がかかっていた。また、督促漏れにより回答率が30%と低迷。',
+                solution: 'GASでGmail APIを制御し、未回答者のみに自動リマインド。回答フォームとスプレッドシートを直結させ、集計作業を完全自動化。',
+                voice: '「毎月の集計作業がなくなり、その分を改善活動の時間に充てられるようになりました。」（事務スタッフ 30代）',
+                stack: ['Google Apps Script', 'HTML/CSS', 'Gmail API'],
+                link: '#',
+                images: [
+                    'https://images.unsplash.com/photo-1555421689-492a18805667?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&q=80&w=1000'
+                ]
+            },
+            'project-3': { // Dashboard
+                tag: 'Data Visualization',
+                title: 'リアルタイム在庫可視化ボード',
+                problem: '在庫データがシステム毎に散在し、経営報告のためにExcel手作業で半日かけて資料を作っていた。',
+                solution: 'BigQueryにデータを集約し、Looker Studioで可視化。在庫回転率や欠品予兆がリアルタイムで分かるようになり、迅速な発注判断が可能に。',
+                voice: '「"今の数字"が見えるので、会議の質が変わりました。以前は数字合わせだけで会議が終わっていましたから。」（物流センター長）',
+                stack: ['Looker Studio', 'BigQuery', 'SQL'],
+                link: '#',
+                images: [
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1543286386-713df548e9cc?auto=format&fit=crop&q=80&w=1000'
+                ]
+            },
+            'project-4': { // Field DX
+                tag: 'Web App (SPA)',
+                title: '現場写真・報告 SPA',
+                problem: '破損商品の報告時、デジカメ画像をPCに取り込み、Excelに貼り付けて矢印を描く...という作業が煩雑だった。',
+                solution: 'Canvas APIを活用し、スマホで撮ってその場で手書き注釈を入れられるWebアプリを開発。現場完結型になり、報告速度が向上。',
+                voice: '「PCのある事務所に戻らなくていいのが最高に楽です。」（入庫担当 20代）',
+                stack: ['Vanilla JS', 'Canvas API', 'GAS Backend'],
+                link: '#',
+                images: [
+                    'https://images.unsplash.com/photo-1605218427368-35b8206d4591?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=1000'
+                ]
+            },
+            'project-5': { // Gamification
+                tag: 'Culture / Gamification',
+                title: 'カイゼン提案ランキングボード',
+                problem: '改善提案制度があったが、形骸化しており、提出率が5%未満だった。やらされ感が蔓延していた。',
+                solution: '提案状況をグラフ化し、部署対抗ランキングをサイネージで表示。「見える化」とゲーム要素で競争意識を刺激し、提出率が60%まで向上。',
+                voice: '「自分のチームの順位が上がると嬉しいですね。休憩室での話題が増えました。」（現場リーダー）',
+                stack: ['Chart.js', 'Google Sheets', 'CSS Animation'],
+                link: '#',
+                images: [
+                    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000'
+                ]
+            }
+        };
+
+        let currentImages = [];
+        let currentIndex = 0;
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalContent = document.getElementById('modal-content');
+
+        // [UX: Mobile Back Button Logic]
+        window.addEventListener('popstate', (event) => {
+            // If URL hash changes back to empty (back button pressed), close modal
+            if (!location.hash && !modalOverlay.classList.contains('hidden')) {
+                _closeModalLogic();
+            }
+        });
+
+        function openModal(projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            // Update URL Hash without reload (UX Improvement)
+            history.pushState(null, null, `#${projectId}`);
+
+            // Populate Content
+            document.getElementById('modal-tag').textContent = project.tag;
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-problem').textContent = project.problem;
+            document.getElementById('modal-solution').textContent = project.solution;
+            document.getElementById('modal-voice').textContent = project.voice; // [New]
+            document.getElementById('modal-link').href = project.link;
+
+            const stackContainer = document.getElementById('modal-stack');
+            stackContainer.innerHTML = '';
+            project.stack.forEach(tech => {
+                const span = document.createElement('span');
+                span.className = 'text-xs font-bold border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg bg-slate-50';
+                span.textContent = tech;
+                stackContainer.appendChild(span);
+            });
+
+            currentImages = project.images || [];
+            currentIndex = 0;
+            renderCarousel();
+
+            // Show Modal
+            modalOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            requestAnimationFrame(() => {
+                modalOverlay.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            });
+        }
+
+        function closeModal() {
+            // Trigger popstate to handle URL cleanup naturally
+            if(location.hash) {
+                history.back();
+            } else {
+                _closeModalLogic();
+            }
+        }
+
+        // Internal Logic (Separated for Back Button Support)
+        function _closeModalLogic() {
+            modalOverlay.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modalOverlay.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        function renderCarousel() {
+            const container = document.getElementById('carousel-container');
+            const indicators = document.getElementById('carousel-indicators');
+            
+            container.innerHTML = '';
+            indicators.innerHTML = '';
+
+            if (currentImages.length === 0) {
+                container.innerHTML = '<div class="w-full h-full flex items-center justify-center text-slate-400">No Image</div>';
+                return;
+            }
+
+            currentImages.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = `slide-image absolute inset-0 w-full h-full object-cover ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+                container.appendChild(img);
+
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all shadow-sm ${index === 0 ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'}`;
+                dot.onclick = (e) => { e.stopPropagation(); goToSlide(index); };
+                indicators.appendChild(dot);
+            });
+        }
+
+        function moveCarousel(direction) {
+            const newIndex = (currentIndex + direction + currentImages.length) % currentImages.length;
+            goToSlide(newIndex);
+        }
+
+        function goToSlide(index) {
+            const images = document.querySelectorAll('.slide-image');
+            const dots = document.getElementById('carousel-indicators').children;
+            if (images.length === 0) return;
+
+            images[currentIndex].classList.remove('opacity-100');
+            images[currentIndex].classList.add('opacity-0');
+            images[index].classList.remove('opacity-0');
+            images[index].classList.add('opacity-100');
+
+            if(dots[currentIndex]) dots[currentIndex].className = 'w-2 h-2 rounded-full transition-all shadow-sm bg-white/50 hover:bg-white/80';
+            if(dots[index]) dots[index].className = 'w-2 h-2 rounded-full transition-all shadow-sm bg-white scale-125';
+
+            currentIndex = index;
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
