@@ -154,13 +154,21 @@
                         Impact
                     </div>
                     <div>
-                        <div class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-1">
+                        <div class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-2">
                             95<span class="text-2xl">%</span>
                             <span class="text-xl">UP</span>
                         </div>
-                        <p class="text-pro-100 text-sm font-medium opacity-90">
-                            在庫確認レスポンス向上<br>破損率 95% 削減
-                        </p>
+                        <div class="space-y-2">
+                            <p class="text-pro-100 text-sm font-medium opacity-90 leading-snug">
+                                在庫確認レスポンス向上<br>
+                                破損率 95% 削減
+                            </p>
+                            <!-- Cost Reduction Added -->
+                            <div class="pt-2 mt-2 border-t border-white/20">
+                                <p class="text-xs text-pro-200 mb-0.5">Excel脱却によるコスト削減効果 <span class="bg-white/20 px-1 rounded text-[10px] ml-1">1案件</span></p>
+                                <p class="text-lg font-bold text-white">年間 約120万円 削減</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,7 +193,7 @@
                 </div>
             </div>
 
-            <!-- 3. Tech Stack Card (Updated with 'Code' evidence hint) -->
+            <!-- 3. Tech Stack Card (Updated to 6 items grid) -->
             <div class="reveal bento-card col-span-1 md:col-span-4 bg-slate-900 rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                     <h3 class="text-white font-bold text-lg flex items-center gap-2 shrink-0 border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
@@ -193,7 +201,8 @@
                         Skills & Tools
                     </h3>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 w-full">
+                    <!-- Changed to grid-cols-3 for balanced 6 items -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
                         <!-- AppSheet -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-emerald-400 mb-1">
@@ -205,7 +214,7 @@
                         <!-- GAS/Web -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-blue-400 mb-1">
-                                <i data-lucide="code-2" class="w-4 h-4"></i> <!-- Changed Icon -->
+                                <i data-lucide="code-2" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">GAS / JS</span>
                             </div>
                             <span class="text-xs text-slate-400 block">API連携 / SPA開発</span>
@@ -216,7 +225,7 @@
                                 <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">Data Viz</span>
                             </div>
-                            <span class="text-xs text-slate-400 block">Looker Studio / SQL</span>
+                            <span class="text-xs text-slate-400 block">Looker Studio / G-Sheets</span>
                         </div>
                         <!-- Field Management -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-rose-500/50 transition-colors">
@@ -226,13 +235,21 @@
                             </div>
                             <span class="text-xs text-slate-400 block">倉庫運営 / 在庫管理</span>
                         </div>
-                        <!-- BPR -->
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-colors col-span-2 md:col-span-1">
+                        <!-- AI / LLM -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-purple-400 mb-1">
-                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">Kaizen</span>
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Gen-AI / LLM</span>
                             </div>
-                            <span class="text-xs text-slate-400 block">業務フロー設計 / BPR</span>
+                            <span class="text-xs text-slate-400 block">Prompt Engineering / AI Coding</span>
+                        </div>
+                        <!-- [New] Docs & Video -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-cyan-400 mb-1">
+                                <i data-lucide="video" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Docs & Video</span>
+                            </div>
+                            <span class="text-xs text-slate-400 block">Google Vids / Manuals</span>
                         </div>
                     </div>
                 </div>
@@ -319,13 +336,15 @@
                         <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                             <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-medium text-slate-400">Looker Studio</span>
+                        <!-- Tech Label Updated -->
+                        <span class="text-xs font-medium text-slate-400">GAS Web App</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
                         リアルタイム在庫可視化
                     </h3>
                     <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
-                        「昨日のデータ」ではなく「今」を見る。BigQuery連携による高速ダッシュボード。
+                        <!-- Description Updated -->
+                        「昨日のデータ」ではなく「今」を見る。Google Sheets連携の独自Webダッシュボード。
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
@@ -388,15 +407,15 @@
             
             <div class="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
                 <div class="relative">
-                    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200 md:hidden"></div>
-                    <div class="hidden md:block absolute top-[2.25rem] left-0 right-0 h-0.5 bg-slate-200"></div>
+                    <!-- Vertical Line (Always visible) -->
+                    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200"></div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="flex flex-col gap-12">
                         <!-- Current Role -->
-                        <div class="relative pl-12 md:pl-0">
-                            <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-pro-600 rounded-full border-4 border-white shadow-sm z-10 md:static md:mx-auto md:mb-6"></div>
+                        <div class="relative pl-12">
+                            <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-pro-600 rounded-full border-4 border-white shadow-sm z-10"></div>
                             
-                            <div class="md:text-center">
+                            <div>
                                 <div class="inline-block px-3 py-1 rounded-full bg-pro-50 text-pro-700 text-sm font-bold mb-2">
                                     2022.01 - Present
                                 </div>
@@ -404,10 +423,21 @@
                                 <p class="text-base text-slate-600 font-medium mb-4">株式会社LIXIL (業務改善G)</p>
                                 
                                 <div class="text-left bg-slate-50 rounded-xl p-5 border border-slate-100">
-                                    <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
+                                    <ul class="text-sm text-slate-600 leading-relaxed space-y-4">
                                         <li class="flex items-start gap-2">
                                             <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
-                                            <span>AppSheetによる社内アプリ設計・運用（300名規模）</span>
+                                            <div class="w-full">
+                                                <span class="font-bold text-slate-800 block mb-2">AppSheetによる社内アプリ設計・運用（300名規模）</span>
+                                                <div class="text-xs text-slate-600 pl-3 border-l-2 border-pro-200 space-y-1.5 bg-white/50 py-2 rounded-r-lg">
+                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>荷受・蔵置統合管理システム</p>
+                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>施工手配・進捗可視化プラットフォーム</p>
+                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>配送リソース・配車計画管理アプリ</p>
+                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>備品発注・在庫最適化ワークフロー</p>
+                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>全社カイゼン提案・ナレッジ共有ポータル</p>
+                                                    <!-- [Added] Manual & Video -->
+                                                    <p class="flex items-center gap-1.5 font-bold text-pro-700 bg-pro-50 inline-block px-1 rounded"><span class="w-1 h-1 rounded-full bg-pro-500"></span>アプリ内操作マニュアル・動画解説機能実装 (Google Vids)</p>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li class="flex items-start gap-2">
                                             <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
@@ -419,10 +449,10 @@
                         </div>
 
                         <!-- Previous Role -->
-                        <div class="relative pl-12 md:pl-0">
-                            <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm z-10 md:static md:mx-auto md:mb-6"></div>
+                        <div class="relative pl-12">
+                            <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm z-10"></div>
                             
-                            <div class="md:text-center">
+                            <div>
                                 <div class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm font-bold mb-2">
                                     2015.11 - 2021.08
                                 </div>
@@ -594,13 +624,13 @@
                     'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
-            'project-3': { // Dashboard
+            'project-3': { // Dashboard (UPDATED)
                 tag: 'Data Visualization',
                 title: 'リアルタイム在庫可視化ボード',
                 problem: '在庫データがシステム毎に散在し、経営報告のためにExcel手作業で半日かけて資料を作っていた。',
-                solution: 'BigQueryにデータを集約し、Looker Studioで可視化。在庫回転率や欠品予兆がリアルタイムで分かるようになり、迅速な発注判断が可能に。',
+                solution: 'Google Sheetsをデータベースとして活用し、GAS（Google Apps Script）で独自のWebダッシュボードアプリを開発。データ集計を全自動化し、PCやスマホからリアルタイムで在庫推移を確認可能に。',
                 voice: '「"今の数字"が見えるので、会議の質が変わりました。以前は数字合わせだけで会議が終わっていましたから。」（物流センター長）',
-                stack: ['Looker Studio', 'BigQuery', 'SQL'],
+                stack: ['GAS Web App', 'Google Sheets', 'Chart.js'],
                 link: '#',
                 images: [
                     'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
