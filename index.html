@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical DX Manager | Portfolio</title>
     
-    <!-- === OGP Tags (링크 공유 시 썸네일 설정) === -->
+    <!-- === OGP Tags (リンク共有時サムネイル設定) === -->
     <meta property="og:title" content="Practical DX Manager Portfolio">
     <meta property="og:description" content="現場視点の徹底的な実利主義。AppSheetとGASによる業務改革ポートフォリオ。">
     <meta property="og:type" content="website">
-    <!-- [TODO] 📸 카톡/라인 공유 시 나올 본인의 대표 이미지 URL로 교체하세요 -->
+    <!-- [TODO] 📸 KakaoTalk/LINE共有時に表示される代表画像URLに置き換えてください -->
     <meta property="og:image" content="https://via.placeholder.com/1200x630/0ea5e9/ffffff?text=Practical+DX+Portfolio">
 
     <meta name="description" content="現場の課題を技術で解決する実戦型DXマネージャーのポートフォリオ。AppSheet, GAS, Dashboard開発による業務効率化。">
@@ -59,7 +59,7 @@
         html { scroll-behavior: smooth; }
         body { 
             background-color: #f8fafc; 
-            /* 일본어 가독성 튜닝: 자간 조정 및 프로포셔널 메트릭스 */
+            /* 日本語可読性チューニング: 字間調整とプロポーショナルメトリクス */
             letter-spacing: 0.03em;
             font-feature-settings: "palt";
         }
@@ -132,7 +132,7 @@
             </div>
             
             <div class="flex flex-col items-start md:items-end gap-3">
-                <!-- [TODO] 📧 본인의 실제 이메일 주소로 교체하세요 -->
+                <!-- [TODO] 📧 ご自身の実際のメールアドレスに置き換えてください -->
                 <a href="mailto:your.email@example.com" class="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-slate-800 transition-all hover:scale-105 active:scale-95">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     <span>Contact Me</span>
@@ -271,12 +271,12 @@
 
             <!-- === Section 2: Projects Grid === -->
 
-            <!-- 4. [Main Project] AppSheet (Visual Emphasis Added) -->
+            <!-- 4. [Main Project] Project 2 -->
             <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-2 md:row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-indigo-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none" aria-label="View Project: AppSheet">
                 <!-- Image Container -->
                 <div class="absolute inset-0 z-0">
                     <!-- [TODO] 📸 여기에 실제 앱 스크린샷 URL을 넣으세요 (메인 그리드용) -->
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Process Automation Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" alt="Warehouse Management" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
                 </div>
 
@@ -293,14 +293,13 @@
                 <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
                     <div class="flex items-center gap-2 mb-2 text-indigo-300 text-xs font-bold uppercase tracking-wider">
                         <i data-lucide="smartphone" class="w-4 h-4"></i>
-                        AppSheet / No-Code
+                        GAS Web App & AppSheet
                     </div>
                     <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
-                        業務プロセス自動化アプリ
+                        担当者不明品・統合管理プラットフォーム
                     </h3>
                     <p class="text-slate-300 text-sm mb-4 max-w-lg leading-relaxed">
-                        「紙・ハンコ・Excel」を撤廃。現場のアナログ業務をスマホ1つで完結させる統合プラットフォーム。
-                        <span class="text-white font-bold">承認スピード 5倍向上。</span>
+                        倉庫内の「所有者不明品」を写真付きカードで可視化。AppSheet連携で直感的なアクションを実現し、<span class="text-white font-bold">棚卸し期間を半減。</span>
                     </p>
                     <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
                         View Details & Voice <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -308,7 +307,7 @@
                 </div>
             </button>
 
-            <!-- 5. Sub: GAS Automation -->
+            <!-- 5. Sub: GAS Automation (Project 1 - Kept as is) -->
             <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-rose-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -318,7 +317,7 @@
                         <span class="text-xs font-medium text-slate-400">GAS / Gmail API</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors">
-                        滞留在庫一掃・自動督促
+                        滞留在庫自動リマインドBot
                     </h3>
                     <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
                         人間がやるべきでない「催促」をボットに一任。回答率 30% → 95% 達成。
@@ -330,22 +329,20 @@
                 </div>
             </button>
 
-            <!-- 6. Sub: Dashboard -->
+            <!-- 6. Sub: Project 3 -->
             <button onclick="openModal('project-3')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                             <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
                         </div>
-                        <!-- Tech Label Updated -->
-                        <span class="text-xs font-medium text-slate-400">GAS Web App</span>
+                        <span class="text-xs font-medium text-slate-400">KPI Dashboard</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
-                        リアルタイム在庫可視化
+                        保管期限管理ダッシュボード
                     </h3>
                     <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
-                        <!-- Description Updated -->
-                        「昨日のデータ」ではなく「今」を見る。Google Sheets連携の独自Webダッシュボード。
+                        期限超過をランキング表示。放置期間の長い順に可視化し回転率改善。
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
@@ -354,20 +351,20 @@
                 </div>
             </button>
 
-            <!-- 7. Sub: Field DX (SPA) -->
+            <!-- 7. Sub: Project 4 -->
             <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-emerald-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
                             <i data-lucide="image-plus" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-medium text-slate-400">Canvas API</span>
+                        <span class="text-xs font-medium text-slate-400">GAS Full-Stack</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                        現場写真・報告 SPA
+                        多機能・在庫管理プラットフォーム
                     </h3>
                     <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
-                        写真への手書き注釈機能をWebで実装。現場完結型レポートアプリ。
+                        スマホ完結SPA。Canvas APIによる写真への手書き注釈機能を実装。
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
@@ -376,7 +373,7 @@
                 </div>
             </button>
 
-            <!-- 8. Sub: Gamification -->
+            <!-- 8. Sub: Project 5 -->
             <button onclick="openModal('project-5')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-orange-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -386,10 +383,10 @@
                         <span class="text-xs font-medium text-slate-400">Gamification</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
-                        カイゼン提案ボード
+                        改善提案・ポイント管理ボード
                     </h3>
                     <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
-                        業務改善を「ゲーム」に。ランキング表示で自発的な提案文化を醸成。
+                        個人の獲得ポイントと提案件数をランキング表示。競争心を刺激し提案数倍増。
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
@@ -598,83 +595,82 @@
         lucide.createIcons();
 
         // [USER DATA]
-        // [TODO] 🔗 아래 projects 객체의 link와 images 부분에 본인의 실제 URL을 넣어주세요.
+        // [TODO] 🔗 以下のprojectsオブジェクトのlinkとimages部分にご自身の実際のURLを入れてください。
         const projects = {
-            'project-1': { // AppSheet (Main)
-                tag: 'AppSheet Mobile App',
-                title: '業務プロセス自動化統合アプリ',
-                problem: '承認フローが紙・FAX・メールで分散。承認待ちで業務が3日間止まることも頻発し、どこで止まっているか不明だった。',
-                solution: 'AppSheetで全フローを電子化。スマホ通知で承認リードタイムを平均3日→0.5日に短縮。承認状況の可視化により、問い合わせ工数もゼロに。',
-                voice: '「正直、スマホ操作は不安でしたが、ボタンを押すだけの画面なので私でも使えました。もう紙には戻れません。」（物流現場 リーダー 50代）',
-                stack: ['AppSheet', 'Google Sheets', 'Process Automation'],
-                // 🔗 [교체] 실제 앱 데모 링크나 소개 페이지 URL을 입력하세요.
-                link: '#', 
-                // 📸 [교체] 모달 창에 띄울 상세 스크린샷 URL들을 입력하세요. (여러 장 가능)
+            'project-2': { // GAS Automation
+                tag: 'GAS Automation',
+                title: '滞留在庫自動リマインド・クレンジングBot', 
+                problem: '各部署への長期滞留在庫の確認メール送信と集計に、毎月20時間の事務工数がかかっていた。また、督促漏れにより回答率が30%と低迷。',
+                solution: 'GASでGmail APIを制御し、未回答者のみに自動リマインド（督促）を実行。回答フォームとスプレッドシートを直結させ、集計作業を完全自動化。',
+                voice: '「毎月の集計作業がなくなり、その分を改善活動の時間に充てられるようになりました。」（事務スタッフ 30代）',
+                stack: ['Google Apps Script', 'HTML/CSS', 'Gmail API'],
+                link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec',
                 images: [
-                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', 
-                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'
+                    'https://images.unsplash.com/photo-1555421689-492a18805667?auto=format&fit=crop&q=80&w=1000', 
+                    'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
-            'project-2': { // GAS Web App & AppSheet
-    tag: 'GAS Web App & AppSheet',
-    title: '担当者不明品・統合管理プラットフォーム',
-    problem: '倉庫や工場内で発生する「所有者不明品」の確認作業において、文字リストだけでは物品の判別が困難で、回答率が低迷していた。また、未回答者への督促や廃棄処分の期限管理に多大な工数を要していた。',
-    solution: 'GASをバックエンド、Tailwind CSSをフロントエンドに使用したWebアプリを開発し、物品を写真付きカード形式で可視化。AppSheetへのディープリンクを実装し、直感的な閲覧から「蔵置・廃棄」のアクションまでをワンストップで完結させた。',
-    voice: '「写真で一覧表示されるため、自分の荷物を一瞬で見つけられるようになりました。アプリ連携で回答もスムーズになり、棚卸し期間が半分以下に短縮されました。」（資材管理 40代）',
-    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Gmail API'],
-    // 🔗 [배포된 웹앱 URL로 교체하세요]
-    link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
-    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
-    images: [
-        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000', // (예시: 창고/재고 이미지)
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'  // (예시: 데이터 차트 이미지)
-    ]
-},
+            'project-1': { // Main Project
+                tag: 'GAS Web App & AppSheet',
+                title: '担当者不明品・統合管理プラットフォーム',
+                problem: '倉庫や工場内で発生する「所有者不明品」の確認作業において、文字リストだけでは物品の判別が困難で、回答率が低迷していた。また、未回答者への督促や廃棄処分の期限管理に多大な工数を要していた。',
+                solution: 'GASをバックエンド、Tailwind CSSをフロントエンドに使用したWebアプリを開発し、物品を写真付きカード形式で可視化。AppSheetへのディープリンクを実装し、直感的な閲覧から「蔵置・廃棄」のアクションまでをワンストップで完結させた。',
+                voice: '「写真で一覧表示されるため、自分の荷物を一瞬で見つけられるようになりました。アプリ連携で回答もスムーズになり、棚卸し期間が半分以下に短縮されました。」（資材管理 40代）',
+                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Gmail API'],
+                // 🔗 [배포된 웹앱 URL로 교체하세요]
+                link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
+                // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+                images: [
+                    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000', // (예시: 창고/재고 이미지)
+                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'  // (예시: 데이터 차트 이미지)
+                ]
+            },
             'project-3': { // KPI Dashboard
-    tag: 'KPI Dashboard & Automation',
-    title: '保管期限管理ダッシュボード・自動督促システム',
-    problem: '倉庫内の保管物品において、期限切れの放置が常態化し、スペース不足が深刻化していた。メールでの督促だけでは「誰がどれだけ滞留させているか」が見えず、担当者の当事者意識が希薄だった。',
-    solution: '期限超過状況をリアルタイムで可視化するダッシュボードを開発。「未処理数ランキング」をトップ画面に表示することで健全な競争意識を醸成し、放置期間の長い順に優先的に表示させるアルゴリズムで、倉庫の回転率を改善した。',
-    voice: '「ダッシュボードで自分の部署がワースト入りしているのを見て、慌てて整理に向かいました。可視化による意識改革の効果は絶大です。」（製造部門 マネージャー）',
-    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'],
-    // 🔗 [배포된 웹앱 URL로 교체하세요]
-    link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
-    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
-    images: [
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // (예시: 대시보드/차트)
-        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000'  // (예시: 창고 관리)
-    ]
-},
-           'project-4': { // GAS Full-Stack Web App
-    tag: 'GAS Full-Stack Web App',
-    title: '多機能・在庫管理プラットフォーム (モバイル特化)',
-    problem: '現場の「仮置き在庫」は移動が激しく、紙やExcelでの管理ではリアルタイムな追跡が不可能だった。特に、物品の状態を記録する写真管理の手間（PCへの転送・紐付け）と、場所の特定に時間がかかり、棚卸し工数が肥大化していた。',
-    solution: 'スマホ・タブレットに最適化したSPA（シングルページアプリ）を構築。QRコードスキャンによる場所特定に加え、Canvas APIを用いて撮影した写真に「直接手書き注釈」を入れる機能を実装し、現場報告の精度を向上。ダッシュボードではChart.jsによるドリルダウン分析やダークモード対応を実現し、UXを最大化した。',
-    voice: '「写真に直接『キズあり』などのメモを書ける機能が画期的です。スマホだけで完結するため、事務所に戻ってからの入力作業がなくなり、残業が月10時間減りました。」（製造現場リーダー）',
-    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
-    // 🔗 [배포된 웹앱 URL로 교체하세요]
-    link: 'https://script.google.com/macros/s/AKfycbw.../exec',
-    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
-    images: [
-        'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&q=80&w=1000', // (예시: 창고/재고 관리)
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000'  // (예시: 대시보드/모바일 UI)
-    ]
-},
+                tag: 'KPI Dashboard & Automation',
+                title: '保管期限管理ダッシュボード・自動督促システム',
+                problem: '倉庫内の保管物品において、期限切れの放置が常態化し、スペース不足が深刻化していた。メールでの督促だけでは「誰がどれだけ滞留させているか」が見えず、担当者の当事者意識が希薄だった。',
+                solution: '期限超過状況をリアルタイムで可視化するダッシュボードを開発。「未処理数ランキング」をトップ画面に表示することで健全な競争意識を醸成し、放置期間の長い順に優先的に表示させるアルゴリズムで、倉庫の回転率を改善した。',
+                voice: '「ダッシュボードで自分の部署がワースト入りしているのを見て、慌てて整理に向かいました。可視化による意識改革の効果は絶大です。」（製造部門 マネージャー）',
+                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'],
+                // 🔗 [배포된 웹앱 URL로 교체하세요]
+                link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
+                // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+                images: [
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // (예시: 대시보드/차트)
+                    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000'  // (예시: 창고 관리)
+                ]
+            },
+            'project-4': { // GAS Full-Stack Web App
+                tag: 'GAS Full-Stack Web App',
+                title: '多機能・在庫管理プラットフォーム (モバイル特化)',
+                problem: '現場の「仮置き在庫」は移動が激しく、紙やExcelでの管理ではリアルタイムな追跡が不可能だった。特に、物品の状態を記録する写真管理の手間（PCへの転送・紐付け）と、場所の特定に時間がかかり、棚卸し工数が肥大化していた。',
+                solution: 'スマホ・タブレットに最適化したSPA（シングルページアプリ）を構築。QRコードスキャンによる場所特定に加え、Canvas APIを用いて撮影した写真に「直接手書き注釈」を入れる機能を実装し、現場報告の精度を向上。ダッシュボードではChart.jsによるドリルダウン分析やダークモード対応を実現し、UXを最大化した。',
+                voice: '「写真に直接『キズあり』などのメモを書ける機能が画期的です。スマホだけで完結するため、事務所に戻ってからの入力作業がなくなり、残業が月10時間減りました。」（製造現場リーダー）',
+                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
+                // 🔗 [배포된 웹앱 URL로 교체하세요]
+                link: 'https://script.google.com/macros/s/AKfycbw.../exec',
+                // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+                images: [
+                    'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&q=80&w=1000', // (예시: 창고/재고 관리)
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000'  // (예시: 대시보드/모바일 UI)
+                ]
+            },
             'project-5': { // Gamification & Dashboard
-    tag: 'Gamification & KPI Dashboard',
-    title: '改善提案・ポイント管理ダッシュボード',
-    problem: '現場の改善活動（カイゼン）がマンネリ化し、提案数が減少していた。Excelでの管理では「誰がどれだけ貢献しているか」が見えにくく、従業員のモチベーション向上や公平な評価につながらないという課題があった。',
-    solution: 'Chart.jsを活用し、個人の獲得ポイントと提案件数をリアルタイムでランキング表示するダッシュボードを構築。競争心を刺激する「ゲーミフィケーション」要素を取り入れた。また、提案リストを「メンバー別」と「タイムライン」の2つの視点で切り替え可能なUIにし、管理者の評価工数を大幅に削減した。',
-    voice: '「自分の順位がグラフで見えるので、『次はトップを目指そう』とゲーム感覚で取り組めるようになりました。導入後、提案数が前年比200%に増えました。」（製造部 チームリーダー）',
-    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA (Single Page App)'],
-    // 🔗 [배포된 웹앱 URL로 교체하세요]
-    link: 'https://script.google.com/macros/s/AKfycbw.../exec',
-    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
-    images: [
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // (예시: 랭킹/차트 대시보드)
-        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000'  // (예시: 타임라인/리스트 뷰)
-    ]
-},
+                tag: 'Gamification & KPI Dashboard',
+                title: '改善提案・ポイント管理ダッシュボード',
+                problem: '現場の改善活動（カイゼン）がマンネリ化し、提案数が減少していた。Excelでの管理では「誰がどれだけ貢献しているか」が見えにくく、従業員のモチベーション向上や公平な評価につながらないという課題があった。',
+                solution: 'Chart.jsを活用し、個人の獲得ポイントと提案件数をリアルタイムでランキング表示するダッシュボードを構築。競争心を刺激する「ゲーミフィケーション」要素を取り入れた。また、提案リストを「メンバー別」と「タイムライン」の2つの視点で切り替え可能なUIにし、管理者の評価工数を大幅に削減した。',
+                voice: '「自分の順位がグラフで見えるので、『次はトップを目指そう』とゲーム感覚で取り組めるようになりました。導入後、提案数が前年比200%に増えました。」（製造部 チームリーダー）',
+                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA (Single Page App)'],
+                // 🔗 [배포된 웹앱 URL로 교체하세요]
+                link: 'https://script.google.com/macros/s/AKfycbw.../exec',
+                // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+                images: [
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // (예시: 랭킹/차트 대시보드)
+                    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000'  // (예시: 타임라인/리스트 뷰)
+                ]
+            }
+        };
 
         let currentImages = [];
         let currentIndex = 0;
