@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical DX Manager | Portfolio</title>
     
-    <!-- === OGP Tags (링크 공유 시 신뢰도 상승) === -->
+    <!-- === OGP Tags (링크 공유 시 썸네일 설정) === -->
     <meta property="og:title" content="Practical DX Manager Portfolio">
     <meta property="og:description" content="現場視点の徹底的な実利主義。AppSheetとGASによる業務改革ポートフォリオ。">
     <meta property="og:type" content="website">
-    <!-- 실제 배포 후 본인의 대표 프로젝트 스크린샷 URL을 넣으세요 -->
+    <!-- [TODO] 📸 카톡/라인 공유 시 나올 본인의 대표 이미지 URL로 교체하세요 -->
     <meta property="og:image" content="https://via.placeholder.com/1200x630/0ea5e9/ffffff?text=Practical+DX+Portfolio">
 
     <meta name="description" content="現場の課題を技術で解決する実戦型DXマネージャーのポートフォリオ。AppSheet, GAS, Dashboard開発による業務効率化。">
@@ -132,6 +132,7 @@
             </div>
             
             <div class="flex flex-col items-start md:items-end gap-3">
+                <!-- [TODO] 📧 본인의 실제 이메일 주소로 교체하세요 -->
                 <a href="mailto:your.email@example.com" class="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-slate-800 transition-all hover:scale-105 active:scale-95">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     <span>Contact Me</span>
@@ -274,7 +275,7 @@
             <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-2 md:row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-indigo-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none" aria-label="View Project: AppSheet">
                 <!-- Image Container -->
                 <div class="absolute inset-0 z-0">
-                    <!-- IMPORTANT: Replace with Real App Screenshot -->
+                    <!-- [TODO] 📸 여기에 실제 앱 스크린샷 URL을 넣으세요 (메인 그리드용) -->
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Process Automation Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
                 </div>
@@ -597,6 +598,7 @@
         lucide.createIcons();
 
         // [USER DATA]
+        // [TODO] 🔗 아래 projects 객체의 link와 images 부분에 본인의 실제 URL을 넣어주세요.
         const projects = {
             'project-2': { // AppSheet (Main)
                 tag: 'AppSheet Mobile App',
@@ -605,9 +607,11 @@
                 solution: 'AppSheetで全フローを電子化。スマホ通知で承認リードタイムを平均3日→0.5日に短縮。承認状況の可視化により、問い合わせ工数もゼロに。',
                 voice: '「正直、スマホ操作は不安でしたが、ボタンを押すだけの画面なので私でも使えました。もう紙には戻れません。」（物流現場 リーダー 50代）',
                 stack: ['AppSheet', 'Google Sheets', 'Process Automation'],
-                link: '#',
+                // 🔗 [교체] 실제 앱 데모 링크나 소개 페이지 URL을 입력하세요.
+                link: '#', 
+                // 📸 [교체] 모달 창에 띄울 상세 스크린샷 URL들을 입력하세요. (여러 장 가능)
                 images: [
-                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', 
                     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
@@ -618,9 +622,11 @@
                 solution: 'GASでGmail APIを制御し、未回答者のみに自動リマインド。回答フォームとスプレッドシートを直結させ、集計作業を完全自動化。',
                 voice: '「毎月の集計作業がなくなり、その分を改善活動の時間に充てられるようになりました。」（事務スタッフ 30代）',
                 stack: ['Google Apps Script', 'HTML/CSS', 'Gmail API'],
+                // 🔗 [교체]
                 link: '#',
+                // 📸 [교체]
                 images: [
-                    'https://images.unsplash.com/photo-1555421689-492a18805667?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1555421689-492a18805667?auto=format&fit=crop&q=80&w=1000', 
                     'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
@@ -631,9 +637,11 @@
                 solution: 'Google Sheetsをデータベースとして活用し、GAS（Google Apps Script）で独自のWebダッシュボードアプリを開発。データ集計を全自動化し、PCやスマホからリアルタイムで在庫推移を確認可能に。',
                 voice: '「"今の数字"が見えるので、会議の質が変わりました。以前は数字合わせだけで会議が終わっていましたから。」（物流センター長）',
                 stack: ['GAS Web App', 'Google Sheets', 'Chart.js'],
+                // 🔗 [교체]
                 link: '#',
+                // 📸 [교체]
                 images: [
-                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
                     'https://images.unsplash.com/photo-1543286386-713df548e9cc?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
@@ -644,9 +652,11 @@
                 solution: 'Canvas APIを活用し、スマホで撮ってその場で手書き注釈を入れられるWebアプリを開発。現場完結型になり、報告速度が向上。',
                 voice: '「PCのある事務所に戻らなくていいのが最高に楽です。」（入庫担当 20代）',
                 stack: ['Vanilla JS', 'Canvas API', 'GAS Backend'],
+                // 🔗 [교체]
                 link: '#',
+                // 📸 [교체]
                 images: [
-                    'https://images.unsplash.com/photo-1605218427368-35b8206d4591?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1605218427368-35b8206d4591?auto=format&fit=crop&q=80&w=1000',
                     'https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
@@ -657,9 +667,11 @@
                 solution: '提案状況をグラフ化し、部署対抗ランキングをサイネージで表示。「見える化」とゲーム要素で競争意識を刺激し、提出率が60%まで向上。',
                 voice: '「自分のチームの順位が上がると嬉しいですね。休憩室での話題が増えました。」（現場リーダー）',
                 stack: ['Chart.js', 'Google Sheets', 'CSS Animation'],
+                // 🔗 [교체]
                 link: '#',
+                // 📸 [교체]
                 images: [
-                    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000', // REPLACE THIS
+                    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000', 
                     'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000'
                 ]
             }
