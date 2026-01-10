@@ -615,67 +615,66 @@
                     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'
                 ]
             },
-            'project-2': { // GAS Automation
-                tag: 'GAS Automation',
-                title: '滞留在庫一掃・自動督促ボット',
-                problem: '各部署への在庫確認メール送信と集計に、毎月20時間の事務工数がかかっていた。また、督促漏れにより回答率が30%と低迷。',
-                solution: 'GASでGmail APIを制御し、未回答者のみに自動リマインド。回答フォームとスプレッドシートを直結させ、集計作業を完全自動化。',
-                voice: '「毎月の集計作業がなくなり、その分を改善活動の時間に充てられるようになりました。」（事務スタッフ 30代）',
-                stack: ['Google Apps Script', 'HTML/CSS', 'Gmail API'],
-                // 🔗 [교체]
-                link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec',
-                // 📸 [교체]
-                images: [
-                    'https://images.unsplash.com/photo-1555421689-492a18805667?auto=format&fit=crop&q=80&w=1000', 
-                    'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&q=80&w=1000'
-                ]
-            },
-            'project-3': { // Dashboard (UPDATED)
-                tag: 'Data Visualization',
-                title: 'リアルタイム在庫可視化ボード',
-                problem: '在庫データがシステム毎に散在し、経営報告のためにExcel手作業で半日かけて資料を作っていた。',
-                solution: 'Google Sheetsをデータベースとして活用し、GAS（Google Apps Script）で独自のWebダッシュボードアプリを開発。データ集計を全自動化し、PCやスマホからリアルタイムで在庫推移を確認可能に。',
-                voice: '「"今の数字"が見えるので、会議の質が変わりました。以前は数字合わせだけで会議が終わっていましたから。」（物流センター長）',
-                stack: ['GAS Web App', 'Google Sheets', 'Chart.js'],
-                // 🔗 [교체]
-                link: 'https://script.google.com/macros/s/AKfycbwHWgT8mFfTuD1Zk2UGYZz_gK6vzpkWPQyuqIDzDF4oyZFxnDerLRJO5S-AXz8TMVn1Jg/exec',
-                // 📸 [교체]
-                images: [
-                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
-                    'https://images.unsplash.com/photo-1543286386-713df548e9cc?auto=format&fit=crop&q=80&w=1000'
-                ]
-            },
-            'project-4': { // Field DX
-                tag: 'Web App (SPA)',
-                title: '現場写真・報告 SPA',
-                problem: '破損商品の報告時、デジカメ画像をPCに取り込み、Excelに貼り付けて矢印を描く...という作業が煩雑だった。',
-                solution: 'Canvas APIを活用し、スマホで撮ってその場で手書き注釈を入れられるWebアプリを開発。現場完結型になり、報告速度が向上。',
-                voice: '「PCのある事務所に戻らなくていいのが最高に楽です。」（入庫担当 20代）',
-                stack: ['Vanilla JS', 'Canvas API', 'GAS Backend'],
-                // 🔗 [교체]
-                link: 'https://script.google.com/macros/s/AKfycbyhbiYNWJ3noPU2Ztxh2BSwuHXSSLA8Ne6C5vHRcHrGKNIaOY2OaQgg5oErAQgk5HnX/exec',
-                // 📸 [교체]
-                images: [
-                    'https://images.unsplash.com/photo-1605218427368-35b8206d4591?auto=format&fit=crop&q=80&w=1000',
-                    'https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=1000'
-                ]
-            },
-            'project-5': { // Gamification
-                tag: 'Culture / Gamification',
-                title: 'カイゼン提案ランキングボード',
-                problem: '改善提案制度があったが、形骸化しており、提出率が5%未満だった。やらされ感が蔓延していた。',
-                solution: '提案状況をグラフ化し、部署対抗ランキングをサイネージで表示。「見える化」とゲーム要素で競争意識を刺激し、提出率が60%まで向上。',
-                voice: '「自分のチームの順位が上がると嬉しいですね。休憩室での話題が増えました。」（現場リーダー）',
-                stack: ['Chart.js', 'Google Sheets', 'CSS Animation'],
-                // 🔗 [교체]
-                link: 'https://script.google.com/macros/s/AKfycbwLrS2DYe3ltTYX7ftEnJrLxxAa7DJHVT4hmTcFrSdhlUHbRTqsMlm-E4j0AHj91Nrj/exec',
-                // 📸 [교체]
-                images: [
-                    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000', 
-                    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000'
-                ]
-            }
-        };
+            'project-2': { // GAS Web App & AppSheet
+    tag: 'GAS Web App & AppSheet',
+    title: '担当者不明品・統合管理プラットフォーム',
+    problem: '倉庫や工場内で発生する「所有者不明品」の確認作業において、文字リストだけでは物品の判別が困難で、回答率が低迷していた。また、未回答者への督促や廃棄処分の期限管理に多大な工数を要していた。',
+    solution: 'GASをバックエンド、Tailwind CSSをフロントエンドに使用したWebアプリを開発し、物品を写真付きカード形式で可視化。AppSheetへのディープリンクを実装し、直感的な閲覧から「蔵置・廃棄」のアクションまでをワンストップで完結させた。',
+    voice: '「写真で一覧表示されるため、自分の荷物を一瞬で見つけられるようになりました。アプリ連携で回答もスムーズになり、棚卸し期間が半分以下に短縮されました。」（資材管理 40代）',
+    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Gmail API'],
+    // 🔗 [배포된 웹앱 URL로 교체하세요]
+    link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
+    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+    images: [
+        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000', // (예시: 창고/재고 이미지)
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000'  // (예시: 데이터 차트 이미지)
+    ]
+},
+            'project-3': { // KPI Dashboard
+    tag: 'KPI Dashboard & Automation',
+    title: '保管期限管理ダッシュボード・自動督促システム',
+    problem: '倉庫内の保管物品において、期限切れの放置が常態化し、スペース不足が深刻化していた。メールでの督促だけでは「誰がどれだけ滞留させているか」が見えず、担当者の当事者意識が希薄だった。',
+    solution: '期限超過状況をリアルタイムで可視化するダッシュボードを開発。「未処理数ランキング」をトップ画面に表示することで健全な競争意識を醸成し、放置期間の長い順に優先的に表示させるアルゴリズムで、倉庫の回転率を改善した。',
+    voice: '「ダッシュボードで自分の部署がワースト入りしているのを見て、慌てて整理に向かいました。可視化による意識改革の効果は絶大です。」（製造部門 マネージャー）',
+    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'],
+    // 🔗 [배포된 웹앱 URL로 교체하세요]
+    link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
+    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+    images: [
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // (예시: 대시보드/차트)
+        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000'  // (예시: 창고 관리)
+    ]
+},
+           'project-4': { // GAS Full-Stack Web App
+    tag: 'GAS Full-Stack Web App',
+    title: '多機能・在庫管理プラットフォーム (モバイル特化)',
+    problem: '現場の「仮置き在庫」は移動が激しく、紙やExcelでの管理ではリアルタイムな追跡が不可能だった。特に、物品の状態を記録する写真管理の手間（PCへの転送・紐付け）と、場所の特定に時間がかかり、棚卸し工数が肥大化していた。',
+    solution: 'スマホ・タブレットに最適化したSPA（シングルページアプリ）を構築。QRコードスキャンによる場所特定に加え、Canvas APIを用いて撮影した写真に「直接手書き注釈」を入れる機能を実装し、現場報告の精度を向上。ダッシュボードではChart.jsによるドリルダウン分析やダークモード対応を実現し、UXを最大化した。',
+    voice: '「写真に直接『キズあり』などのメモを書ける機能が画期的です。スマホだけで完結するため、事務所に戻ってからの入力作業がなくなり、残業が月10時間減りました。」（製造現場リーダー）',
+    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
+    // 🔗 [배포된 웹앱 URL로 교체하세요]
+    link: 'https://script.google.com/macros/s/AKfycbw.../exec',
+    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+    images: [
+        'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&q=80&w=1000', // (예시: 창고/재고 관리)
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000'  // (예시: 대시보드/모바일 UI)
+    ]
+},
+            'project-5': { // Gamification & Dashboard
+    tag: 'Gamification & KPI Dashboard',
+    title: '改善提案・ポイント管理ダッシュボード',
+    problem: '現場の改善活動（カイゼン）がマンネリ化し、提案数が減少していた。Excelでの管理では「誰がどれだけ貢献しているか」が見えにくく、従業員のモチベーション向上や公平な評価につながらないという課題があった。',
+    solution: 'Chart.jsを活用し、個人の獲得ポイントと提案件数をリアルタイムでランキング表示するダッシュボードを構築。競争心を刺激する「ゲーミフィケーション」要素を取り入れた。また、提案リストを「メンバー別」と「タイムライン」の2つの視点で切り替え可能なUIにし、管理者の評価工数を大幅に削減した。',
+    voice: '「自分の順位がグラフで見えるので、『次はトップを目指そう』とゲーム感覚で取り組めるようになりました。導入後、提案数が前年比200%に増えました。」（製造部 チームリーダー）',
+    stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA (Single Page App)'],
+    // 🔗 [배포된 웹앱 URL로 교체하세요]
+    link: 'https://script.google.com/macros/s/AKfycbw.../exec',
+    // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
+    images: [
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000', // (예시: 랭킹/차트 대시보드)
+        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000'  // (예시: 타임라인/리스트 뷰)
+    ]
+},
 
         let currentImages = [];
         let currentIndex = 0;
