@@ -599,11 +599,11 @@
         const projects = {
             'project-1': { // GAS Automation
                 tag: 'GAS Automation',
-                title: '滞留在庫自動リマインド・クレンジングBot', 
-                problem: '各部署への長期滞留在庫の確認メール送信と集計に、毎月20時間の事務工数がかかっていた。また、督促漏れにより回答率が30%と低迷。',
-                solution: 'GASでGmail APIを制御し、未回答者のみに自動リマインド（督促）を実行。回答フォームとスプレッドシートを直結させ、集計作業を完全自動化。',
-                voice: '「毎月の集計作業がなくなり、その分を改善活動の時間に充てられるようになりました。」（事務スタッフ 30代）',
-                stack: ['Google Apps Script', 'HTML/CSS', 'Gmail API'],
+                title: '業務プロセス自動化アプリ', 
+                problem: '承認フローが紙・FAX・メールで分散。承認待ちで業務が3日間止まることも頻発し、どこで止まっているか不明だった。',
+                solution: 'AppSheetで全フローを電子化。スマホ通知で承認リードタイムを平均3日→0.5日に短縮。承認状況の可視化により、問い合わせ工数もゼロに。',
+                voice: '「「正直、スマホ操作は不安でしたが、ボタンを押すだけの画面なので私でも使えました。もう紙には戻れません。」（物流現場 リーダー 50代）',
+                stack: ['AppSheet' ,'Google Sheet', 'Gmail API'],
                 link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec',
                 images: [
                     'https://images.unsplash.com/photo-1555421689-492a18805667?auto=format&fit=crop&q=80&w=1000', 
@@ -616,7 +616,7 @@
                 problem: '倉庫や工場内で発生する「所有者不明品」の確認作業において、文字リストだけでは物品の判別が困難で、回答率が低迷していた。また、未回答者への督促や廃棄処分の期限管理に多大な工数を要していた。',
                 solution: 'GASをバックエンド、Tailwind CSSをフロントエンドに使用したWebアプリを開発し、物品を写真付きカード形式で可視化。AppSheetへのディープリンクを実装し、直感的な閲覧から「蔵置・廃棄」のアクションまでをワンストップで完結させた。',
                 voice: '「写真で一覧表示されるため、自分の荷物を一瞬で見つけられるようになりました。アプリ連携で回答もスムーズになり、棚卸し期間が半分以下に短縮されました。」（資材管理 40代）',
-                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Gmail API'],
+                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Process Automation'],
                 // 🔗 [배포된 웹앱 URL로 교체하세요]
                 link: 'https://script.google.com/a/macros/lixil.com/s/AKfycbxjVYpti0_qStVk8z-t03Z8GQUXMz1yRicdrK9-20eDuY6_0M1RPplrtyRqd5XxGohf1Q/exec',
                 // 📸 [실제 구현된 웹앱 스크린샷 URL로 교체하세요]
