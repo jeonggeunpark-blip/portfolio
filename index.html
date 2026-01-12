@@ -5,24 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical DX Manager | Portfolio</title>
     
-    <!-- === OGP Tags (リンク共有時サムネイル設定) === -->
     <meta property="og:title" content="Practical DX Manager Portfolio">
     <meta property="og:description" content="現場視点の徹底的な実利主義。AppSheetとGASによる業務改革ポートフォリオ。">
     <meta property="og:type" content="website">
-    <!-- [TODO] 📸 KakaoTalk/LINE共有時に表示される代表画像URLに置き換えてください -->
     <meta property="og:image" content="https://via.placeholder.com/1200x630/0ea5e9/ffffff?text=Practical+DX+Portfolio">
 
     <meta name="description" content="現場の課題を技術で解決する実戦型DXマネージャーのポートフォリオ。AppSheet, GAS, Dashboard開発による業務効率化。">
     
-    <!-- 1. Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- 2. CSS Framework -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 3. Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -98,7 +93,6 @@
 </head>
 <body class="text-slate-800 font-sans antialiased selection:bg-pro-200 selection:text-pro-900">
 
-    <!-- Background -->
     <div class="fixed inset-0 z-[-1] pointer-events-none bg-slate-50">
         <div class="absolute inset-0 bg-grid-pattern opacity-[0.3]"></div>
         <div class="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-white via-white/90 to-transparent"></div>
@@ -107,7 +101,6 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative">
         
-        <!-- Header -->
         <header class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal active">
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pro-50 border border-pro-100 text-pro-700 text-xs font-bold tracking-wider uppercase mb-4 shadow-sm">
@@ -123,7 +116,6 @@
                         Ending the "Excel Hell"
                     </span>
                 </h1>
-                <!-- Copywriting Upgrade: Professional & Impactful -->
                 <p class="mt-4 text-slate-600 max-w-2xl text-lg leading-relaxed font-medium">
                     「現場視点の徹底的な実利主義」<br>
                     現場の痛みを誰よりも知る元センター長として、<br>
@@ -132,21 +124,19 @@
             </div>
             
             <div class="flex flex-col items-start md:items-end gap-3">
-    <a href="mailto:jeonggeun.park0416@gmail.com" class="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-slate-800 transition-all hover:scale-105 active:scale-95">
-        <i data-lucide="mail" class="w-4 h-4"></i>
-        <span>Contact Me</span>
-        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-    </a>
-    <span class="text-xs text-slate-500 font-mono select-all hover:text-slate-800 transition-colors">
-        jeonggeun.park0416@gmail.com
-    </span>
-</div>
+                <button onclick="copyEmail()" class="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-slate-800 transition-all hover:scale-105 active:scale-95">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span id="contact-text">メールアドレスをコピー</span>
+                    <i id="contact-icon" data-lucide="copy" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
+                </button>
+                <span class="text-xs text-slate-500 font-mono select-all hover:text-slate-800 transition-colors">
+                    jeonggeun.park0416@gmail.com
+                </span>
+            </div>
         </header>
 
-         <!-- Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12">
+         <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12">
 
-            <!-- 1. KPI Card -->
             <div class="reveal bento-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute -right-6 -bottom-6 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform duration-500">
                     <i data-lucide="zap" class="w-32 h-32"></i>
@@ -166,7 +156,6 @@
                                 在庫確認レスポンス向上<br>
                                 破損率 95% 削減
                             </p>
-                            <!-- Cost Reduction Added -->
                             <div class="pt-2 mt-2 border-t border-white/20">
                                 <p class="text-xs text-pro-200 mb-0.5">Excel脱却によるコスト削減効果 <span class="bg-white/20 px-1 rounded text-[10px] ml-1">1案件</span></p>
                                 <p class="text-lg font-bold text-white">年間 約120万円 削減</p>
@@ -176,7 +165,6 @@
                 </div>
             </div>
 
-            <!-- 2. Philosophy Card -->
             <div class="reveal bento-card col-span-1 md:col-span-3 bg-white rounded-3xl p-8 border border-slate-200 shadow-soft flex flex-col justify-center relative overflow-hidden">
                 <div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-slate-50 to-transparent opacity-50"></div>
                 <div class="relative z-10 max-w-3xl">
@@ -197,7 +185,6 @@
             </div>
 
 
-            <!-- 3. Tech Stack Card (Updated to 6 items grid) -->
             <div class="reveal bento-card col-span-1 md:col-span-4 bg-slate-900 rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                     <h3 class="text-white font-bold text-lg flex items-center gap-2 shrink-0 border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
@@ -205,9 +192,7 @@
                         Skills & Tools
                     </h3>
                     
-                    <!-- Changed to grid-cols-3 for balanced 6 items -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
-                        <!-- AppSheet -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-emerald-400 mb-1">
                                 <i data-lucide="smartphone" class="w-4 h-4"></i>
@@ -215,7 +200,6 @@
                             </div>
                             <span class="text-xs text-slate-400 block">Gold相当 / Advanced UI</span>
                         </div>
-                        <!-- GAS/Web -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-blue-400 mb-1">
                                 <i data-lucide="code-2" class="w-4 h-4"></i>
@@ -223,7 +207,6 @@
                             </div>
                             <span class="text-xs text-slate-400 block">API連携 / SPA開発</span>
                         </div>
-                        <!-- Analytics -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-amber-400 mb-1">
                                 <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
@@ -231,7 +214,6 @@
                             </div>
                             <span class="text-xs text-slate-400 block">Looker Studio / G-Sheets</span>
                         </div>
-                        <!-- Field Management -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-rose-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-rose-400 mb-1">
                                 <i data-lucide="package" class="w-4 h-4"></i>
@@ -239,7 +221,6 @@
                             </div>
                             <span class="text-xs text-slate-400 block">倉庫運営 / 在庫管理</span>
                         </div>
-                        <!-- AI / LLM -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-purple-400 mb-1">
                                 <i data-lucide="sparkles" class="w-4 h-4"></i>
@@ -247,7 +228,6 @@
                             </div>
                             <span class="text-xs text-slate-400 block">Prompt Engineering / AI Coding</span>
                         </div>
-                        <!-- [New] Docs & Video -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-cyan-400 mb-1">
                                 <i data-lucide="video" class="w-4 h-4"></i>
@@ -259,7 +239,6 @@
                 </div>
             </div>
 
-            <!-- Projects Header -->
             <div class="col-span-1 md:col-span-4 mt-8 mb-2 flex items-end justify-between border-b border-slate-200 pb-4 reveal">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">System Portfolio</h2>
@@ -272,18 +251,12 @@
                 </div>
             </div>
 
-            <!-- === Section 2: Projects Grid === -->
-
-            <!-- 4. [Main Project] Project 1 -->
             <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-2 md:row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-indigo-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none" aria-label="View Project: AppSheet">
-                <!-- Image Container -->
                 <div class="absolute inset-0 z-0">
-                    <!-- [TODO] 📸 여기에 실제 앱 스크린샷 URL을 넣으세요 (메인 그리드용) -->
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" alt="Warehouse Management" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
                 </div>
 
-                <!-- Main Project Badge (Pulsing) -->
                 <div class="absolute top-4 right-4 z-20">
                     <span class="relative inline-flex">
                         <span class="absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-40 animate-pulse-slow"></span>
@@ -310,7 +283,6 @@
                 </div>
             </button>
 
-            <!-- 5. Sub: GAS Automation (Project2 - Kept as is) -->
             <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-rose-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -332,7 +304,6 @@
                 </div>
             </button>
 
-            <!-- 6. Sub: Project 3 -->
             <button onclick="openModal('project-3')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -354,7 +325,6 @@
                 </div>
             </button>
 
-            <!-- 7. Sub: Project 4 -->
             <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-emerald-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -376,7 +346,6 @@
                 </div>
             </button>
 
-            <!-- 8. Sub: Project 5 -->
             <button onclick="openModal('project-5')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-orange-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -400,19 +369,16 @@
 
         </div>
 
-         <!-- Career History -->
-        <section class="mt-16 reveal">
+         <section class="mt-16 reveal">
             <h3 class="font-bold text-slate-900 mb-8 flex items-center gap-2 text-xl">
                 <i data-lucide="briefcase" class="w-6 h-6 text-slate-500"></i> Career Highlight
             </h3>
             
             <div class="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
                 <div class="relative">
-                    <!-- Vertical Line (Always visible) -->
                     <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200"></div>
 
                     <div class="flex flex-col gap-12">
-                        <!-- Current Role -->
                         <div class="relative pl-12">
                             <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-pro-600 rounded-full border-4 border-white shadow-sm z-10"></div>
                             
@@ -428,7 +394,6 @@
                                         <li class="flex items-start gap-2">
                                             <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
                                             <div class="w-full">
-                                                <!-- [Change] 숫자를 강조하여 스캔 효율을 높임 -->
                                                 <span class="font-bold text-slate-800 block mb-2">AppSheetによる社内アプリ設計・運用（<span class="text-pro-700">300名規模</span>）</span>
                                                 <div class="text-xs text-slate-600 pl-3 border-l-2 border-pro-200 space-y-1.5 bg-white/50 py-2 rounded-r-lg">
                                                     <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>荷受・蔵置統合管理システム</p>
@@ -442,7 +407,6 @@
                                         </li>
                                         <li class="flex items-start gap-2">
                                             <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
-                                            <!-- [Change] 숫자를 강조 -->
                                             <span>GAS/API活用による<span class="font-bold text-slate-900 bg-yellow-100/50 px-1">年間400時間の工数削減</span></span>
                                         </li>
                                     </ul>
@@ -450,7 +414,6 @@
                             </div>
                         </div>
 
-                        <!-- Previous Role -->
                         <div class="relative pl-12">
                             <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm z-10"></div>
                             
@@ -465,7 +428,6 @@
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
                                         <li class="flex items-start gap-2">
                                             <i data-lucide="check" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
-                                            <!-- [Change] 숫자를 강조 -->
                                             <span>スタッフ<span class="font-bold text-slate-700">25名のマネジメント</span>と現場指揮</span>
                                         </li>
                                         <li class="flex items-start gap-2">
@@ -481,7 +443,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="mt-24 text-center border-t border-slate-200 pt-8 pb-8">
             <p class="text-slate-400 text-xs mb-2">
                 &copy; 2026 Practical DX Manager Portfolio. All Rights Reserved.
@@ -492,20 +453,16 @@
         </footer>
     </main>
 
-    <!-- Project Details Modal -->
     <div id="modal-overlay" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-0 md:p-4 bg-slate-900/70" aria-modal="true" role="dialog">
         
         <div id="modal-content" class="bg-white w-full h-full md:h-auto md:max-w-5xl md:max-h-[90vh] md:rounded-2xl shadow-2xl overflow-y-auto transform scale-95 transition-transform duration-300 flex flex-col relative">
             
-            <!-- Close Button -->
             <button onclick="closeModal()" class="absolute top-4 right-4 z-50 p-2 bg-black/20 hover:bg-black/30 text-white rounded-full transition-colors hidden md:flex backdrop-blur-md">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
-            <!-- Image Carousel -->
             <div class="relative w-full h-64 md:h-[450px] bg-slate-900 shrink-0 group">
                 <div id="carousel-container" class="w-full h-full relative overflow-hidden"></div>
-                <!-- Controls -->
                 <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                     <button onclick="moveCarousel(-1)" class="pointer-events-auto p-2 rounded-full bg-white/80 hover:bg-white text-slate-800 shadow-lg backdrop-blur-sm transition-transform hover:scale-110">
                         <i data-lucide="chevron-left" class="w-6 h-6"></i>
@@ -517,7 +474,6 @@
                 <div id="carousel-indicators" class="absolute bottom-4 left-0 w-full flex justify-center gap-2"></div>
             </div>
 
-            <!-- Content Section -->
             <div class="p-6 md:p-8 flex-grow bg-white">
                 <div class="flex flex-col gap-6">
                     <div class="border-b border-slate-100 pb-4">
@@ -528,10 +484,8 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Left: Main Content -->
                         <div class="md:col-span-2 space-y-8">
                             
-                            <!-- Problem & Solution -->
                             <div class="grid gap-6">
                                 <div class="bg-rose-50/50 p-5 rounded-xl border border-rose-100">
                                     <h4 class="font-bold text-rose-700 text-sm mb-2 flex items-center gap-2">
@@ -547,7 +501,6 @@
                                 </div>
                             </div>
 
-                            <!-- [New] User Voice: Credibility Booster -->
                             <div>
                                 <h4 class="font-bold text-slate-900 text-sm mb-3 flex items-center gap-2">
                                     <i data-lucide="message-circle" class="w-4 h-4 text-slate-400"></i> User Voice (現場の声)
@@ -560,22 +513,18 @@
 
                         </div>
 
-                        <!-- Right: Side Info -->
                         <div class="md:col-span-1 space-y-6">
-                            <!-- Tech Stack -->
                             <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
                                 <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3">Technology</h4>
                                 <div id="modal-stack" class="flex flex-wrap gap-2"></div>
                             </div>
 
-                            <!-- [New] Code Evidence / Links -->
                             <div class="flex flex-col gap-3">
                                 <a id="modal-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full bg-slate-900 text-white text-sm font-bold py-3.5 rounded-xl hover:bg-slate-800 transition-all shadow-md hover:shadow-lg">
                                     View Project Demo
                                     <i data-lucide="external-link" class="w-4 h-4"></i>
                                 </a>
                                 
-                                <!-- Placeholder for GitHub or Logic Screenshot -->
                                 <button class="flex items-center justify-center gap-2 w-full bg-white text-slate-600 border border-slate-300 text-sm font-bold py-3.5 rounded-xl hover:bg-slate-50 transition-all">
                                     <i data-lucide="github" class="w-4 h-4"></i>
                                     Code / Logic Structure
@@ -587,7 +536,6 @@
                 </div>
             </div>
 
-            <!-- Mobile Close Button -->
             <div class="md:hidden sticky bottom-0 w-full bg-white border-t border-slate-100 p-4 shrink-0 z-50">
                 <button onclick="closeModal()" class="w-full bg-slate-100 text-slate-700 font-bold py-3 rounded-xl hover:bg-slate-200 transition-colors">
                     Close Project
@@ -599,8 +547,29 @@
     <script>
         lucide.createIcons();
 
+        // [MODIFIED] Copy Email Function
+        function copyEmail() {
+            const email = "jeonggeun.park0416@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const btnText = document.getElementById('contact-text');
+                const originalText = "メールアドレスをコピー"; 
+                
+                // 1. Text Change (Japanese)
+                btnText.innerText = "コピーしました！";
+                
+                // 2. Revert after 2 seconds
+                setTimeout(() => {
+                    btnText.innerText = originalText;
+                }, 2000);
+                
+                // 3. Alert (Japanese)
+                alert("メールアドレスをコピーしました。\n" + email);
+            }).catch(err => {
+                console.error('Copy failed:', err);
+            });
+        }
+
         // [USER DATA]
-        // [TODO] 🔗 以下のprojectsオブジェクトのlinkとimages部分にご自身の実際のURLを入れてください。
         const projects = {
             'project-1': { // GAS Automation
                 tag: 'AppSheet',
