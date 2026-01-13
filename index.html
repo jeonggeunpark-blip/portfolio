@@ -196,13 +196,20 @@
                     </h3>
                     
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 transition-colors">
-                            <div class="flex items-center gap-2 text-emerald-400 mb-1">
-                                <i data-lucide="smartphone" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">AppSheet</span>
-                            </div>
-                            <span class="text-xs text-slate-400 block">Gold相当 / Advanced UI</span>
-                        </div>
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-amber-500/30 hover:border-amber-400 transition-colors relative overflow-hidden">
+    <div class="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    
+    <div class="flex items-center gap-2 text-amber-400 mb-1 relative z-10">
+        <i data-lucide="award" class="w-4 h-4"></i> <span class="font-bold text-sm">AppSheet</span>
+    </div>
+    
+    <div class="relative z-10">
+        <span class="text-xs text-white font-bold block mb-0.5">社内認定 Gold 取得</span>
+        <span class="text-[10px] text-amber-200/80 block leading-tight">
+            Top 1.5% (22/1400名)<br>エキスパート認定
+        </span>
+    </div>
+</div>
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-blue-400 mb-1">
                                 <i data-lucide="code-2" class="w-4 h-4"></i>
@@ -400,27 +407,42 @@
                                 <p class="text-base text-slate-600 font-medium mb-4">株式会社LIXIL (業務改善G)</p>
                                 
                                 <div class="text-left bg-slate-50 rounded-xl p-5 border border-slate-100">
-                                    <ul class="text-sm text-slate-600 leading-relaxed space-y-4">
-                                        <li class="flex items-start gap-2">
-                                            <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
-                                            <div class="w-full">
-                                                <span class="font-bold text-slate-800 block mb-2">AppSheetによる社内アプリ設計・運用（<span class="text-pro-700">300名規模</span>）</span>
-                                                <div class="text-xs text-slate-600 pl-3 border-l-2 border-pro-200 space-y-1.5 bg-white/50 py-2 rounded-r-lg">
-                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>荷受・蔵置統合管理システム</p>
-                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>施工手配・進捗可視化プラットフォーム</p>
-                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>配送リソース・配車計画管理アプリ</p>
-                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>備品発注・在庫最適化ワークフロー</p>
-                                                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>全社カイゼン提案・ナレッジ共有ポータル</p>
-                                                    <p class="flex items-center gap-1.5 font-bold text-pro-700 bg-pro-50 inline-block px-1 rounded"><span class="w-1 h-1 rounded-full bg-pro-500"></span>アプリ内操作マニュアル・動画解説機能実装 (Google Vids)</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="flex items-start gap-2">
-                                            <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
-                                            <span>GAS/API活用による<span class="font-bold text-slate-900 bg-yellow-100/50 px-1">年間400時間の工数削減</span></span>
-                                        </li>
-                                    </ul>
-                                </div>
+    <ul class="text-sm text-slate-600 leading-relaxed space-y-4">
+        
+        <li class="flex items-start gap-2">
+            <i data-lucide="trophy" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+            <div class="w-full">
+                <span class="font-bold text-slate-800 block">
+                    社内AppSheet検定 <span class="text-amber-600">Goldランク</span> 認定
+                </span>
+                <p class="text-xs text-slate-500 mt-1">
+                    全社約1,400名の受験者中、上位22名（1.5%）のエキスパートとして選抜。
+                    <br>社内公式アンバサダーとして技術指導も担当。
+                </p>
+            </div>
+        </li>
+
+        <li class="flex items-start gap-2">
+            <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
+            <div class="w-full">
+                <span class="font-bold text-slate-800 block mb-2">AppSheetによる社内アプリ設計・運用（<span class="text-pro-700">300名規模</span>）</span>
+                <div class="text-xs text-slate-600 pl-3 border-l-2 border-pro-200 space-y-1.5 bg-white/50 py-2 rounded-r-lg">
+                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>荷受・蔵置統合管理システム</p>
+                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>施工手配・進捗可視化プラットフォーム</p>
+                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>配送リソース・配車計画管理アプリ</p>
+                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>備品発注・在庫最適化ワークフロー</p>
+                    <p class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-slate-400"></span>全社カイゼン提案・ナレッジ共有ポータル</p>
+                    <p class="flex items-center gap-1.5 font-bold text-pro-700 bg-pro-50 inline-block px-1 rounded"><span class="w-1 h-1 rounded-full bg-pro-500"></span>アプリ内操作マニュアル・動画解説機能実装 (Google Vids)</p>
+                </div>
+            </div>
+        </li>
+
+        <li class="flex items-start gap-2">
+            <i data-lucide="check" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
+            <span>GAS/API活用による<span class="font-bold text-slate-900 bg-yellow-100/50 px-1">年間400時間の工数削減</span></span>
+        </li>
+    </ul>
+</div>
                             </div>
                         </div>
 
