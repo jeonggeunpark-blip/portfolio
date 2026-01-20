@@ -282,31 +282,33 @@
                 </div>
             </div>
 
-            <!-- Project Cards -->
-            <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-2 row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-indigo-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none">
+            <!-- Project Cards Area -->
+            
+            <!-- Project 1 (Main): Previously Project 4 (Stock Rescue) -->
+            <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-2 row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-emerald-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none">
                 <div class="absolute inset-0 z-0">
-                    <img src="https://i.postimg.cc/Qxr0fRYc/hwamyeon-kaebcheo-2026-01-14-023847.png" alt="Smart Inventory System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
                 </div>
                 <div class="absolute top-4 right-4 z-20">
                     <span class="relative inline-flex">
-                        <span class="absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-40 animate-pulse-slow"></span>
-                        <span class="relative bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-indigo-400/50" data-i18n="p1Badge">
-                            ★ 決算精度 向上
+                        <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40 animate-pulse-slow"></span>
+                        <span class="relative bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">
+                             廃棄ゼロ化
                         </span>
                     </span>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
-                    <div class="flex items-center gap-2 mb-2 text-indigo-300 text-xs font-bold uppercase tracking-wider">
-                        <i data-lucide="scan-barcode" class="w-4 h-4"></i>
-                        <span data-i18n="p1Category">資産管理・棚卸しBPR</span>
+                    <div class="flex items-center gap-2 mb-2 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                        <i data-lucide="image-plus" class="w-4 h-4"></i>
+                        <span data-i18n="p1Category">現場DX・UXデザイン</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors" data-i18n="p1Title">
-                        スマホ在庫管理・資産評価ソリューション
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">
+                        廃棄ロスゼロ・滞留防止ソリューション
                     </h3>
                     <p class="text-slate-300 text-sm mb-4 max-w-lg leading-relaxed" data-i18n="p1Desc">
-                        【課題】棚卸し工数の肥大化と、単価変動による在庫資産評価のズレ。<br>
-                        【解決】QRスキャンによる入力効率化と、移動平均法ロジックの実装で、財務会計と連携可能なリアルタイム資産管理を実現。
+                        【課題】入荷品が放置され廃棄ロスが多発。<br>
+                        【解決】Canvas APIによる「写真への手書き注釈」機能と即時アラートで、廃棄ロスを実質ゼロへ削減。
                     </p>
                     <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
                         <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -314,7 +316,7 @@
                 </div>
             </button>
 
-            <!-- Other Projects -->
+            <!-- Project 2 (Unchanged) -->
             <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-rose-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -336,6 +338,7 @@
                 </div>
             </button>
 
+            <!-- Project 3 (Unchanged) -->
             <button onclick="openModal('project-3')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -357,28 +360,8 @@
                 </div>
             </button>
 
-            <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-emerald-200">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                            <i data-lucide="image-plus" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-xs font-medium text-slate-400">Mobile UX Design</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors" data-i18n="p4Title">
-                        現場特化型・多機能在庫管理
-                    </h3>
-                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p4Desc">
-                        Canvas APIによる「写真への手書き注釈」機能を実装。現場のUXを考慮した設計力。
-                    </p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
-                    <span data-i18n="p4Cat">現場DX</span>
-                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-emerald-500"></i>
-                </div>
-            </button>
-
-            <button onclick="openModal('project-5')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-orange-200">
+            <!-- Project 4: Previously Project 5 (Gamification) -->
+            <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-orange-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors">
@@ -386,15 +369,15 @@
                         </div>
                         <span class="text-xs font-medium text-slate-400">Gamification</span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors" data-i18n="p5Title">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors" data-i18n="p4Title">
                         カイゼン提案・活性化ボード
                     </h3>
-                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p5Desc">
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p4Desc">
                         ゲーミフィケーションによる組織文化変革の実践。提案数を倍増させた実績。
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
-                    <span data-i18n="p5Cat">組織開発</span>
+                    <span data-i18n="p4Cat">組織開発</span>
                     <i data-lucide="external-link" class="w-3 h-3 group-hover:text-orange-500"></i>
                 </div>
             </button>
@@ -592,23 +575,29 @@
                 skill6Desc: "HTML5 / Tailwind CSS / JS<br>Web標準技術の理解と応用",
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "課題解決のプロセスと成果 (Portfolio)",
-                p1Badge: "★ 決算精度 向上",
-                p1Category: "資産管理・棚卸しBPR",
-                p1Title: "スマホ在庫管理・資産評価ソリューション",
-                p1Desc: "【課題】棚卸し工数の肥大化と、単価変動による在庫資産評価のズレ。<br>【解決】QRスキャンによる入力効率化と、移動平均法ロジックの実装で、財務会計と連携可能なリアルタイム資産管理を実現。",
+                
+                // P1: Stock Rescue (Promoted from P4)
+                p1Badge: "廃棄ゼロ化",
+                p1Category: "現場DX・UXデザイン",
+                p1Title: "廃棄ロスゼロ・滞留防止ソリューション",
+                p1Desc: "【課題】入荷品が放置され廃棄ロスが多発。<br>【解決】Canvas APIによる「写真への手書き注釈」機能と即時アラートで、廃棄ロスを実質ゼロへ削減。",
                 viewDetails: "プロジェクト詳細",
+                
+                // P2: Unknown Items (Unchanged)
                 p2Title: "不明品管理プラットフォーム",
                 p2Desc: "写真カード形式での管理とAppSheet連携で、廃棄判断フローを自動化。回答率向上に貢献。",
                 p2Cat: "業務効率化",
+                
+                // P3: KPI Dashboard (Unchanged)
                 p3Title: "長期滞留在庫・督促ダッシュボード",
                 p3Desc: "放置期間のランキング化で競争意識を刺激し、倉庫回転率を改善したBI導入実績。",
                 p3Cat: "データ可視化",
-                p4Title: "現場特化型・多機能在庫管理",
-                p4Desc: "Canvas APIによる「写真への手書き注釈」機能を実装。現場のUXを考慮した設計力。",
-                p4Cat: "現場DX",
-                p5Title: "カイゼン提案・活性化ボード",
-                p5Desc: "ゲーミフィケーションによる組織文化変革の実践。提案数を倍増させた実績。",
-                p5Cat: "組織開発",
+                
+                // P4: Gamification (Moved from P5)
+                p4Title: "カイゼン提案・活性化ボード",
+                p4Desc: "ゲーミフィケーションによる組織文化変革の実践。提案数を倍増させた実績。",
+                p4Cat: "組織開発",
+
                 expTitle: "職務経歴 (Professional Experience)",
                 exp1Company: "株式会社LIXIL (業務改善G)",
                 exp1Role: "業務プロセス改善 / 社内DX推進",
@@ -660,23 +649,29 @@
                 skill6Desc: "HTML5 / Tailwind CSS / JS<br>웹 표준 기술의 이해와 응용",
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "과제 해결 프로세스와 성과 (Portfolio)",
-                p1Badge: "★ 결산 정밀도 향상",
-                p1Category: "자산관리・재고조사 BPR",
-                p1Title: "스마트 재고관리・자산평가 솔루션",
-                p1Desc: "【과제】 재고조사 공수의 비대화 및 단가 변동에 따른 재고 자산 평가의 불일치.<br>【해결】 QR 스캔을 통한 입력 효율화와 이동평균법 로직 구현으로, 재무회계와 연동 가능한 실시간 자산 관리를 실현.",
+                
+                // P1: Stock Rescue (Promoted from P4)
+                p1Badge: "폐기 제로화",
+                p1Category: "현장 DX・UX 디자인",
+                p1Title: "폐기 손실 제로・체류 방지 솔루션",
+                p1Desc: "【과제】 입하품 방치로 인한 폐기 손실 다발.<br>【해결】 Canvas API를 활용한 「사진 위 손글씨 주석」 기능과 즉시 알림으로 폐기 손실을 실질 제로(0)로 삭감.",
                 viewDetails: "프로젝트 상세",
+                
+                // P2: Unknown Items (Unchanged)
                 p2Title: "불명품 관리 플랫폼",
                 p2Desc: "사진 카드 형식의 관리와 AppSheet 연동으로 폐기 판단 흐름을 자동화. 회답률 향상에 공헌.",
                 p2Cat: "업무 효율화",
+                
+                // P3: KPI Dashboard (Unchanged)
                 p3Title: "장기 체류 재고・독촉 대시보드",
                 p3Desc: "방치 기간의 랭킹화로 경쟁 심리를 자극하여 창고 회전율을 개선한 BI 도입 실적.",
                 p3Cat: "데이터 시각화",
-                p4Title: "현장 특화형・다기능 재고관리",
-                p4Desc: "Canvas API를 활용한 「사진 위 손글씨 주석」 기능 구현. 현장의 UX를 고려한 설계 능력.",
-                p4Cat: "현장 DX",
-                p5Title: "카이젠 제안・활성화 보드",
-                p5Desc: "게이미피케이션을 통한 조직 문화 변혁의 실천. 제안 건수를 2배로 증가시킨 실적.",
-                p5Cat: "조직 개발",
+                
+                // P4: Gamification (Moved from P5)
+                p4Title: "카이젠 제안・활성화 보드",
+                p4Desc: "게이미피케이션을 통한 조직 문화 변혁의 실천. 제안 건수를 2배로 증가시킨 실적.",
+                p4Cat: "조직 개발",
+
                 expTitle: "직무 경력 (Professional Experience)",
                 exp1Company: "주식회사 LIXIL (업무개선G)",
                 exp1Role: "업무 프로세스 개선 / 사내 DX 추진",
@@ -748,27 +743,28 @@
 
         // Expanded Projects Data for Modal
         const projects = {
+            // New Project 1 (Was Project 4: Stock Rescue)
             'project-1': {
-                tag: 'QR Inventory & Asset Mgmt',
-                link: 'https://script.google.com/macros/s/AKfycbx8Sk6X1hLyKWadvexAdo8wvBNJR78OZB5sgUcEZHsZO0vPs8N4wDj-80MkoO0Rpwam/exec',
-                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'html5-qrcode', 'QRious', 'Drive API'],
-                images: ['https://i.postimg.cc/Qxr0fRYc/hwamyeon-kaebcheo-2026-01-14-023847.png', 'https://i.postimg.cc/NMnsDGjq/inbentoli-1.png'],
-                // Localized Content
-                ja: {
-                    title: 'スマート在庫管理・資産評価システム (Smart Stock)',
-                    approach: '・現場ヒアリングによるAs-Is課題の抽出\n・移動平均法を用いた資産評価ロジックの設計(Data Modeling)\n・QRスキャンフローのUI設計と現場テスト(Prototyping)',
-                    problem: '備品の在庫管理が属人化し、棚卸し差異や発注漏れが頻発。また、単価変動により「現在の正確な在庫資産額」が把握できず、決算処理に支障が出ていた。',
-                    solution: 'スマホQRスキャンで棚卸し工数を1/3に削減。「移動平均法」による自動単価計算で資産価値をリアルタイム可視化し、決算処理を高速化。',
-                    voice: '「棚卸し作業がスマホをかざすだけで済み、所要時間が1/3に短縮されました。常に正確な資産金額が把握できるため、期末の決算処理も非常にスムーズです。」（総務部・資産管理担当）'
-                },
-                ko: {
-                    title: '스마트 재고관리・자산평가 솔루션 (Smart Stock)',
-                    approach: '・현장 히어링을 통한 As-Is 과제 도출\n・이동평균법을 이용한 자산평가 로직 설계 (Data Modeling)\n・QR 스캔 흐름의 UI 설계 및 현장 테스트 (Prototyping)',
-                    problem: '비품 재고관리가 속인화되어, 재고조사 차이나 발주 누락이 빈발. 또한, 단가 변동으로 인해 「현재의 정확한 재고 자산액」을 파악하지 못해 결산 처리에 지장이 있었음.',
-                    solution: '스마트폰 QR 스캔으로 재고조사 공수를 1/3로 절감. 「이동평균법」에 의한 자동 단가 계산으로 자산 가치를 실시간 시각화하여 결산 처리를 고속화.',
-                    voice: '「재고조사 작업이 스마트폰을 갖다 대는 것만으로 끝나, 소요 시간이 1/3로 단축되었습니다. 항상 정확한 자산 금액을 파악할 수 있어 기말 결산 처리도 매우 원활합니다.」 (총무부 자산관리 담당)'
-                }
+                 tag: 'Mobile Solution',
+                 link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec',
+                 stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
+                 images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'],
+                 ja: {
+                     title: '入荷品廃棄ゼロ化・滞留防止ソリューション «Stock Rescue»',
+                     approach: '・入荷直後の「ゴールデンタイム」を逃さない即時登録フロー\n・Canvas APIによる画像記録で、物品の状態とリスクを可視化\n・警告アラート機能により、放置される前に担当者へ通知',
+                     problem: '入荷品が適切な置き場に移動されず、仮置きのまま放置・劣化し「廃棄処理」されるケースが多発。仕入れコストの無駄と廃棄費用が利益を圧迫していた。',
+                     solution: '入荷検品と同時に写真を登録し、"放置の芽"を摘む「Stock Rescue」を導入。経過時間の可視化とアラートにより、廃棄ロスを実質ゼロへ削減。',
+                     voice: '「『とりあえず置いておく』がなくなりました。写真で状態が記録されるため、放置すればすぐバレるという意識が定着し、廃棄コンテナが空になりました。」'
+                 },
+                 ko: {
+                     title: '입하품 폐기 제로화・방치 방지 솔루션 «Stock Rescue»',
+                     approach: '・입하 직후의 「골든타임」을 놓치지 않는 즉시 등록 플로우\n・Canvas API를 활용한 이미지 기록으로, 물품의 상태와 리스크를 시각화\n・경고 알림 기능을 통해, 방치되기 전에 담당자에게 통지',
+                     problem: '입하품이 적절한 장소로 이동되지 않고, 임시 보관인 채로 방치・열화되어 「폐기 처리」되는 케이스가 다발. 매입 비용 낭비와 폐기 비용이 이익을 압박하고 있었음.',
+                     solution: '입하 검품과 동시에 사진을 등록하여, "방치의 싹"을 자르는 「Stock Rescue」를 도입. 경과 시간의 시각화와 알림을 통해, 폐기 손실을 실질 제로(0)로 삭감.',
+                     voice: '「『일단 놔두자』는 관행이 사라졌습니다. 사진으로 상태가 기록되기 때문에, 방치하면 금방 들통난다는 의식이 정착되어 폐기 컨테이너가 텅 비게 되었습니다.」'
+                 }
             },
+            // Project 2 (Unchanged)
             'project-2': {
                 tag: 'Process Automation',
                 link: 'https://script.google.com/macros/s/AKfycbwHWgT8mFfTuD1Zk2UGYZz_gK6vzpkWPQyuqIDzDF4oyZFxnDerLRJO5S-AXz8TMVn1Jg/exec',
@@ -789,6 +785,7 @@
                     voice: '「사진으로 목록이 표시되어, 한눈에 판별할 수 있게 되었습니다. 앱 연동으로 회답도 원활해져 재고조사가 대폭 편해졌습니다.」 (현장 스태프)'
                 }
             },
+            // Project 3 (Unchanged)
             'project-3': {
                 tag: 'KPI Dashboard',
                 link: 'https://script.google.com/macros/s/AKfycbyhbiYNWJ3noPU2Ztxh2BSwuHXSSLA8Ne6C5vHRcHrGKNIaOY2OaQgg5oErAQgk5HnX/exec',
@@ -809,29 +806,8 @@
                     voice: '「대시보드를 통한 시각화 효과는 절대적이었습니다. 각 부서가 자발적으로 정리에 나서, 창고 공간을 유효하게 활용할 수 있게 되었습니다.」 (센터장)'
                 }
             },
+            // New Project 4 (Was Project 5: Gamification)
             'project-4': {
-             tag: 'Mobile Solution',
-               // 링크는 기존 그대로 유지
-             link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec',
-             stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
-             // 이미지 링크 기존 그대로 유지
-             images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'],
-             ja: {
-             title: '入荷品廃棄ゼロ化・滞留防止ソリューション «Stock Rescue»',
-             approach: '・入荷直後の「ゴールデンタイム」を逃さない即時登録フロー\n・Canvas APIによる画像記録で、物品の状態とリスクを可視化\n・警告アラート機能により、放置される前に担当者へ通知',
-             problem: '入荷品が適切な置き場に移動されず、仮置きのまま放置・劣化し「廃棄処理」されるケースが多発。仕入れコストの無駄と廃棄費用が利益を圧迫していた。',
-             solution: '入荷検品と同時に写真を登録し、"放置の芽"を摘む「Stock Rescue」を導入。経過時間の可視化とアラートにより、廃棄ロスを実質ゼロへ削減。',
-             voice: '「『とりあえず置いておく』がなくなりました。写真で状態が記録されるため、放置すればすぐバレるという意識が定着し、廃棄コンテナが空になりました。」'
-             },
-             ko: {
-             title: '입하품 폐기 제로화・방치 방지 솔루션 «Stock Rescue»',
-             approach: '・입하 직후의 「골든타임」을 놓치지 않는 즉시 등록 플로우\n・Canvas API를 활용한 이미지 기록으로, 물품의 상태와 리스크를 시각화\n・경고 알림 기능을 통해, 방치되기 전에 담당자에게 통지',
-             problem: '입하품이 적절한 장소로 이동되지 않고, 임시 보관인 채로 방치・열화되어 「폐기 처리」되는 케이스가 다발. 매입 비용 낭비와 폐기 비용이 이익을 압박하고 있었음.',
-             solution: '입하 검품과 동시에 사진을 등록하여, "방치의 싹"을 자르는 「Stock Rescue」를 도입. 경과 시간의 시각화와 알림을 통해, 폐기 손실을 실질 제로(0)로 삭감.',
-             voice: '「『일단 놔두자』는 관행이 사라졌습니다. 사진으로 상태가 기록되기 때문에, 방치하면 금방 들통난다는 의식이 정착되어 폐기 컨테이너가 텅 비게 되었습니다.」'
-             }
-            },
-            'project-5': {
                 tag: 'Gamification & Dashboard',
                 link: 'https://script.google.com/macros/s/AKfycbwLrS2DYe3ltTYX7ftEnJrLxxAa7DJHVT4hmTcFrSdhlUHbRTqsMlm-E4j0AHj91Nrj/exec',
                 stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA'],
@@ -952,7 +928,8 @@
             currentImages.forEach((src, index) => {
                 const img = document.createElement('img');
                 img.src = src;
-                img.className = `slide-image absolute inset-0 w-full h-full object-cover ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+                // Changed object-cover to object-contain to prevent cropping on wider screens
+                img.className = `slide-image absolute inset-0 w-full h-full object-contain ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
                 container.appendChild(img);
 
                 const dot = document.createElement('button');
