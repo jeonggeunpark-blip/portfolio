@@ -210,61 +210,69 @@
                 </div>
             </div>
 
-            <!-- Skills -->
+            <!-- Skills (Updated Grid Layout) -->
             <div class="reveal bento-card col-span-1 md:col-span-4 bg-slate-900 rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <!-- Title Section -->
                     <h3 class="text-white font-bold text-lg flex items-center gap-2 shrink-0 border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
                         <i data-lucide="layers" class="w-5 h-5 text-pro-400"></i>
-                        <span data-i18n="skillsTitle">コア・コンピタンス (Core Competencies)</span>
+                        <span data-i18n="skillsTitle">Skills & Tools</span>
                     </h3>
                     
+                    <!-- Grid Section (6 items) -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-amber-500/30 hover:border-amber-400 transition-colors relative overflow-hidden">
-                            <div class="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="flex items-center gap-2 text-amber-400 mb-1 relative z-10">
-                                <i data-lucide="smartphone" class="w-4 h-4"></i> <span class="font-bold text-sm">Rapid Prototyping</span>
+                        <!-- 1. AppSheet -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-emerald-400 mb-1">
+                                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">AppSheet</span>
                             </div>
-                            <div class="relative z-10">
-                                <span class="text-xs text-white font-bold block mb-0.5">AppSheet Expert</span>
-                                <span class="text-[10px] text-amber-200/80 block leading-tight" data-i18n="skill1Desc">
-                                    要件定義〜実装をアジャイルに実行<br>現場フィードバックの即時反映
-                                </span>
-                            </div>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill1Desc">Gold相当 / Advanced UI</span>
                         </div>
+
+                        <!-- 2. GAS/Web -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-blue-400 mb-1">
-                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">BPR / Automation</span>
+                                <i data-lucide="code-2" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">GAS / JS</span>
                             </div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill2Desc">GAS / API Integration<br>ボトルネック工程の自動化設計</span>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill2Desc">API連携 / SPA開発</span>
                         </div>
+
+                        <!-- 3. Analytics -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-amber-400 mb-1">
-                                <i data-lucide="database" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">Data Architecture</span>
+                                <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Data Viz</span>
                             </div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill3Desc">DB設計 / データモデリング<br>拡張性を考慮した正規化設計</span>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill3Desc">Looker Studio / G-Sheets</span>
                         </div>
+
+                        <!-- 4. Field Management -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-rose-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-rose-400 mb-1">
-                                <i data-lucide="settings-2" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">Operations Strategy</span>
+                                <i data-lucide="package" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Logistics</span>
                             </div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill4Desc">OpEx (Operational Excellence)<br>現場運用プロセスの最適化</span>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill4Desc">倉庫運営 / 在庫管理</span>
                         </div>
+
+                        <!-- 5. AI / LLM -->
                         <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-colors">
                             <div class="flex items-center gap-2 text-purple-400 mb-1">
-                                <i data-lucide="users" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">Change Mgmt.</span>
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Gen-AI / LLM</span>
                             </div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill5Desc">組織変革 / 定着化支援<br>マニュアル作成・社内研修</span>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill5Desc">Prompt Engineering / AI Coding</span>
                         </div>
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-gray-400/50 transition-colors">
-                            <div class="flex items-center gap-2 text-gray-300 mb-1">
-                                <i data-lucide="code-2" class="w-4 h-4"></i>
-                                <span class="font-bold text-sm">Web Standard</span>
+
+                        <!-- 6. Docs & Video -->
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 transition-colors">
+                            <div class="flex items-center gap-2 text-cyan-400 mb-1">
+                                <i data-lucide="video" class="w-4 h-4"></i>
+                                <span class="font-bold text-sm">Docs & Video</span>
                             </div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill6Desc">HTML5 / Tailwind CSS / JS<br>Web標準技術の理解と応用</span>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill6Desc">Google Vids / Manuals</span>
                         </div>
                     </div>
                 </div>
@@ -568,13 +576,16 @@
                 whyMeLabel: "Why Me? (差別化要因)",
                 whyMeTitle: "「開発だけ」の人材ではありません。<br>「課題発見〜定着化」までを一気通貫で担います。",
                 whyMeDesc: "多くのDXプロジェクトが失敗する理由は技術力不足ではなく、「現場への理解不足」です。私は<span class='font-bold text-slate-800'>物流センター長としてのマネジメント経験</span>を基に、ITリテラシーが高くない現場作業員でも<span class='font-bold text-pro-700 bg-pro-50 px-1'>「抵抗なく使えるUI/UX」</span>を設計し、組織全体の行動変容（Change Management）までをリードします。",
-                skillsTitle: "コア・コンピタンス (Core Competencies)",
-                skill1Desc: "要件定義〜実装をアジャイルに実行<br>現場フィードバックの即時反映",
-                skill2Desc: "GAS / API Integration<br>ボトルネック工程の自動化設計",
-                skill3Desc: "DB設計 / データモデリング<br>拡張性を考慮した正規化設計",
-                skill4Desc: "OpEx (Operational Excellence)<br>現場運用プロセスの最適化",
-                skill5Desc: "組織変革 / 定着化支援<br>マニュアル作成・社内研修",
-                skill6Desc: "HTML5 / Tailwind CSS / JS<br>Web標準技術の理解と応用",
+                
+                // --- Skills Section (Updated) ---
+                skillsTitle: "Skills & Tools",
+                skill1Desc: "Gold相当 / Advanced UI",
+                skill2Desc: "API連携 / SPA開発",
+                skill3Desc: "Looker Studio / G-Sheets",
+                skill4Desc: "倉庫運営 / 在庫管理",
+                skill5Desc: "Prompt Engineering / AI Coding",
+                skill6Desc: "Google Vids / Manuals",
+
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "課題解決のプロセスと成果 (Portfolio)",
                 
@@ -642,13 +653,16 @@
                 whyMeLabel: "Why Me? (차별화 요소)",
                 whyMeTitle: "개발만 하는 인재가 아닙니다.<br>「과제 발견부터 정착」까지 원스톱으로 책임집니다.",
                 whyMeDesc: "많은 DX 프로젝트가 실패하는 이유는 기술력 부족이 아닌 '현장에 대한 이해 부족'입니다. 저는 <span class='font-bold text-slate-800'>물류 센터장으로서의 매니지먼트 경험</span>을 바탕으로, IT 리터러시가 높지 않은 현장 작업자도 <span class='font-bold text-pro-700 bg-pro-50 px-1'>「거부감 없이 사용할 수 있는 UI/UX」</span>를 설계하고, 조직 전체의 행동 변용(Change Management)까지 리드합니다.",
-                skillsTitle: "핵심 역량 (Core Competencies)",
-                skill1Desc: "요건 정의~구현을 애자일하게 실행<br>현장 피드백 즉시 반영",
-                skill2Desc: "GAS / API Integration<br>보틀넥 공정의 자동화 설계",
-                skill3Desc: "DB설계 / 데이터 모델링<br>확장성을 고려한 정규화 설계",
-                skill4Desc: "OpEx (Operational Excellence)<br>현장 운용 프로세스 최적화",
-                skill5Desc: "조직 변혁 / 정착화 지원<br>매뉴얼 작성 · 사내 연수",
-                skill6Desc: "HTML5 / Tailwind CSS / JS<br>웹 표준 기술의 이해와 응용",
+                
+                // --- Skills Section (Updated) ---
+                skillsTitle: "Skills & Tools",
+                skill1Desc: "Gold 상당 / Advanced UI",
+                skill2Desc: "API 연동 / SPA 개발",
+                skill3Desc: "Looker Studio / G-Sheets",
+                skill4Desc: "창고 운영 / 재고 관리",
+                skill5Desc: "Prompt Engineering / AI Coding",
+                skill6Desc: "Google Vids / Manuals",
+
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "과제 해결 프로세스와 성과 (Portfolio)",
                 
