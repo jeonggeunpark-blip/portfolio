@@ -282,9 +282,9 @@
                 </div>
             </div>
 
-            <!-- Project Cards Area -->
+            <!-- Project Cards Area (Fixed Layout: 2x2 Left, 2x1 Top Right, 1x1 Bottom Right) -->
             
-            <!-- Project 1 (Main): Previously Project 4 (Stock Rescue) -->
+            <!-- Project 1 (Main): Left Large Card -->
             <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-2 row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-emerald-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none">
                 <div class="absolute inset-0 z-0">
                     <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
@@ -316,14 +316,17 @@
                 </div>
             </button>
 
-            <!-- Project 2 (Unchanged) -->
-            <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-rose-200">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
+            <!-- Project 2 (Wide): Top Right -->
+            <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-2 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-rose-200 gap-4">
+                <div class="md:w-3/5">
+                    <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-colors">
                             <i data-lucide="bot" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-medium text-slate-400">Process Automation</span>
+                        <div>
+                             <span class="text-xs font-medium text-slate-400 block">Process Automation</span>
+                             <span data-i18n="p2Cat" class="text-xs text-rose-500 font-bold uppercase">業務効率化</span>
+                        </div>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors" data-i18n="p2Title">
                         不明品管理プラットフォーム
@@ -332,13 +335,12 @@
                         写真カード形式での管理とAppSheet連携で、廃棄判断フローを自動化。回答率向上に貢献。
                     </p>
                 </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
-                    <span data-i18n="p2Cat">業務効率化</span>
-                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-rose-500"></i>
+                <div class="md:w-2/5 flex flex-row md:flex-col justify-between items-end h-full">
+                     <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-rose-500 transition-colors"></i>
                 </div>
             </button>
 
-            <!-- Project 3 (Unchanged) -->
+            <!-- Project 3: Bottom Right (Left) -->
             <button onclick="openModal('project-3')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -360,7 +362,7 @@
                 </div>
             </button>
 
-            <!-- Project 4: Previously Project 5 (Gamification) -->
+            <!-- Project 4: Bottom Right (Right) -->
             <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-orange-200">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -602,7 +604,7 @@
                 exp1Company: "株式会社LIXIL (業務改善G)",
                 exp1Role: "業務プロセス改善 / 社内DX推進",
                 exp1Detail1Title: "社内AppSheet検定 Goldランク 認定",
-               exp1Detail1Desc: "全社約1,400名の受験者中、上位28名（2%）のエキスパートとして選抜。開発したアプリケーションは他部署へも展開され、活用されています。",
+                exp1Detail1Desc: "全社約1,400名の受験者中、上位28名（2%）のエキスパートとして選抜。開発したアプリケーションは他部署へも展開され、活用されています。",
                 exp1Detail2Title: "AppSheetによる社内アプリ設計・運用（300名規模）",
                 exp1Detail2Desc: `<ul class="list-disc pl-4 mt-1 space-y-1">
                                     <li>荷受・蔵置統合管理システム</li>
