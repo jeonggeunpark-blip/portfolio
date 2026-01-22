@@ -124,12 +124,23 @@
         <!-- Header / Hero Section -->
         <header class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal active">
             <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-bold tracking-wider uppercase mb-4 shadow-sm">
-                    <span class="relative flex h-2 w-2">
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <span data-i18n="badge">Career Portfolio</span>
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                    <!-- Existing Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-bold tracking-wider uppercase shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span data-i18n="badge">Career Portfolio</span>
+                    </div>
+
+                    <!-- NEW: Visa Status Badge -->
+                    <!-- 이 문구는 영주권/배우자 비자 등 취업 제한이 없을 때 매우 강력한 어필이 됩니다 -->
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold tracking-wider uppercase shadow-sm">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                        <span data-i18n="visaStatus">就労制限なし (Visa Verified)</span>
+                    </div>
                 </div>
+
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
                     Business <span class="text-slate-400">×</span> Technology<br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-pro-700 to-pro-500 font-medium text-3xl md:text-5xl" data-i18n="heroTitle">
@@ -137,11 +148,11 @@
                     </span>
                 </h1>
                 <p class="mt-4 text-slate-600 max-w-2xl text-lg leading-relaxed font-medium" data-i18n="heroDesc">
-    システム開発における最大の失敗は「現場で使われないこと」です。<br>
-    私は<span class="text-slate-800 font-bold">現場業務を実行レベルまで分解して理解する力</span>と
-    <span class="text-slate-800 font-bold">エンジニアリング</span>の両輪で、
-    <span class="text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2">投資対効果（ROI）の高いDX</span>を実現する実行型コンサルタントです。
-</p>
+                    システム開発における最大の失敗は「現場で使われないこと」です。<br>
+                    私は<span class="text-slate-800 font-bold">現場業務を実行レベルまで分解して理解する力</span>と
+                    <span class="text-slate-800 font-bold">エンジニアリング</span>の両輪で、
+                    <span class="text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2">投資対効果（ROI）の高いDX</span>を実現する実行型コンサルタントです。
+                </p>
 
             </div>
             
@@ -346,7 +357,7 @@
                     </p>
                 </div>
                 <div class="md:w-2/5 flex flex-row md:flex-col justify-between items-end h-full">
-                     <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-rose-500 transition-colors"></i>
+                      <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-rose-500 transition-colors"></i>
                 </div>
             </button>
 
@@ -568,6 +579,7 @@
         const translations = {
             ja: {
                 badge: "Career Portfolio",
+                visaStatus: "就労制限なし (Visa Support Not Required)",
                 heroTitle: "現場と経営をつなぐ「通訳者」",
                 heroDesc: "システム開発における最大の失敗は「現場で使われないこと」です。<br>私は<span class='text-slate-800 font-bold'>業務プロセスの解像度</span>と<span class='text-slate-800 font-bold'>エンジニアリング</span>の両輪で、<span class='text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>投資対効果(ROI)の高いDX</span>を実現する実利追求型コンサルタントです。",
                 ctaButton: "面談・連絡先をコピー",
@@ -645,6 +657,7 @@
             },
             ko: {
                 badge: "Career Portfolio",
+                visaStatus: "비자 문제 없음 (Visa Verified)",
                 heroTitle: "현장과 경영을 잇는「통역사」",
                 heroDesc: "시스템 개발의 최대 실패는 '현장에서 쓰이지 않는 것'입니다.<br>저는 <span class='text-slate-800 font-bold'>업무 프로세스의 해상도</span>와 <span class='text-slate-800 font-bold'>엔지니어링</span>의 양륜으로, <span class='text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>투자대비효과(ROI) 높은 DX</span>를 실현하는 실리추구형 컨설턴트입니다.",
                 ctaButton: "면담 요청 · 연락처 복사",
@@ -768,19 +781,19 @@
                  stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
                  images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'],
                  ja: {
-                     title: '入荷品廃棄ゼロ化・滞留防止ソリューション «Stock Rescue»',
-                     approach: '・入荷直後の「ゴールデンタイム」を逃さない即時登録フロー\n・Canvas APIによる画像記録で、物品の状態とリスクを可視化\n・警告アラート機能により、放置される前に担当者へ通知',
-                     problem: '入荷品が適切な置き場に移動されず、仮置きのまま放置・劣化し「廃棄処理」されるケースが多発。仕入れコストの無駄と廃棄費用が利益を圧迫していた。',
-                     solution: '入荷検品と同時に写真を登録し、"放置の芽"を摘む「Stock Rescue」を導入。経過時間の可視化とアラートにより、廃棄ロスを実質ゼロへ削減。',
-                     voice: '「『とりあえず置いておく』がなくなりました。写真で状態が記録されるため、放置すればすぐバレるという意識が定着し、廃棄コンテナが空になりました。」'
-                 },
-                 ko: {
-                     title: '입하품 폐기 제로화・방치 방지 솔루션 «Stock Rescue»',
-                     approach: '・입하 직후의 「골든타임」을 놓치지 않는 즉시 등록 플로우\n・Canvas API를 활용한 이미지 기록으로, 물품의 상태와 리스크를 시각화\n・경고 알림 기능을 통해, 방치되기 전에 담당자에게 통지',
-                     problem: '입하품이 적절한 장소로 이동되지 않고, 임시 보관인 채로 방치・열화되어 「폐기 처리」되는 케이스가 다발. 매입 비용 낭비와 폐기 비용이 이익을 압박하고 있었음.',
-                     solution: '입하 검품과 동시에 사진을 등록하여, "방치의 싹"을 자르는 「Stock Rescue」를 도입. 경과 시간의 시각화와 알림을 통해, 폐기 손실을 실질 제로(0)로 삭감.',
-                     voice: '「『일단 놔두자』는 관행이 사라졌습니다. 사진으로 상태가 기록되기 때문에, 방치하면 금방 들통난다는 의식이 정착되어 폐기 컨테이너가 텅 비게 되었습니다.」'
-                 }
+                      title: '入荷品廃棄ゼロ化・滞留防止ソリューション «Stock Rescue»',
+                      approach: '・入荷直後の「ゴールデンタイム」を逃さない即時登録フロー\n・Canvas APIによる画像記録で、物品の状態とリスクを可視化\n・警告アラート機能により、放置される前に担当者へ通知',
+                      problem: '入荷品が適切な置き場に移動されず、仮置きのまま放置・劣化し「廃棄処理」されるケースが多発。仕入れコストの無駄と廃棄費用が利益を圧迫していた。',
+                      solution: '入荷検品と同時に写真を登録し、"放置の芽"を摘む「Stock Rescue」を導入。経過時間の可視化とアラートにより、廃棄ロスを実質ゼロへ削減。',
+                      voice: '「『とりあえず置いておく』がなくなりました。写真で状態が記録されるため、放置すればすぐバレるという意識が定着し、廃棄コンテナが空になりました。」'
+                  },
+                  ko: {
+                      title: '입하품 폐기 제로화・방치 방지 솔루션 «Stock Rescue»',
+                      approach: '・입하 직후의 「골든타임」을 놓치지 않는 즉시 등록 플로우\n・Canvas API를 활용한 이미지 기록으로, 물품의 상태와 리스크를 시각화\n・경고 알림 기능을 통해, 방치되기 전에 담당자에게 통지',
+                      problem: '입하품이 적절한 장소로 이동되지 않고, 임시 보관인 채로 방치・열화되어 「폐기 처리」되는 케이스가 다발. 매입 비용 낭비와 폐기 비용이 이익을 압박하고 있었음.',
+                      solution: '입하 검품과 동시에 사진을 등록하여, "방치의 싹"을 자르는 「Stock Rescue」를 도입. 경과 시간의 시각화와 알림을 통해, 폐기 손실을 실질 제로(0)로 삭감.',
+                      voice: '「『일단 놔두자』는 관행이 사라졌습니다. 사진으로 상태가 기록되기 때문에, 방치하면 금방 들통난다는 의식이 정착되어 폐기 컨테이너가 텅 비게 되었습니다.」'
+                  }
             },
             // Project 2 (Unchanged)
             'project-2': {
