@@ -6,18 +6,14 @@
     <title>Jeonggeun Park | IT Consultant Portfolio</title>
     
     <meta property="og:title" content="Jeonggeun Park - Practical DX Consultant">
-    <meta property="og:description" content="現場を知る実戦型DX人材。Business(現場)とTechnology(開発)をつなぐ、実行力のあるコンサルティングポートフォリオ。">
+    <meta property="og:description" content="Business(現場)とTechnology(開発)をつなぐ、実行力のあるコンサルティングポートフォリオ。">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/0ea5e9/ffffff?text=Career+Portfolio">
-
-    <meta name="description" content="物流センター長の実務経験とシステム開発力を兼ね備えた、実利追求型DXコンサルタントのポートフォリオ。">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -41,9 +37,17 @@
                     boxShadow: {
                         'soft': '0 4px 30px rgba(0, 0, 0, 0.03)',
                         'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'cursor': 'cursor .75s step-end infinite',
+                    },
+                    keyframes: {
+                        cursor: {
+                            '0%, 100%': { borderColor: 'transparent' },
+                            '50%': { borderColor: '#0ea5e9' },
+                        }
                     }
                 }
             }
@@ -63,11 +67,13 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
+        /* Background Pattern */
         .bg-grid-pattern {
             background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
             background-size: 40px 40px;
         }
 
+        /* Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -78,33 +84,43 @@
             transform: translateY(0);
         }
 
-        .bento-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .bento-card:hover {
-            transform: translateY(-4px);
-            z-index: 10;
+        /* 3D Tilt Effect Base */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
         }
         
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .nav-item.active {
+            color: #0ea5e9;
+            background-color: rgba(14, 165, 233, 0.1);
+        }
+
+        /* Typewriter Cursor */
+        .typing-cursor::after {
+            content: "|";
+            animation: cursor .75s step-end infinite;
+            color: #0ea5e9;
+        }
+
         .slide-image { transition: opacity 0.5s ease-in-out; }
         #modal-overlay { backdrop-filter: blur(8px); }
         
-        /* Language Switcher Style */
-        .lang-active {
-            font-weight: 800;
-            color: #0f172a;
-            border-bottom: 2px solid #0ea5e9;
-        }
-        .lang-inactive {
-            color: #94a3b8;
-            cursor: pointer;
-        }
-        .lang-inactive:hover {
-            color: #64748b;
-        }
+        /* Language Switcher */
+        .lang-active { font-weight: 800; color: #0f172a; border-bottom: 2px solid #0ea5e9; }
+        .lang-inactive { color: #94a3b8; cursor: pointer; }
+        .lang-inactive:hover { color: #64748b; }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased selection:bg-pro-200 selection:text-pro-900">
+<body class="text-slate-800 font-sans antialiased selection:bg-pro-200 selection:text-pro-900 pb-24">
+
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-pro-500 z-[60] w-0 transition-all duration-100 ease-out"></div>
 
     <div class="fixed inset-0 z-[-1] pointer-events-none bg-slate-50">
         <div class="absolute inset-0 bg-grid-pattern opacity-[0.3]"></div>
@@ -120,7 +136,7 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative">
         
-        <header class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal active">
+        <header id="home" class="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal active scroll-mt-24">
             <div>
                 <div class="flex flex-wrap items-center gap-2 mb-4">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-bold tracking-wider uppercase shadow-sm">
@@ -130,24 +146,18 @@
                         <span data-i18n="badge">Career Portfolio</span>
                     </div>
 
-                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold tracking-wider uppercase shadow-sm">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-5 border border-emerald-200 text-emerald-700 text-xs font-bold tracking-wider uppercase shadow-sm">
                         <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
                         <span data-i18n="visaStatus">就労制限なし (Visa Verified)</span>
                     </div>
                 </div>
 
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight min-h-[3.5rem] md:min-h-[4.5rem]">
                     Business <span class="text-slate-400">×</span> Technology<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pro-700 to-pro-500 font-medium text-3xl md:text-5xl" data-i18n="heroTitle">
-                        現場と経営をつなぐ「通訳者」
-                    </span>
+                    <span id="typewriter-text" class="text-transparent bg-clip-text bg-gradient-to-r from-pro-700 to-pro-500 font-medium text-3xl md:text-5xl typing-cursor"></span>
                 </h1>
                 <p class="mt-4 text-slate-600 max-w-2xl text-lg leading-relaxed font-medium" data-i18n="heroDesc">
-                    システム開発における最大の失敗は「現場で使われないこと」です。<br>
-                    私は<span class="text-slate-800 font-bold">現場業務を実行レベルまで分解して理解する力</span>と
-                    <span class="text-slate-800 font-bold">エンジニアリング</span>の両輪で、
-                    <span class="text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2">投資対効果（ROI）の高いDX</span>を実現する実行型コンサルタントです。
-                </p>
+                    </p>
 
             </div>
             
@@ -163,16 +173,16 @@
             </div>
         </header>
 
-         <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12">
+         <div id="projects" class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12 scroll-mt-24">
 
-            <div class="reveal bento-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 flex flex-col justify-between relative overflow-hidden group">
+            <div class="reveal tilt-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 flex flex-col justify-between relative overflow-hidden group" style="transition-delay: 100ms;">
                 <div class="absolute -right-6 -bottom-6 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform duration-500">
                     <i data-lucide="bar-chart-4" class="w-32 h-32"></i>
                 </div>
-                <div class="relative z-10">
+                <div class="relative z-10 pointer-events-none">
                     <div class="flex items-center gap-2 mb-4 text-pro-100 text-xs font-bold uppercase tracking-wider">
                         <i data-lucide="trending-up" class="w-4 h-4"></i>
-                        <span data-i18n="impactLabel">Value Delivered (提供価値)</span>
+                        <span data-i18n="impactLabel">Value Delivered</span>
                     </div>
                     <div>
                         <div class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-2">
@@ -181,12 +191,11 @@
                         </div>
                         <div class="space-y-2">
                             <p class="text-pro-100 text-sm font-medium opacity-90 leading-snug" data-i18n="impactMain">
-                                資産・在庫の差異率を極小化<br>
-                                決算業務工数を1/3へ短縮
+                                資産・在庫の差異率を極小化
                             </p>
                             <div class="pt-3 mt-3 border-t border-white/20">
                                 <div class="flex justify-between items-end mb-1">
-                                    <span class="text-xs text-pro-200" data-i18n="impactSubLabel">コスト削減効果 (1案件/年)</span>
+                                    <span class="text-xs text-pro-200" data-i18n="impactSubLabel">コスト削減効果</span>
                                     <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-mono whitespace-nowrap">ROI Case</span>
                                 </div>
                                 <p class="text-xl font-bold text-white" data-i18n="impactSubValue">約 120万円 / 年</p>
@@ -196,75 +205,66 @@
                 </div>
             </div>
 
-            <div class="reveal bento-card col-span-1 md:col-span-3 bg-white rounded-3xl p-8 border border-slate-200 shadow-soft flex flex-col justify-center relative overflow-hidden">
+            <div class="reveal tilt-card col-span-1 md:col-span-3 bg-white rounded-3xl p-8 border border-slate-200 shadow-soft flex flex-col justify-center relative overflow-hidden" style="transition-delay: 200ms;">
                 <div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-slate-50 to-transparent opacity-50"></div>
-                <div class="relative z-10 max-w-3xl">
+                <div class="relative z-10 max-w-3xl pointer-events-none">
                     <div class="inline-flex items-center gap-2 text-pro-600 font-bold mb-3">
                         <i data-lucide="user-check" class="w-5 h-5"></i>
-                        <span class="uppercase text-xs tracking-wider" data-i18n="whyMeLabel">Why Me? (差別化要因)</span>
+                        <span class="uppercase text-xs tracking-wider" data-i18n="whyMeLabel">Why Me?</span>
                     </div>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-snug" data-i18n="whyMeTitle">
-                        「開発だけ」の人材ではありません。<br>
-                        「課題発見〜定着化」までを一気通貫で担います。
+                        「開発だけ」の人材ではありません。
                     </h2>
                     <p class="text-slate-600 text-base leading-relaxed" data-i18n="whyMeDesc">
-                        多くのDXプロジェクトが失敗する理由は技術力不足ではなく、「現場への理解不足」です。
-                        私は<span class="font-bold text-slate-800">物流センター長としてのマネジメント経験</span>を基に、
-                        ITリテラシーが高くない現場作業員でも<span class="font-bold text-pro-700 bg-pro-50 px-1">「抵抗なく使えるUI/UX」</span>を設計し、
-                        組織全体の行動変容（Change Management）までをリードします。
+                        多くのDXプロジェクトが失敗する理由は...
                     </p>
                 </div>
             </div>
 
-            <div class="reveal bento-card col-span-1 md:col-span-4 bg-slate-900 rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft">
+            <div class="reveal tilt-card col-span-1 md:col-span-4 bg-slate-900 rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft" style="transition-delay: 300ms;">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                     <h3 class="text-white font-bold text-lg flex items-center gap-2 shrink-0 border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
                         <i data-lucide="layers" class="w-5 h-5 text-pro-400"></i>
                         <span data-i18n="skillsTitle">Skills & Tools</span>
                     </h3>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 transition-colors">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full pointer-events-none">
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700">
                             <div class="flex items-center gap-2 text-emerald-400 mb-1">
                                 <i data-lucide="smartphone" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">AppSheet</span>
                             </div>
                             <span class="text-xs text-slate-400 block" data-i18n="skill1Desc">Gold相当 / Advanced UI</span>
                         </div>
-
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-colors">
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700">
                             <div class="flex items-center gap-2 text-blue-400 mb-1">
                                 <i data-lucide="code-2" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">GAS / JS</span>
                             </div>
                             <span class="text-xs text-slate-400 block" data-i18n="skill2Desc">API連携 / SPA開発</span>
                         </div>
-
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 transition-colors">
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700">
                             <div class="flex items-center gap-2 text-amber-400 mb-1">
                                 <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">Data Viz</span>
                             </div>
                             <span class="text-xs text-slate-400 block" data-i18n="skill3Desc">Looker Studio / G-Sheets</span>
                         </div>
-
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-rose-500/50 transition-colors">
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700">
                             <div class="flex items-center gap-2 text-rose-400 mb-1">
                                 <i data-lucide="package" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">Logistics</span>
                             </div>
                             <span class="text-xs text-slate-400 block" data-i18n="skill4Desc">倉庫運営 / 在庫管理</span>
                         </div>
-
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500/50 transition-colors">
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700">
                             <div class="flex items-center gap-2 text-purple-400 mb-1">
                                 <i data-lucide="sparkles" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">Gen-AI / LLM</span>
                             </div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill5Desc">Prompt Engineering / AI Coding</span>
+                            <span class="text-xs text-slate-400 block" data-i18n="skill5Desc">Prompt Engineering</span>
                         </div>
-
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-yellow-500/50 transition-colors">
+                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700">
                             <div class="flex items-center gap-2 text-yellow-400 mb-1">
                                 <i data-lucide="server" class="w-4 h-4"></i>
                                 <span class="font-bold text-sm">Python / Flask</span>
@@ -278,7 +278,7 @@
             <div class="col-span-1 md:col-span-4 mt-8 mb-2 flex items-end justify-between border-b border-slate-200 pb-4 reveal">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900" data-i18n="portfolioTitle">Project Case Study</h2>
-                    <p class="text-slate-500 text-sm mt-1" data-i18n="portfolioSubtitle">課題解決のプロセスと成果 (Portfolio)</p>
+                    <p class="text-slate-500 text-sm mt-1" data-i18n="portfolioSubtitle">課題解決のプロセスと成果</p>
                 </div>
                 <div class="hidden md:flex gap-1">
                     <span class="w-1 h-1 rounded-full bg-slate-300"></span>
@@ -287,17 +287,15 @@
                 </div>
             </div>
 
-            <button onclick="openModal('project-1')" class="reveal bento-card col-span-1 md:col-span-2 row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-emerald-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none">
+            <button onclick="openModal('project-1')" class="reveal tilt-card col-span-1 md:col-span-2 row-span-2 bg-white rounded-3xl p-0 border-2 border-transparent hover:border-emerald-400/50 shadow-soft hover:shadow-glow relative overflow-hidden text-left group focus:outline-none" style="transition-delay: 100ms;">
                 <div class="absolute inset-0 z-0">
-                    <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                    <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
                 </div>
                 <div class="absolute top-4 right-4 z-20">
                     <span class="relative inline-flex">
                         <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40 animate-pulse-slow"></span>
-                        <span class="relative bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">
-                             廃棄ゼロ化
-                        </span>
+                        <span class="relative bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">廃棄ゼロ化</span>
                     </span>
                 </div>
                 <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
@@ -305,172 +303,105 @@
                         <i data-lucide="image-plus" class="w-4 h-4"></i>
                         <span data-i18n="p1Category">現場DX・UXデザイン</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">
-                        廃棄ロスゼロ・滞留防止ソリューション
-                    </h3>
-                    <p class="text-slate-300 text-sm mb-4 max-w-lg leading-relaxed" data-i18n="p1Desc">
-                        【課題】入荷品が放置され廃棄ロスが多発。<br>
-                        【解決】Canvas APIによる「写真への手書き注釈」機能と即時アラートで、廃棄ロスを実質ゼロへ削減。
-                    </p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
+                    <p class="text-slate-300 text-sm mb-4 max-w-lg leading-relaxed line-clamp-2" data-i18n="p1Desc">...</p>
                     <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
                         <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
                 </div>
             </button>
 
-            <button onclick="openModal('project-2')" class="reveal bento-card col-span-1 md:col-span-2 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-rose-200 gap-4">
+            <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 md:col-span-2 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-rose-200 gap-4" style="transition-delay: 200ms;">
                 <div class="md:w-3/5">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-colors">
-                            <i data-lucide="bot" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                             <span class="text-xs font-medium text-slate-400 block">Process Automation</span>
-                             <span data-i18n="p2Cat" class="text-xs text-rose-500 font-bold uppercase">業務効率化</span>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i data-lucide="bot" class="w-5 h-5"></i></div>
+                        <div><span class="text-xs font-medium text-slate-400 block">Process Automation</span><span data-i18n="p2Cat" class="text-xs text-rose-500 font-bold uppercase">業務効率化</span></div>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors" data-i18n="p2Title">
-                        不明品管理プラットフォーム
-                    </h3>
-                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p2Desc">
-                        写真カード形式での管理とAppSheet連携で、廃棄判断フローを自動化。回答率向上に貢献。
-                    </p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors" data-i18n="p2Title">不明品管理プラットフォーム</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p2Desc">...</p>
                 </div>
-                <div class="md:w-2/5 flex flex-row md:flex-col justify-between items-end h-full">
-                      <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-rose-500 transition-colors"></i>
-                </div>
+                <div class="md:w-2/5 flex flex-row md:flex-col justify-between items-end h-full"><i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-rose-500 transition-colors"></i></div>
             </button>
 
-            <button onclick="openModal('project-3')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-indigo-200">
+            <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-indigo-200" style="transition-delay: 300ms;">
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-                            <i data-lucide="calendar-clock" class="w-5 h-5"></i>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
                         <span class="text-xs font-medium text-slate-400">Python / Flask</span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors" data-i18n="p3Title">
-                        社内備品・施設予約システム
-                    </h3>
-                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p3Desc">
-                        台車や会議スペースの重複予約を解消。Python(Flask)で構築したリアルタイム予約管理Webアプリ。
-                    </p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors" data-i18n="p3Title">社内備品・施設予約</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p3Desc">...</p>
                 </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
-                    <span data-i18n="p3Cat">Webアプリ開発</span>
-                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i>
-                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
             </button>
 
-            <button onclick="openModal('project-4')" class="reveal bento-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200">
+            <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 md:col-span-1 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col justify-between text-left group hover:border-amber-200" style="transition-delay: 400ms;">
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
                         <span class="text-xs font-medium text-slate-400">KPI Visualization</span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors" data-i18n="p4Title">
-                        長期滞留在庫・督促ダッシュボード
-                    </h3>
-                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p4Desc">
-                        放置期間のランキング化で競争意識を刺激し、倉庫回転率を改善したBI導入実績。
-                    </p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors" data-i18n="p4Title">長期滞留在庫・督促</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
                 </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
-                    <span data-i18n="p4Cat">データ可視化</span>
-                    <i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i>
-                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
             </button>
 
-            <button onclick="openModal('project-5')" class="reveal bento-card col-span-1 md:col-span-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-orange-200 gap-4">
+            <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 md:col-span-4 bg-white rounded-3xl p-6 border border-slate-200 shadow-soft flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-orange-200 gap-4" style="transition-delay: 500ms;">
                 <div class="md:w-4/5">
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors">
-                            <i data-lucide="trophy" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                             <span class="text-xs font-medium text-slate-400 block">Gamification</span>
-                             <span data-i18n="p5Cat" class="text-xs text-orange-500 font-bold uppercase">組織開発</span>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
+                        <div><span class="text-xs font-medium text-slate-400 block">Gamification</span><span data-i18n="p5Cat" class="text-xs text-orange-500 font-bold uppercase">組織開発</span></div>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors" data-i18n="p5Title">
-                        カイゼン提案・活性化ボード
-                    </h3>
-                    <p class="text-xs text-slate-500 leading-relaxed" data-i18n="p5Desc">
-                        ゲーミフィケーションによる組織文化変革の実践。提案数を倍増させた実績。
-                    </p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-i18n="p5Desc">...</p>
                 </div>
-                <div class="md:w-1/5 flex flex-row md:flex-col justify-end items-end h-full">
-                      <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-orange-500 transition-colors"></i>
-                </div>
+                <div class="md:w-1/5 flex flex-row md:flex-col justify-end items-end h-full"><i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 group-hover:text-orange-500 transition-colors"></i></div>
             </button>
 
         </div>
 
-         <section class="mt-16 reveal">
+         <section id="experience" class="mt-16 reveal scroll-mt-24">
             <h3 class="font-bold text-slate-900 mb-8 flex items-center gap-2 text-xl">
-                <i data-lucide="history" class="w-6 h-6 text-slate-500"></i> <span data-i18n="expTitle">職務経歴 (Professional Experience)</span>
+                <i data-lucide="history" class="w-6 h-6 text-slate-500"></i> <span data-i18n="expTitle">職務経歴 (Experience)</span>
             </h3>
             
             <div class="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
                 <div class="relative">
                     <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200"></div>
-
                     <div class="flex flex-col gap-12">
                         <div class="relative pl-12">
                             <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-pro-600 rounded-full border-4 border-white shadow-sm z-10"></div>
-                            
                             <div>
-                                <div class="inline-block px-3 py-1 rounded-full bg-pro-50 text-pro-700 text-sm font-bold mb-2">
-                                    2022.01 - Present
-                                </div>
+                                <div class="inline-block px-3 py-1 rounded-full bg-pro-50 text-pro-700 text-sm font-bold mb-2">2022.01 - Present</div>
                                 <h4 class="font-bold text-slate-900 text-xl mb-1" data-i18n="exp1Company">株式会社LIXIL (業務改善G)</h4>
                                 <p class="text-base text-slate-600 font-medium mb-4" data-i18n="exp1Role">業務プロセス改善 / 社内DX推進</p>
-                                
                                 <div class="text-left bg-slate-50 rounded-xl p-5 border border-slate-100">
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-4">
                                             <li class="flex items-start gap-2">
                                                 <i data-lucide="check-circle" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
                                                 <div class="w-full">
                                                     <span class="font-bold text-slate-800 block" data-i18n="exp1Detail1Title">社内AppSheet検定 Goldランク 認定</span>
-                                                    <p class="text-xs text-slate-500 mt-1" data-i18n="exp1Detail1Desc">
-                                                        全社約1,400名の受験者中、上位28名（2%）のエキスパートとして選抜。開発したアプリケーションは他部署へも展開され、活用されています。
-                                                    </p>
+                                                    <p class="text-xs text-slate-500 mt-1" data-i18n="exp1Detail1Desc">...</p>
                                                 </div>
                                             </li>
                                             <li class="flex items-start gap-2">
                                                 <i data-lucide="check-circle" class="w-4 h-4 text-pro-500 shrink-0 mt-0.5"></i>
                                                 <div class="w-full">
-                                                    <span class="font-bold text-slate-800 block" data-i18n="exp1Detail2Title">AppSheetによる社内アプリ設計・運用（300名規模）</span>
-                                                    <div class="text-xs text-slate-500 mt-1" data-i18n="exp1Detail2Desc">
-                                                        <ul class="list-disc pl-4 mt-1 space-y-1">
-                                                            <li>荷受・蔵置統合管理システム</li>
-                                                            <li>施工手配・進捗可視化プラットフォーム</li>
-                                                            <li>配送リソース・配車計画管理アプリ</li>
-                                                            <li>備品発注・在庫最適化ワークフロー</li>
-                                                            <li>全社カイゼン提案・ナレッジ共有ポータル</li>
-                                                            <li>アプリ内操作マニュアル・動画解説機能実装 (Google Vids)</li>
-                                                        </ul>
-                                                        <p class="mt-2 font-bold text-pro-700">GAS/API活用による年間400時間の工数削減を達成</p>
-                                                    </div>
+                                                    <span class="font-bold text-slate-800 block" data-i18n="exp1Detail2Title">AppSheetによる社内アプリ設計・運用</span>
+                                                    <div class="text-xs text-slate-500 mt-1" data-i18n="exp1Detail2Desc">...</div>
                                                 </div>
                                             </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
                         <div class="relative pl-12">
                             <div class="absolute left-[0.6rem] top-[0.4rem] w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm z-10"></div>
-                            
                             <div>
-                                <div class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm font-bold mb-2">
-                                    2015.11 - 2021.08
-                                </div>
+                                <div class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm font-bold mb-2">2015.11 - 2021.08</div>
                                 <h4 class="font-bold text-slate-900 text-xl mb-1" data-i18n="exp2Company">有利株式会社</h4>
                                 <p class="text-base text-slate-600 font-medium mb-4" data-i18n="exp2Role">センター長（物流倉庫長）</p>
-                                
                                 <div class="text-left bg-slate-50 rounded-xl p-5 border border-slate-100">
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
                                             <li class="flex items-start gap-2">
@@ -502,6 +433,24 @@
             </p>
         </footer>
     </main>
+
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40">
+        <nav class="glass-nav flex items-center gap-1 px-2 py-2 rounded-full shadow-glass transition-all hover:scale-105">
+            <a href="#home" class="nav-item active p-3 rounded-full text-slate-500 hover:text-pro-600 transition-colors" title="Home">
+                <i data-lucide="home" class="w-5 h-5"></i>
+            </a>
+            <a href="#projects" class="nav-item p-3 rounded-full text-slate-500 hover:text-pro-600 transition-colors" title="Projects">
+                <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+            </a>
+            <a href="#experience" class="nav-item p-3 rounded-full text-slate-500 hover:text-pro-600 transition-colors" title="Experience">
+                <i data-lucide="briefcase" class="w-5 h-5"></i>
+            </a>
+            <div class="w-px h-6 bg-slate-300 mx-1"></div>
+            <button onclick="copyEmail()" class="nav-item p-3 rounded-full text-slate-500 hover:text-emerald-600 transition-colors" title="Contact">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+            </button>
+        </nav>
+    </div>
 
     <div id="modal-overlay" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-0 md:p-4 bg-slate-900/70" aria-modal="true" role="dialog">
         <div id="modal-content" class="bg-white w-full h-full md:h-auto md:max-w-5xl md:max-h-[90vh] md:rounded-2xl shadow-2xl overflow-y-auto transform scale-95 transition-transform duration-300 flex flex-col relative">
@@ -575,12 +524,14 @@
     <script>
         lucide.createIcons();
         
-        // --- Multi-language Logic ---
+        let currentLang = localStorage.getItem('userLang') || 'ja';
+
         const translations = {
             ja: {
                 badge: "Career Portfolio",
-                visaStatus: "就労制限なし (Visa Support Not Required)",
-                heroTitle: "現場と経営をつなぐ「通訳者」",
+                visaStatus: "就労制限なし (Visa Verified)",
+                // Typewriter Text (Array)
+                heroTypewriter: ["現場と経営をつなぐ「通訳者」", "ROIを最大化するDX人材"],
                 heroDesc: "システム開発における最大の失敗は「現場で使われないこと」です。<br>私は<span class='text-slate-800 font-bold'>業務プロセスの解像度</span>と<span class='text-slate-800 font-bold'>エンジニアリング</span>の両輪で、<span class='text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>投資対効果(ROI)の高いDX</span>を実現する実利追求型コンサルタントです。",
                 ctaButton: "面談・連絡先をコピー",
                 impactLabel: "Value Delivered (提供価値)",
@@ -591,7 +542,6 @@
                 whyMeTitle: "「開発だけ」の人材ではありません。<br>「課題発見〜定着化」までを一気通貫で担います。",
                 whyMeDesc: "多くのDXプロジェクトが失敗する理由は技術力不足ではなく、「現場への理解不足」です。私は<span class='font-bold text-slate-800'>物流センター長としてのマネジメント経験</span>を基に、ITリテラシーが高くない現場作業員でも<span class='font-bold text-pro-700 bg-pro-50 px-1'>「抵抗なく使えるUI/UX」</span>を設計し、組織全体の行動変容（Change Management）までをリードします。",
                 
-                // --- Skills Section (Updated) ---
                 skillsTitle: "Skills & Tools",
                 skill1Desc: "Gold相当 / Advanced UI",
                 skill2Desc: "API連携 / SPA開発",
@@ -603,32 +553,27 @@
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "課題解決のプロセスと成果 (Portfolio)",
                 
-                // P1: Stock Rescue (Promoted from P4)
                 p1Badge: "廃棄ゼロ化",
                 p1Category: "現場DX・UXデザイン",
                 p1Title: "廃棄ロスゼロ・滞留防止ソリューション",
                 p1Desc: "【課題】入荷品が放置され廃棄ロスが多発。<br>【解決】Canvas APIによる「写真への手書き注釈」機能と即時アラートで、廃棄ロスを実質ゼロへ削減。",
                 viewDetails: "プロジェクト詳細",
                 
-                // P2: Unknown Items (Unchanged)
+                p2Cat: "業務効率化",
                 p2Title: "不明品管理プラットフォーム",
                 p2Desc: "写真カード形式での管理とAppSheet連携で、廃棄判断フローを自動化。回答率向上に貢献。",
-                p2Cat: "業務効率化",
                 
-                // P3: [NEW] Reservation System (Was P3 Dashboard)
+                p3Cat: "Webアプリ開発",
                 p3Title: "社内備品・施設予約システム",
                 p3Desc: "台車や会議スペースの重複予約を解消。Python(Flask)で構築したリアルタイム予約管理Webアプリ。",
-                p3Cat: "Webアプリ開発",
                 
-                // P4: Dashboard (Was P3)
+                p4Cat: "データ可視化",
                 p4Title: "長期滞留在庫・督促ダッシュボード",
                 p4Desc: "放置期間のランキング化で競争意識を刺激し、倉庫回転率を改善したBI導入実績。",
-                p4Cat: "データ可視化",
 
-                // P5: Gamification (Was P4)
+                p5Cat: "組織開発",
                 p5Title: "カイゼン提案・活性化ボード",
                 p5Desc: "ゲーミフィケーションによる組織文化変革の実践。提案数を倍増させた実績。",
-                p5Cat: "組織開発",
 
                 expTitle: "職務経歴 (Professional Experience)",
                 exp1Company: "株式会社LIXIL (業務改善G)",
@@ -650,7 +595,7 @@
                 exp2Detail1: "スタッフ25名のマネジメントと現場指揮",
                 exp2Detail2: "アナログ業務（Excel/紙）の限界とDXの必要性を痛感",
                 footerCta: "面談依頼・お問い合わせ",
-                // Modal Labels
+                
                 mApproach: "Consulting Approach (担当範囲)",
                 mProblem: "Before (課題)",
                 mSolution: "After (解決策・成果)",
@@ -658,12 +603,19 @@
                 mTech: "使用技術 (Tech Stack)",
                 mDemo: "成果物デモを見る",
                 mLock: "社内システムのため、詳細は面談時にてご説明可能です。",
-                mClose: "閉じる"
+                mClose: "閉じる",
+                
+                // Detailed Project Data for Modal (Re-using text for brevity in JS object but should be distinct)
+                project1: { title: '入荷品廃棄ゼロ化・滞留防止ソリューション «Stock Rescue»', approach: '・入荷直後の「ゴールデンタイム」を逃さない即時登録フロー\n・Canvas APIによる画像記録で、物品の状態とリスクを可視化\n・警告アラート機能により、放置される前に担当者へ通知', problem: '入荷品が適切な置き場に移動されず、仮置きのまま放置・劣化し「廃棄処理」されるケースが多発。仕入れコストの無駄と廃棄費用が利益を圧迫していた。', solution: '入荷検品と同時に写真を登録し、"放置の芽"を摘む「Stock Rescue」を導入。経過時間の可視化とアラートにより、廃棄ロスを実質ゼロへ削減。', voice: '「『とりあえず置いておく』がなくなりました。写真で状態が記録されるため、放置すればすぐバレるという意識が定着し、廃棄コンテナが空になりました。」' },
+                project2: { title: '担当者不明品・統合管理プラットフォーム', approach: '・廃棄判断プロセスのフローチャート再設計(BPR)\n・AppSheet APIを活用したデータ連携基盤の構築\n・回答率向上のためのUX改善(写真カードUI)', problem: '倉庫内の「所有者不明品」の確認作業において、文字リストだけでは判別が困難で回答率が低迷。督促や廃棄管理に多大な工数を要していた。', solution: 'GAS×Tailwind製Webアプリで物品を写真付きカード化。AppSheet連携で閲覧から廃棄指示までをワンストップで完結させ、棚卸し期間を半減させた。', voice: '「写真で一覧表示されるため、一瞬で判別できるようになりました。アプリ連携で回答もスムーズになり、棚卸しが大幅に楽になりました。」（現場スタッフ）' },
+                project3: { title: '社内備品・施設予約システム (Reservation App)', approach: '・Flaskによる軽量かつ高速なWebアプリケーション開発\n・FullCalendarライブラリを用いた直感的なUI設計\n・APSchedulerによる「予約自動キャンセル」機能の実装', problem: '台車や確認スペースの予約が紙やExcelで行われており、重複予約や「予約したのに使われない（No Show）」問題が多発。物理的な移動による確認の手間も課題だった。', solution: 'Python(Flask)で独自の予約システムを構築。スマホからリアルタイムで空き状況が確認可能になり、重複をシステムで防止。開始10分経過で自動キャンセルするロジックで稼働率を最大化した。', voice: '「わざわざ現場に行かなくても空き状況がわかるので助かっています。自動キャンセル機能のおかげで、予約の空き待ちストレスが解消されました。」' },
+                project4: { title: '保管期限管理ダッシュボード・自動督促', approach: '・重要KPI(滞留期間・未処理数)の定義と可視化設計\n・各部門長へのダッシュボード活用トレーニング\n・自動督促ロジックの実装による業務負荷軽減', problem: '入荷予定のない不明品が散乱。各担当者がバラバラのExcelで管理しており、検索と持ち主特定に時間がかかっていた。', solution: '期限超過状況を可視化するダッシュボードを開発。「未処理数ランキング」で競争意識を醸成し、放置期間の長い順に表示させるロジックで回転率を改善。', voice: '「ダッシュボードでの可視化効果は絶大でした。各部署が自主的に整理に動き出し、倉庫スペースが有効活用できるようになりました。」（センター長）' },
+                project5: { title: '改善提案・ポイント管理ボード', approach: '・組織活性化のためのゲーミフィケーション要素設計\n・ランキングロジックの構築とフィードバックループ設計\n・経営層向けの成果報告レポート自動化', problem: '現場の改善活動がマンネリ化し、提案数が減少。Excel管理では個人の貢献度が見えにくく、評価につながらない課題があった。', solution: '個人の獲得ポイントと提案件数をランキング表示するダッシュボードを構築。「ゲーミフィケーション」要素で競争心を刺激し、提案数を倍増させた。', voice: '「順位が見えることでゲーム感覚で取り組めるようになり、若手からの提案が増えました。組織活性化に繋がっています。」（部門長）' }
             },
             ko: {
                 badge: "Career Portfolio",
                 visaStatus: "비자 문제 없음 (Visa Verified)",
-                heroTitle: "현장과 경영을 잇는「통역사」",
+                heroTypewriter: ["현장과 경영을 잇는「통역사」", "ROI를 극대화하는 DX 인재"],
                 heroDesc: "시스템 개발의 최대 실패는 '현장에서 쓰이지 않는 것'입니다.<br>저는 <span class='text-slate-800 font-bold'>업무 프로세스의 해상도</span>와 <span class='text-slate-800 font-bold'>엔지니어링</span>의 양륜으로, <span class='text-pro-700 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>투자대비효과(ROI) 높은 DX</span>를 실현하는 실리추구형 컨설턴트입니다.",
                 ctaButton: "면담 요청 · 연락처 복사",
                 impactLabel: "Value Delivered (제공 가치)",
@@ -674,7 +626,6 @@
                 whyMeTitle: "개발만 하는 인재가 아닙니다.<br>「과제 발견부터 정착」까지 원스톱으로 책임집니다.",
                 whyMeDesc: "많은 DX 프로젝트가 실패하는 이유는 기술력 부족이 아닌 '현장에 대한 이해 부족'입니다. 저는 <span class='font-bold text-slate-800'>물류 센터장으로서의 매니지먼트 경험</span>을 바탕으로, IT 리터러시가 높지 않은 현장 작업자도 <span class='font-bold text-pro-700 bg-pro-50 px-1'>「거부감 없이 사용할 수 있는 UI/UX」</span>를 설계하고, 조직 전체의 행동 변용(Change Management)까지 리드합니다.",
                 
-                // --- Skills Section (Updated) ---
                 skillsTitle: "Skills & Tools",
                 skill1Desc: "Gold 상당 / Advanced UI",
                 skill2Desc: "API 연동 / SPA 개발",
@@ -686,32 +637,27 @@
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "과제 해결 프로세스와 성과 (Portfolio)",
                 
-                // P1: Stock Rescue (Promoted from P4)
                 p1Badge: "폐기 제로화",
                 p1Category: "현장 DX・UX 디자인",
                 p1Title: "폐기 손실 제로・체류 방지 솔루션",
                 p1Desc: "【과제】 입하품 방치로 인한 폐기 손실 다발.<br>【해결】 Canvas API를 활용한 「사진 위 손글씨 주석」 기능과 즉시 알림으로 폐기 손실을 실질 제로(0)로 삭감.",
                 viewDetails: "프로젝트 상세",
                 
-                // P2: Unknown Items (Unchanged)
+                p2Cat: "업무 효율화",
                 p2Title: "불명품 관리 플랫폼",
                 p2Desc: "사진 카드 형식의 관리와 AppSheet 연동으로 폐기 판단 흐름을 자동화. 회답률 향상에 공헌.",
-                p2Cat: "업무 효율화",
                 
-                // P3: [NEW] Reservation System
+                p3Cat: "웹 앱 개발",
                 p3Title: "사내 설비・비품 예약 시스템",
                 p3Desc: "대차나 회의 공간의 중복 예약을 해소. Python(Flask)으로 구축한 실시간 예약 관리 웹 앱.",
-                p3Cat: "웹 앱 개발",
                 
-                // P4: Dashboard (Was P3)
+                p4Cat: "데이터 시각화",
                 p4Title: "장기 체류 재고・독촉 대시보드",
                 p4Desc: "방치 기간의 랭킹화로 경쟁 심리를 자극하여 창고 회전율을 개선한 BI 도입 실적.",
-                p4Cat: "데이터 시각화",
 
-                // P5: Gamification (Was P4)
+                p5Cat: "조직 개발",
                 p5Title: "카이젠 제안・활성화 보드",
                 p5Desc: "게이미피케이션을 통한 조직 문화 변혁의 실천. 제안 건수를 2배로 증가시킨 실적.",
-                p5Cat: "조직 개발",
 
                 expTitle: "직무 경력 (Professional Experience)",
                 exp1Company: "주식회사 LIXIL (업무개선G)",
@@ -733,7 +679,7 @@
                 exp2Detail1: "스태프 25명의 매니지먼트 및 현장 지휘",
                 exp2Detail2: "아날로그 업무(Excel/종이)의 한계와 DX의 필요성을 절감",
                 footerCta: "면담 요청 · 문의하기",
-                // Modal Labels
+                
                 mApproach: "Consulting Approach (담당 범위)",
                 mProblem: "Before (과제)",
                 mSolution: "After (해결책・성과)",
@@ -741,16 +687,27 @@
                 mTech: "사용 기술 (Tech Stack)",
                 mDemo: "성과물 데모 보기",
                 mLock: "사내 시스템이므로 상세 내용은 면담 시 설명 가능합니다.",
-                mClose: "닫기"
+                mClose: "닫기",
+
+                project1: { title: '입하품 폐기 제로화・방치 방지 솔루션 «Stock Rescue»', approach: '・입하 직후의 「골든타임」을 놓치지 않는 즉시 등록 플로우\n・Canvas API를 활용한 이미지 기록으로, 물품의 상태와 리스크를 시각화\n・경고 알림 기능을 통해, 방치되기 전에 담당자에게 통지', problem: '입하품이 적절한 장소로 이동되지 않고, 임시 보관인 채로 방치・열화되어 「폐기 처리」되는 케이스가 다발. 매입 비용 낭비와 폐기 비용이 이익을 압박하고 있었음.', solution: '입하 검품과 동시에 사진을 등록하여, "방치의 싹"을 자르는 「Stock Rescue」를 도입. 경과 시간의 시각화와 알림을 통해, 폐기 손실을 실질 제로(0)로 삭감.', voice: '「『일단 놔두자』는 관행이 사라졌습니다. 사진으로 상태가 기록되기 때문에, 방치하면 금방 들통난다는 의식이 정착되어 폐기 컨테이너가 텅 비게 되었습니다.」' },
+                project2: { title: '담당자 불명품・통합 관리 플랫폼', approach: '・폐기 판단 프로세스의 흐름도 재설계 (BPR)\n・AppSheet API를 활용한 데이터 연동 기반 구축\n・회답률 향상을 위한 UX 개선 (사진 카드 UI)', problem: '창고 내 「소유자 불명품」 확인 작업에서, 문자 리스트만으로는 판별이 어려워 회답률이 저조. 독촉이나 폐기 관리에 막대한 공수가 소요됨.', solution: 'GAS×Tailwind 기반 웹 앱으로 물품을 사진 카드화. AppSheet 연동으로 열람부터 폐기 지시까지 원스톱으로 완결시켜, 재고조사 기간을 반으로 줄임.', voice: '「사진으로 목록이 표시되어, 한눈에 판별할 수 있게 되었습니다. 앱 연동으로 회답도 원활해져 재고조사가 대폭 편해졌습니다.」 (현장 스태프)' },
+                project3: { title: '사내 설비・비품 예약 시스템 (Reservation App)', approach: '・Flask를 활용한 경량 고속 웹 애플리케이션 개발\n・FullCalendar 라이브러리를 이용한 직관적인 UI 설계\n・APScheduler를 통한 「예약 자동 취소」 기능 구현', problem: '대차나 확인 공간의 예약이 종이나 Excel로 이루어져, 중복 예약이나 「예약하고 쓰지 않는(No Show)」 문제가 다발. 물리적인 이동에 의한 확인 수고도 과제였음.', solution: 'Python(Flask)으로 독자적인 예약 시스템을 구축. 스마트폰으로 실시간 공석 확인이 가능해져 중복을 시스템으로 방지. 개시 10분 경과 시 자동 취소하는 로직으로 가동률을 최대화함.', voice: '「일일이 현장에 가지 않아도 공석 상황을 알 수 있어 도움이 됩니다. 자동 취소 기능 덕분에 예약 대기 스트레스가 해소되었습니다.」' },
+                project4: { title: '보관 기한 관리 대시보드・자동 독촉', approach: '・중요 KPI(체류 기간・미처리 수)의 정의 및 시각화 설계\n・각 부문장에 대한 대시보드 활용 트레이닝\n・자동 독촉 로직 구현을 통한 업무 부하 경감', problem: '입하 예정이 없는 불명품이 산재. 각 담당자가 제각각 Excel로 관리하고 있어, 검색과 주인 특정에 시간이 걸림.', solution: '기한 초과 상황을 시각화하는 대시보드 개발. 「미처리 수 랭킹」으로 경쟁 의식을 조성하고, 방치 기간이 긴 순서대로 표시하는 로직으로 회전율 개선.', voice: '「대시보드를 통한 시각화 효과는 절대적이었습니다. 각 부서가 자발적으로 정리에 나서, 창고 공간을 유효하게 활용할 수 있게 되었습니다.」 (센터장)' },
+                project5: { title: '개선 제안・포인트 관리 보드', approach: '・조직 활성화를 위한 게이미피케이션 요소 설계\n・랭킹 로직 구축 및 피드백 루프 설계\n・경영층 대상 성과 보고 리포트 자동화', problem: '현장의 개선 활동이 매너리즘에 빠져 제안 수 감소. Excel 관리로는 개인의 공헌도가 잘 보이지 않아 평가로 이어지지 않는 과제가 있었음.', solution: '개인 획득 포인트와 제안 건수를 랭킹으로 표시하는 대시보드 구축. 「게이미피케이션」 요소로 경쟁심을 자극하여 제안 수를 2배로 증가시킴.', voice: '「순위가 보임으로써 게임 감각으로 임할 수 있게 되어, 젊은 직원들의 제안이 늘었습니다. 조직 활성화로 이어지고 있습니다.」 (부문장)' }
             }
         };
 
-        let currentLang = 'ja';
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+            initTypewriter();
+        });
 
         function setLanguage(lang) {
             currentLang = lang;
+            localStorage.setItem('userLang', lang);
             
-            // UI Toggle Style
+            // UI Switcher
             const btnJa = document.getElementById('btn-ja');
             const btnKo = document.getElementById('btn-ko');
             if(lang === 'ja') {
@@ -761,7 +718,7 @@
                 btnKo.className = 'lang-active transition-all';
             }
 
-            // Update Text Content
+            // Update DOM Text
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -769,126 +726,72 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
+
+            // Re-init Typewriter with new lang
+            initTypewriter();
+        }
+
+        // --- Typewriter Effect ---
+        let typeInterval;
+        function initTypewriter() {
+            const textElement = document.getElementById('typewriter-text');
+            const texts = translations[currentLang].heroTypewriter; // Array of strings
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            if (typeInterval) clearInterval(typeInterval);
+
+            function type() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    textElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    textElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    // Finished typing
+                    isDeleting = true;
+                    setTimeout(type, 2000); // Pause at end
+                } else if (isDeleting && charIndex === 0) {
+                    // Finished deleting
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, 500); // Pause before next
+                } else {
+                    const speed = isDeleting ? 50 : 100;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
         }
 
         function copyEmail() {
             const email = "jeonggeun.park0416@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
                 const btnText = document.getElementById('contact-text');
+                const btnIcon = document.getElementById('contact-icon');
                 const originalText = currentLang === 'ja' ? "面談・連絡先をコピー" : "면담 요청 · 연락처 복사"; 
-                if(btnText) btnText.innerText = currentLang === 'ja' ? "コピーしました！" : "복사되었습니다!";
-                setTimeout(() => { if(btnText) btnText.innerText = originalText; }, 2000);
-                alert(currentLang === 'ja' ? "メールアドレスをコピーしました。\n" + email : "이메일 주소가 복사되었습니다.\n" + email);
+                if(btnText) btnText.innerText = currentLang === 'ja' ? "Copied!" : "완료!";
+                if(btnIcon) btnIcon.setAttribute('class', 'w-4 h-4 text-emerald-400');
+                setTimeout(() => { 
+                    if(btnText) btnText.innerText = originalText; 
+                    if(btnIcon) btnIcon.setAttribute('class', 'w-4 h-4 transition-transform group-hover:scale-110');
+                }, 2000);
             }).catch(err => { console.error('Copy failed:', err); });
         }
 
-        // Expanded Projects Data for Modal
+        // --- Projects Data & Modal ---
         const projects = {
-            // New Project 1 (Was Project 4: Stock Rescue)
-            'project-1': {
-                 tag: 'Mobile Solution',
-                 link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec',
-                 stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'],
-                 images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'],
-                 ja: {
-                      title: '入荷品廃棄ゼロ化・滞留防止ソリューション «Stock Rescue»',
-                      approach: '・入荷直後の「ゴールデンタイム」を逃さない即時登録フロー\n・Canvas APIによる画像記録で、物品の状態とリスクを可視化\n・警告アラート機能により、放置される前に担当者へ通知',
-                      problem: '入荷品が適切な置き場に移動されず、仮置きのまま放置・劣化し「廃棄処理」されるケースが多発。仕入れコストの無駄と廃棄費用が利益を圧迫していた。',
-                      solution: '入荷検品と同時に写真を登録し、"放置の芽"を摘む「Stock Rescue」を導入。経過時間の可視化とアラートにより、廃棄ロスを実質ゼロへ削減。',
-                      voice: '「『とりあえず置いておく』がなくなりました。写真で状態が記録されるため、放置すればすぐバレるという意識が定着し、廃棄コンテナが空になりました。」'
-                  },
-                  ko: {
-                      title: '입하품 폐기 제로화・방치 방지 솔루션 «Stock Rescue»',
-                      approach: '・입하 직후의 「골든타임」을 놓치지 않는 즉시 등록 플로우\n・Canvas API를 활용한 이미지 기록으로, 물품의 상태와 리스크를 시각화\n・경고 알림 기능을 통해, 방치되기 전에 담당자에게 통지',
-                      problem: '입하품이 적절한 장소로 이동되지 않고, 임시 보관인 채로 방치・열화되어 「폐기 처리」되는 케이스가 다발. 매입 비용 낭비와 폐기 비용이 이익을 압박하고 있었음.',
-                      solution: '입하 검품과 동시에 사진을 등록하여, "방치의 싹"을 자르는 「Stock Rescue」를 도입. 경과 시간의 시각화와 알림을 통해, 폐기 손실을 실질 제로(0)로 삭감.',
-                      voice: '「『일단 놔두자』는 관행이 사라졌습니다. 사진으로 상태가 기록되기 때문에, 방치하면 금방 들통난다는 의식이 정착되어 폐기 컨테이너가 텅 비게 되었습니다.」'
-                  }
-            },
-            // Project 2 (Unchanged)
-            'project-2': {
-                tag: 'Process Automation',
-                link: 'https://script.google.com/macros/s/AKfycbwHWgT8mFfTuD1Zk2UGYZz_gK6vzpkWPQyuqIDzDF4oyZFxnDerLRJO5S-AXz8TMVn1Jg/exec',
-                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Automation'],
-                images: ['https://i.postimg.cc/MGcC02vn/damdangja-bulmyeong.png', 'https://i.postimg.cc/SNNt7FPk/damdangja-bulmyeong2.png'],
-                ja: {
-                    title: '担当者不明品・統合管理プラットフォーム',
-                    approach: '・廃棄判断プロセスのフローチャート再設計(BPR)\n・AppSheet APIを活用したデータ連携基盤の構築\n・回答率向上のためのUX改善(写真カードUI)',
-                    problem: '倉庫内の「所有者不明品」の確認作業において、文字リストだけでは判別が困難で回答率が低迷。督促や廃棄管理に多大な工数を要していた。',
-                    solution: 'GAS×Tailwind製Webアプリで物品を写真付きカード化。AppSheet連携で閲覧から廃棄指示までをワンストップで完結させ、棚卸し期間を半減させた。',
-                    voice: '「写真で一覧表示されるため、一瞬で判別できるようになりました。アプリ連携で回答もスムーズになり、棚卸しが大幅に楽になりました。」（現場スタッフ）'
-                },
-                ko: {
-                    title: '담당자 불명품・통합 관리 플랫폼',
-                    approach: '・폐기 판단 프로세스의 흐름도 재설계 (BPR)\n・AppSheet API를 활용한 데이터 연동 기반 구축\n・회답률 향상을 위한 UX 개선 (사진 카드 UI)',
-                    problem: '창고 내 「소유자 불명품」 확인 작업에서, 문자 리스트만으로는 판별이 어려워 회답률이 저조. 독촉이나 폐기 관리에 막대한 공수가 소요됨.',
-                    solution: 'GAS×Tailwind 기반 웹 앱으로 물품을 사진 카드화. AppSheet 연동으로 열람부터 폐기 지시까지 원스톱으로 완결시켜, 재고조사 기간을 반으로 줄임.',
-                    voice: '「사진으로 목록이 표시되어, 한눈에 판별할 수 있게 되었습니다. 앱 연동으로 회답도 원활해져 재고조사가 대폭 편해졌습니다.」 (현장 스태프)'
-                }
-            },
-            // Project 3 (NEW - Python Reservation System)
-            'project-3': {
-                tag: 'Web App / Automation',
-                link: 'http://jeonggeunpark.pythonanywhere.com',
-                stack: ['Python', 'Flask', 'SQLite', 'FullCalendar', 'APScheduler'],
-                images: ['https://i.postimg.cc/4d1hm7ry/yeyagsiseutem.png'], 
-                ja: {
-                    title: '社内備品・施設予約システム (Reservation App)',
-                    approach: '・Flaskによる軽量かつ高速なWebアプリケーション開発\n・FullCalendarライブラリを用いた直感的なUI設計\n・APSchedulerによる「予約自動キャンセル」機能の実装',
-                    problem: '台車や確認スペースの予約が紙やExcelで行われており、重複予約や「予約したのに使われない（No Show）」問題が多発。物理的な移動による確認の手間も課題だった。',
-                    solution: 'Python(Flask)で独自の予約システムを構築。スマホからリアルタイムで空き状況が確認可能になり、重複をシステムで防止。開始10分経過で自動キャンセルするロジックで稼働率を最大化した。',
-                    voice: '「わざわざ現場に行かなくても空き状況がわかるので助かっています。自動キャンセル機能のおかげで、予約の空き待ちストレスが解消されました。」'
-                },
-                ko: {
-                    title: '사내 설비・비품 예약 시스템 (Reservation App)',
-                    approach: '・Flask를 활용한 경량 고속 웹 애플리케이션 개발\n・FullCalendar 라이브러리를 이용한 직관적인 UI 설계\n・APScheduler를 통한 「예약 자동 취소」 기능 구현',
-                    problem: '대차나 확인 공간의 예약이 종이나 Excel로 이루어져, 중복 예약이나 「예약하고 쓰지 않는(No Show)」 문제가 다발. 물리적인 이동에 의한 확인 수고도 과제였음.',
-                    solution: 'Python(Flask)으로 독자적인 예약 시스템을 구축. 스마트폰으로 실시간 공석 확인이 가능해져 중복을 시스템으로 방지. 개시 10분 경과 시 자동 취소하는 로직으로 가동률을 최대화함.',
-                    voice: '「일일이 현장에 가지 않아도 공석 상황을 알 수 있어 도움이 됩니다. 자동 취소 기능 덕분에 예약 대기 스트레스가 해소되었습니다.」'
-                }
-            },
-            // Project 4 (Was Project 3 - Dashboard)
-            'project-4': {
-                tag: 'KPI Dashboard',
-                link: 'https://script.google.com/macros/s/AKfycbyhbiYNWJ3noPU2Ztxh2BSwuHXSSLA8Ne6C5vHRcHrGKNIaOY2OaQgg5oErAQgk5HnX/exec',
-                stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'],
-                images: ['https://i.postimg.cc/8Ct9hXzt/bogwangihan.png', 'https://i.postimg.cc/2yPmvkxB/diteil.png', 'https://i.postimg.cc/0yvjHnpy/diteil2.png'],
-                ja: {
-                    title: '保管期限管理ダッシュボード・自動督促',
-                    approach: '・重要KPI(滞留期間・未処理数)の定義と可視化設計\n・各部門長へのダッシュボード活用トレーニング\n・自動督促ロジックの実装による業務負荷軽減',
-                    problem: '入荷予定のない不明品が散乱。各担当者がバラバラのExcelで管理しており、検索と持ち主特定に時間がかかっていた。',
-                    solution: '期限超過状況を可視化するダッシュボードを開発。「未処理数ランキング」で競争意識を醸成し、放置期間の長い順に表示させるロジックで回転率を改善。',
-                    voice: '「ダッシュボードでの可視化効果は絶大でした。各部署が自主的に整理に動き出し、倉庫スペースが有効活用できるようになりました。」（センター長）'
-                },
-                ko: {
-                    title: '보관 기한 관리 대시보드・자동 독촉',
-                    approach: '・중요 KPI(체류 기간・미처리 수)의 정의 및 시각화 설계\n・각 부문장에 대한 대시보드 활용 트레이닝\n・자동 독촉 로직 구현을 통한 업무 부하 경감',
-                    problem: '입하 예정이 없는 불명품이 산재. 각 담당자가 제각각 Excel로 관리하고 있어, 검색과 주인 특정에 시간이 걸림.',
-                    solution: '기한 초과 상황을 시각화하는 대시보드 개발. 「미처리 수 랭킹」으로 경쟁 의식을 조성하고, 방치 기간이 긴 순서대로 표시하는 로직으로 회전율 개선.',
-                    voice: '「대시보드를 통한 시각화 효과는 절대적이었습니다. 각 부서가 자발적으로 정리에 나서, 창고 공간을 유효하게 활용할 수 있게 되었습니다.」 (센터장)'
-                }
-            },
-            // Project 5 (Was Project 4 - Gamification)
-            'project-5': {
-                tag: 'Gamification & Dashboard',
-                link: 'https://script.google.com/macros/s/AKfycbwLrS2DYe3ltTYX7ftEnJrLxxAa7DJHVT4hmTcFrSdhlUHbRTqsMlm-E4j0AHj91Nrj/exec',
-                stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA'],
-                images: ['https://i.postimg.cc/9XbfSCNT/hwamyeon-kaebcheo-2026-01-12-225809.png', 'https://i.postimg.cc/KjRCJPHn/hwamyeon-kaebcheo-2026-01-12-230036.png'],
-                ja: {
-                    title: '改善提案・ポイント管理ボード',
-                    approach: '・組織活性化のためのゲーミフィケーション要素設計\n・ランキングロジックの構築とフィードバックループ設計\n・経営層向けの成果報告レポート自動化',
-                    problem: '現場の改善活動がマンネリ化し、提案数が減少。Excel管理では個人の貢献度が見えにくく、評価につながらない課題があった。',
-                    solution: '個人の獲得ポイントと提案件数をランキング表示するダッシュボードを構築。「ゲーミフィケーション」要素で競争心を刺激し、提案数を倍増させた。',
-                    voice: '「順位が見えることでゲーム感覚で取り組めるようになり、若手からの提案が増えました。組織活性化に繋がっています。」（部門長）'
-                },
-                ko: {
-                    title: '개선 제안・포인트 관리 보드',
-                    approach: '・조직 활성화를 위한 게이미피케이션 요소 설계\n・랭킹 로직 구축 및 피드백 루프 설계\n・경영층 대상 성과 보고 리포트 자동화',
-                    problem: '현장의 개선 활동이 매너리즘에 빠져 제안 수 감소. Excel 관리로는 개인의 공헌도가 잘 보이지 않아 평가로 이어지지 않는 과제가 있었음.',
-                    solution: '개인 획득 포인트와 제안 건수를 랭킹으로 표시하는 대시보드 구축. 「게이미피케이션」 요소로 경쟁심을 자극하여 제안 수를 2배로 증가시킴.',
-                    voice: '「순위가 보임으로써 게임 감각으로 임할 수 있게 되어, 젊은 직원들의 제안이 늘었습니다. 조직 활성화로 이어지고 있습니다.」 (부문장)'
-                }
-            }
+            'project-1': { tag: 'Mobile Solution', link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec', stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'], images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'] },
+            'project-2': { tag: 'Process Automation', link: 'https://script.google.com/macros/s/AKfycbwHWgT8mFfTuD1Zk2UGYZz_gK6vzpkWPQyuqIDzDF4oyZFxnDerLRJO5S-AXz8TMVn1Jg/exec', stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Automation'], images: ['https://i.postimg.cc/MGcC02vn/damdangja-bulmyeong.png', 'https://i.postimg.cc/SNNt7FPk/damdangja-bulmyeong2.png'] },
+            'project-3': { tag: 'Web App / Automation', link: 'https://jeonggeunpark.pythonanywhere.com', stack: ['Python', 'Flask', 'SQLite', 'FullCalendar', 'APScheduler'], images: ['https://i.postimg.cc/4d1hm7ry/yeyagsiseutem.png'] },
+            'project-4': { tag: 'KPI Dashboard', link: 'https://script.google.com/macros/s/AKfycbyhbiYNWJ3noPU2Ztxh2BSwuHXSSLA8Ne6C5vHRcHrGKNIaOY2OaQgg5oErAQgk5HnX/exec', stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'], images: ['https://i.postimg.cc/8Ct9hXzt/bogwangihan.png', 'https://i.postimg.cc/2yPmvkxB/diteil.png', 'https://i.postimg.cc/0yvjHnpy/diteil2.png'] },
+            'project-5': { tag: 'Gamification & Dashboard', link: 'https://script.google.com/macros/s/AKfycbwLrS2DYe3ltTYX7ftEnJrLxxAa7DJHVT4hmTcFrSdhlUHbRTqsMlm-E4j0AHj91Nrj/exec', stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA'], images: ['https://i.postimg.cc/9XbfSCNT/hwamyeon-kaebcheo-2026-01-12-225809.png', 'https://i.postimg.cc/KjRCJPHn/hwamyeon-kaebcheo-2026-01-12-230036.png'] }
         };
 
         let currentImages = [];
@@ -907,8 +810,9 @@
             if (!project) return;
             history.pushState(null, null, `#${projectId}`);
 
-            // Localize Modal Content based on currentLang
-            const content = project[currentLang];
+            // Get localized text from the translations object
+            const projectKey = projectId.replace('-', ''); // project-1 -> project1
+            const content = translations[currentLang][projectKey];
             
             document.getElementById('modal-tag').textContent = project.tag;
             document.getElementById('modal-title').textContent = content.title;
@@ -929,7 +833,6 @@
                 linkBtn.classList.add('hidden');
                 linkBtn.classList.remove('flex');
                 noLinkMsg.classList.remove('hidden');
-                lucide.createIcons();
             }
 
             const stackContainer = document.getElementById('modal-stack');
@@ -968,32 +871,24 @@
             }, 300);
         }
 
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) closeModal();
-        });
+        modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) closeModal(); });
 
         function renderCarousel() {
             const container = document.getElementById('carousel-container');
             const indicators = document.getElementById('carousel-indicators');
             container.innerHTML = '';
             indicators.innerHTML = '';
-
             if (currentImages.length === 0) {
                 container.innerHTML = '<div class="w-full h-full flex items-center justify-center text-slate-400">No Image</div>';
                 return;
             }
-
             currentImages.forEach((src, index) => {
                 const img = document.createElement('img');
                 img.src = src;
-                // Changed object-cover to object-contain to prevent cropping on wider screens
+                img.loading = "lazy";
                 img.className = `slide-image absolute inset-0 w-full h-full object-contain ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
                 container.appendChild(img);
-
                 const dot = document.createElement('button');
                 dot.className = `w-2 h-2 rounded-full transition-all shadow-sm ${index === 0 ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'}`;
                 dot.onclick = (e) => { e.stopPropagation(); goToSlide(index); };
@@ -1010,30 +905,90 @@
             const images = document.querySelectorAll('.slide-image');
             const dots = document.getElementById('carousel-indicators').children;
             if (images.length === 0) return;
-
             images[currentIndex].classList.remove('opacity-100');
             images[currentIndex].classList.add('opacity-0');
             images[index].classList.remove('opacity-0');
             images[index].classList.add('opacity-100');
-
             if(dots[currentIndex]) dots[currentIndex].className = 'w-2 h-2 rounded-full transition-all shadow-sm bg-white/50 hover:bg-white/80';
             if(dots[index]) dots[index].className = 'w-2 h-2 rounded-full transition-all shadow-sm bg-white scale-125';
-
             currentIndex = index;
         }
 
-        function reveal() {
+        // --- Animations (Reveal & Scroll Spy & Progress) ---
+        function onScroll() {
+            // Reveal
             var reveals = document.querySelectorAll(".reveal");
+            var windowHeight = window.innerHeight;
             for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 50) {
-                    reveals[i].classList.add("active");
+                if (elementTop < windowHeight - 50) reveals[i].classList.add("active");
+            }
+            
+            // Scroll Progress
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+
+            // Scroll Spy for Nav
+            const sections = ['home', 'projects', 'experience'];
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const sectionTop = element.offsetTop;
+                    if (scrollY >= sectionTop - 200) {
+                        current = section;
+                    }
                 }
+            });
+
+            navItems.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) {
+                    a.classList.add('active');
+                }
+            });
+            if(scrollY < 100) { // Top
+                 navItems.forEach(a => a.classList.remove('active'));
+                 navItems[0].classList.add('active');
             }
         }
-        window.addEventListener("scroll", reveal);
-        reveal();
+        window.addEventListener("scroll", onScroll);
+        onScroll(); // Trigger once
+
+        // --- Mobile Swipe ---
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const carouselContainer = document.getElementById('carousel-container');
+        carouselContainer.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+        carouselContainer.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, {passive: true});
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) moveCarousel(1);
+            if (touchEndX > touchStartX + 50) moveCarousel(-1);
+        }
+
+        // --- 3D Tilt Effect Logic ---
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
+                const rotateY = ((x - centerX) / centerX) * 5;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+
     </script>
 </body>
 </html>
