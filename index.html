@@ -32,7 +32,7 @@
 
     <script>
         tailwind.config = {
-            darkMode: 'class', // Enable Class-based Dark Mode
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -55,18 +55,12 @@
                         'soft': '0 4px 30px rgba(0, 0, 0, 0.03)',
                         'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
                         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-                        'neon': '0 0 10px rgba(14, 165, 233, 0.5), 0 0 20px rgba(14, 165, 233, 0.3)',
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'cursor': 'cursor .75s step-end infinite',
                         'blob': 'blob 7s infinite',
                     },
                     keyframes: {
-                        cursor: {
-                            '0%, 100%': { borderColor: 'transparent' },
-                            '50%': { borderColor: '#0ea5e9' },
-                        },
                         blob: {
                             "0%": { transform: "translate(0px, 0px) scale(1)" },
                             "33%": { transform: "translate(30px, -50px) scale(1.1)" },
@@ -80,29 +74,20 @@
     </script>
 
     <style>
-        /* Smooth Scrolling */
         html { scroll-behavior: smooth; }
-        
         body { 
             background-color: #f8fafc; 
             letter-spacing: 0.03em;
             font-feature-settings: "palt";
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        /* Dark Mode Transitions */
         .dark body { background-color: #0f172a; color: #e2e8f0; }
-        
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
         .dark ::-webkit-scrollbar-track { background: #1e293b; }
         .dark ::-webkit-scrollbar-thumb { background: #475569; }
 
-        /* Background Pattern */
         .bg-grid-pattern {
             background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
             background-size: 40px 40px;
@@ -112,7 +97,6 @@
             opacity: 0.1;
         }
 
-        /* Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -123,13 +107,11 @@
             transform: translateY(0);
         }
 
-        /* 3D Tilt Effect Base */
         .tilt-card {
             transform-style: preserve-3d;
             transition: transform 0.1s ease-out;
         }
         
-        /* Glassmorphism Navigation */
         .glass-nav {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
@@ -145,7 +127,6 @@
             background-color: rgba(14, 165, 233, 0.1);
         }
 
-        /* Toast Notification */
         #toast {
             visibility: hidden;
             min-width: 250px;
@@ -174,13 +155,9 @@
             color: #333;
         }
 
-        /* Language Switcher */
         .lang-active { font-weight: 800; border-bottom: 2px solid #0ea5e9; }
         .lang-inactive { color: #94a3b8; cursor: pointer; }
-        .lang-inactive:hover { color: #64748b; }
         .dark .lang-active { color: #fff; }
-        .dark .lang-inactive { color: #64748b; }
-        .dark .lang-inactive:hover { color: #94a3b8; }
     </style>
 </head>
 <body class="text-slate-800 dark:text-slate-100 pb-24 transition-colors duration-300">
@@ -229,7 +206,7 @@
 
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight min-h-[3.5rem] md:min-h-[4.5rem]">
                     Business <span class="text-slate-400">×</span> Technology<br>
-                    <span id="typewriter-text" class="text-transparent bg-clip-text bg-gradient-to-r from-pro-700 to-emerald-500 dark:from-pro-400 dark:to-emerald-400 font-medium text-3xl md:text-5xl typing-cursor"></span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pro-700 to-emerald-500 dark:from-pro-400 dark:to-emerald-400 font-medium text-3xl md:text-5xl" data-i18n="heroSubtitle"></span>
                 </h1>
                 <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed font-medium" data-i18n="heroDesc">
                     </p>
@@ -248,9 +225,9 @@
             </div>
         </header>
 
-         <div id="projects" class="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12 scroll-mt-24">
+        <div id="projects" class="grid grid-cols-1 md:grid-cols-2 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12 scroll-mt-24">
 
-            <div class="reveal tilt-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 dark:from-pro-900 dark:to-slate-900 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group" style="transition-delay: 100ms;">
+            <div class="reveal tilt-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 dark:from-pro-900 dark:to-slate-900 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute -right-6 -bottom-6 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform duration-500">
                     <i data-lucide="bar-chart-4" class="w-32 h-32"></i>
                 </div>
@@ -278,57 +255,57 @@
                 </div>
             </div>
 
-            <div class="reveal tilt-card col-span-1 md:col-span-3 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-center relative overflow-hidden" style="transition-delay: 200ms;">
+            <div class="reveal tilt-card col-span-1 md:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-center relative overflow-hidden">
                 <div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-slate-50 to-transparent dark:from-slate-700/50 opacity-50"></div>
-                <div class="relative z-10 max-w-3xl pointer-events-none">
+                <div class="relative z-10 pointer-events-none">
                     <div class="inline-flex items-center gap-2 text-pro-600 dark:text-pro-400 font-bold mb-3">
                         <i data-lucide="user-check" class="w-5 h-5"></i>
                         <span class="uppercase text-xs tracking-wider" data-i18n="whyMeLabel">Why Me?</span>
                     </div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-snug" data-i18n="whyMeTitle">
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 leading-snug" data-i18n="whyMeTitle">
                         「開発だけ」の人材ではありません。
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed" data-i18n="whyMeDesc">...</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed" data-i18n="whyMeDesc">...</p>
                 </div>
             </div>
 
-            <div class="reveal tilt-card col-span-1 md:col-span-4 bg-slate-900 dark:bg-black rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft dark:border dark:border-slate-800" style="transition-delay: 300ms;">
+            <div class="reveal tilt-card col-span-1 md:col-span-2 bg-slate-900 dark:bg-black rounded-3xl p-6 md:px-8 text-slate-300 shadow-soft dark:border dark:border-slate-800">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                     <h3 class="text-white font-bold text-lg flex items-center gap-2 shrink-0 border-b md:border-b-0 md:border-r border-slate-700 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
                         <i data-lucide="layers" class="w-5 h-5 text-pro-400"></i>
                         <span data-i18n="skillsTitle">Skills & Tools</span>
                     </h3>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full pointer-events-none">
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-emerald-400 mb-1"><i data-lucide="smartphone" class="w-4 h-4"></i><span class="font-bold text-sm">AppSheet</span></div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill1Desc">Gold相当 / Advanced UI</span>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full pointer-events-none">
+                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-emerald-400 mb-1"><i data-lucide="smartphone" class="w-3 h-3"></i><span class="font-bold text-xs">AppSheet</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill1Desc">Gold相当 / UI</span>
                         </div>
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-blue-400 mb-1"><i data-lucide="code-2" class="w-4 h-4"></i><span class="font-bold text-sm">GAS / JS</span></div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill2Desc">API連携 / SPA開発</span>
+                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-blue-400 mb-1"><i data-lucide="code-2" class="w-3 h-3"></i><span class="font-bold text-xs">GAS / JS</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill2Desc">API連携 / SPA</span>
                         </div>
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="bar-chart-2" class="w-4 h-4"></i><span class="font-bold text-sm">Data Viz</span></div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill3Desc">Looker Studio / G-Sheets</span>
+                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="bar-chart-2" class="w-3 h-3"></i><span class="font-bold text-xs">Data Viz</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill3Desc">Looker / Sheets</span>
                         </div>
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-rose-400 mb-1"><i data-lucide="package" class="w-4 h-4"></i><span class="font-bold text-sm">Logistics</span></div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill4Desc">倉庫運営 / 在庫管理</span>
+                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-rose-400 mb-1"><i data-lucide="package" class="w-3 h-3"></i><span class="font-bold text-xs">Logistics</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill4Desc">倉庫運営 / 在庫</span>
                         </div>
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-purple-400 mb-1"><i data-lucide="sparkles" class="w-4 h-4"></i><span class="font-bold text-sm">Gen-AI / LLM</span></div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill5Desc">Prompt Engineering</span>
+                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-purple-400 mb-1"><i data-lucide="sparkles" class="w-3 h-3"></i><span class="font-bold text-xs">Gen-AI</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill5Desc">Prompt Eng.</span>
                         </div>
-                        <div class="group p-3 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-yellow-400 mb-1"><i data-lucide="server" class="w-4 h-4"></i><span class="font-bold text-sm">Python / Flask</span></div>
-                            <span class="text-xs text-slate-400 block" data-i18n="skill6Desc">Web App / Backend</span>
+                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-yellow-400 mb-1"><i data-lucide="server" class="w-3 h-3"></i><span class="font-bold text-xs">Python</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill6Desc">Flask / Backend</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-span-1 md:col-span-4 mt-8 mb-2 flex items-end justify-between border-b border-slate-200 dark:border-slate-700 pb-4 reveal">
+            <div class="col-span-1 md:col-span-2 mt-8 mb-2 flex items-end justify-between border-b border-slate-200 dark:border-slate-700 pb-4 reveal">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white" data-i18n="portfolioTitle">Project Case Study</h2>
                     <p class="text-slate-500 dark:text-slate-400 text-sm mt-1" data-i18n="portfolioSubtitle">課題解決のプロセスと成果</p>
@@ -340,43 +317,56 @@
                 </div>
             </div>
 
-            <button onclick="openModal('project-1')" class="reveal tilt-card col-span-1 md:col-span-2 row-span-2 bg-white dark:bg-slate-800 rounded-3xl p-0 border-2 border-transparent hover:border-emerald-400/50 shadow-soft dark:shadow-none relative overflow-hidden text-left group focus:outline-none" style="transition-delay: 100ms;">
-                <div class="absolute inset-0 z-0">
-                    <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent"></div>
+            <button onclick="openModal('project-1')" class="reveal tilt-card col-span-1 md:col-span-2 bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border-2 border-transparent hover:border-emerald-400/50 shadow-soft dark:shadow-none flex flex-col md:flex-row group focus:outline-none h-full min-h-[280px]" style="transition-delay: 100ms;">
+                <div class="relative w-full md:w-1/2 h-48 md:h-auto overflow-hidden">
+                    <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors"></div>
+                    <div class="absolute top-4 left-4 z-20">
+                        <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">廃棄ゼロ化</span>
+                    </div>
                 </div>
-                <div class="absolute top-4 right-4 z-20">
-                    <span class="relative inline-flex">
-                        <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40 animate-pulse-slow"></span>
-                        <span class="relative bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">廃棄ゼロ化</span>
-                    </span>
-                </div>
-                <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
-                    <div class="flex items-center gap-2 mb-2 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center text-left bg-slate-900">
+                    <div class="flex items-center gap-2 mb-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
                         <i data-lucide="image-plus" class="w-4 h-4"></i>
                         <span data-i18n="p1Category">現場DX・UXデザイン</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
-                    <p class="text-slate-300 text-sm mb-4 max-w-lg leading-relaxed line-clamp-2" data-i18n="p1Desc">...</p>
-                    <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed line-clamp-3" data-i18n="p1Desc">...</p>
+                    <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
                         <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
                 </div>
             </button>
 
-            <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 md:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-rose-200 gap-4" style="transition-delay: 200ms;">
-                <div class="md:w-3/5">
-                    <div class="flex items-center gap-3 mb-3">
+            <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-rose-200 h-full min-h-[200px]" style="transition-delay: 200ms;">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-500 dark:text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i data-lucide="bot" class="w-5 h-5"></i></div>
-                        <div><span class="text-xs font-medium text-slate-400 block">Process Automation</span><span data-i18n="p2Cat" class="text-xs text-rose-500 dark:text-rose-400 font-bold uppercase">業務効率化</span></div>
+                        <span data-i18n="p2Cat" class="text-xs font-bold text-rose-500 uppercase">業務効率化</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n="p2Title">不明品管理プラットフォーム</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p2Desc">...</p>
                 </div>
-                <div class="md:w-2/5 flex flex-row md:flex-col justify-between items-end h-full"><i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 dark:text-slate-600 group-hover:text-rose-500 transition-colors"></i></div>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-rose-500 transition-colors"></i>
+                </div>
             </button>
 
-            <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 md:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200" style="transition-delay: 300ms;">
+             <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-orange-200 h-full min-h-[200px]" style="transition-delay: 250ms;">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
+                        <span data-i18n="p5Cat" class="text-xs font-bold text-orange-500 uppercase">組織開発</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p5Desc">...</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors"></i>
+                </div>
+            </button>
+
+            <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200 h-full min-h-[200px]" style="transition-delay: 300ms;">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
@@ -388,7 +378,7 @@
                 <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
             </button>
 
-            <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 md:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200" style="transition-delay: 400ms;">
+            <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200 h-full min-h-[200px]" style="transition-delay: 400ms;">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
@@ -398,18 +388,6 @@
                     <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
-            </button>
-
-            <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col md:flex-row justify-between md:items-center text-left group hover:border-orange-200 gap-4" style="transition-delay: 500ms;">
-                <div class="md:w-4/5">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
-                        <div><span class="text-xs font-medium text-slate-400 block">Gamification</span><span data-i18n="p5Cat" class="text-xs text-orange-500 dark:text-orange-400 font-bold uppercase">組織開発</span></div>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="p5Desc">...</p>
-                </div>
-                <div class="md:w-1/5 flex flex-row md:flex-col justify-end items-end h-full"><i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors"></i></div>
             </button>
 
         </div>
@@ -603,8 +581,7 @@
             ja: {
                 badge: "Career Portfolio",
                 visaStatus: "就労制限なし (Visa Verified)",
-                // Typewriter Text (Array)
-                heroTypewriter: ["現場と経営をつなぐ「通訳者」", "ROIを最大化するDX人材"],
+                heroSubtitle: "ROIを最大化するDX人材", // Static Subtitle
                 heroDesc: "システム開発における最大の失敗は「現場で使われないこと」です。<br>私は<span class='text-slate-800 dark:text-slate-200 font-bold'>業務プロセスの解像度</span>と<span class='text-slate-800 dark:text-slate-200 font-bold'>エンジニアリング</span>の両輪で、<span class='text-pro-700 dark:text-pro-400 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>投資対効果(ROI)の高いDX</span>を実現する実利追求型コンサルタントです。",
                 ctaButton: "面談・連絡先をコピー",
                 impactLabel: "Value Delivered (提供価値)",
@@ -687,7 +664,7 @@
             ko: {
                 badge: "Career Portfolio",
                 visaStatus: "비자 문제 없음 (Visa Verified)",
-                heroTypewriter: ["현장과 경영을 잇는「통역사」", "ROI를 극대화하는 DX 인재"],
+                heroSubtitle: "ROI를 극대화하는 DX 인재", // Static Subtitle
                 heroDesc: "시스템 개발의 최대 실패는 '현장에서 쓰이지 않는 것'입니다.<br>저는 <span class='text-slate-800 dark:text-slate-200 font-bold'>업무 프로세스의 해상도</span>와 <span class='text-slate-800 dark:text-slate-200 font-bold'>엔지니어링</span>의 양륜으로, <span class='text-pro-700 dark:text-pro-400 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>투자대비효과(ROI) 높은 DX</span>를 실현하는 실리추구형 컨설턴트입니다.",
                 ctaButton: "면담 요청 · 연락처 복사",
                 impactLabel: "Value Delivered (제공 가치)",
@@ -772,7 +749,7 @@
         // --- Init ---
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage(currentLang);
-            initTypewriter();
+            // initTypewriter removed
         });
 
         function setLanguage(lang) {
@@ -798,46 +775,6 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
-
-            // Re-init Typewriter with new lang
-            initTypewriter();
-        }
-
-        // --- Typewriter Effect ---
-        let typeInterval;
-        function initTypewriter() {
-            const textElement = document.getElementById('typewriter-text');
-            const texts = translations[currentLang].heroTypewriter; 
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            
-            if (typeInterval) clearInterval(typeInterval);
-
-            function type() {
-                const currentText = texts[textIndex];
-                
-                if (isDeleting) {
-                    textElement.textContent = currentText.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    textElement.textContent = currentText.substring(0, charIndex + 1);
-                    charIndex++;
-                }
-
-                if (!isDeleting && charIndex === currentText.length) {
-                    isDeleting = true;
-                    setTimeout(type, 2000); 
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    setTimeout(type, 500); 
-                } else {
-                    const speed = isDeleting ? 50 : 100;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
         }
 
         // --- Toast Notification Logic ---
