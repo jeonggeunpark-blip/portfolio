@@ -393,96 +393,130 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6">
-                <button onclick="openModal('project-1')" class="reveal tilt-card col-span-1 md:col-span-2 bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border-2 border-transparent hover:border-emerald-400/50 shadow-soft dark:shadow-none flex flex-col md:flex-row group focus:outline-none h-full min-h-[280px]" style="transition-delay: 100ms;">
-                    <div class="relative w-full md:w-1/2 h-48 md:h-auto overflow-hidden">
-                        <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors"></div>
-                        <div class="absolute top-4 left-4 z-20">
-                            <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">廃棄ゼロ化</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <button onclick="openModal('project-1')" class="reveal tilt-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-lg transition-all text-left flex flex-col group focus:outline-none w-full h-full" style="transition-delay: 50ms;">
+                    <div class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-900 shrink-0">
+                        <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Project 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/90 dark:bg-slate-800/90 rounded-full shadow backdrop-blur-sm text-pro-600 dark:text-pro-400">
+                            <i data-lucide="image-plus" class="w-4 h-4"></i>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center text-left bg-slate-900">
-                        <div class="flex items-center gap-2 mb-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                            <i data-lucide="image-plus" class="w-4 h-4"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2 text-pro-600 dark:text-pro-400 text-xs font-bold uppercase tracking-wider">
                             <span data-i18n="p1Category">現場DX・UXデザイン</span>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
-                        <p class="text-slate-300 text-sm mb-6 leading-relaxed line-clamp-3" data-i18n="p1Desc">...</p>
-                        <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
-                            <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-pro-600 dark:group-hover:text-pro-400 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4" data-i18n="p1Desc">...</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end text-slate-400 group-hover:text-pro-500 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </button>
 
-                <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-rose-200 h-full min-h-[200px]" style="transition-delay: 150ms;">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-500 dark:text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i data-lucide="bot" class="w-5 h-5"></i></div>
-                            <span data-i18n="p2Cat" class="text-xs font-bold text-rose-500 uppercase">業務効率化</span>
+                <button onclick="openModal('project-2')" class="reveal tilt-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-lg transition-all text-left flex flex-col group focus:outline-none w-full h-full" style="transition-delay: 100ms;">
+                    <div class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-900 shrink-0">
+                        <img src="https://i.postimg.cc/MGcC02vn/damdangja-bulmyeong.png" loading="lazy" alt="Project 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/90 dark:bg-slate-800/90 rounded-full shadow backdrop-blur-sm text-rose-500">
+                            <i data-lucide="bot" class="w-4 h-4"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n="p2Title">不明品管理プラットフォーム</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p2Desc">...</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
-                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-rose-500 transition-colors"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2 text-rose-500 text-xs font-bold uppercase tracking-wider">
+                            <span data-i18n="p2Cat">業務効率化</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n="p2Title">不明品管理プラットフォーム</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4" data-i18n="p2Desc">...</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end text-slate-400 group-hover:text-rose-500 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
                     </div>
                 </button>
 
-                <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200 h-full min-h-[200px]" style="transition-delay: 200ms;">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
-                            <span class="text-xs font-medium text-slate-400">KPI Visualization</span>
+                <button onclick="openModal('project-4')" class="reveal tilt-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-lg transition-all text-left flex flex-col group focus:outline-none w-full h-full" style="transition-delay: 150ms;">
+                    <div class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-900 shrink-0">
+                        <img src="https://i.postimg.cc/8Ct9hXzt/bogwangihan.png" loading="lazy" alt="Project 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/90 dark:bg-slate-800/90 rounded-full shadow backdrop-blur-sm text-amber-500">
+                            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" data-i18n="p4Title">長期滞留在庫・督促ダッシュボード</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2 text-amber-500 text-xs font-bold uppercase tracking-wider">
+                            <span data-i18n="p4Cat">データ可視化</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" data-i18n="p4Title">長期滞留在庫・督促ダッシュボード</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4" data-i18n="p4Desc">...</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end text-slate-400 group-hover:text-amber-500 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
                 </button>
 
-                <button onclick="openModal('project-6')" class="reveal tilt-card col-span-1 md:col-span-2 bg-gradient-to-br from-cyan-600 to-blue-800 dark:from-cyan-900 dark:to-slate-900 rounded-3xl p-6 md:p-8 text-white shadow-lg shadow-cyan-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group h-full min-h-[240px]" style="transition-delay: 250ms;">
-                    <div class="absolute right-0 top-0 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="layout-template" class="w-48 h-48 -mr-10 -mt-10"></i>
-                    </div>
-                    <div class="relative z-10 text-left w-full md:w-2/3">
-                        <div class="flex items-center gap-2 mb-3 text-cyan-200 text-xs font-bold uppercase tracking-wider">
+                <button onclick="openModal('project-6')" class="reveal tilt-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-lg transition-all text-left flex flex-col group focus:outline-none w-full h-full" style="transition-delay: 200ms;">
+                    <div class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-900 shrink-0">
+                        <div class="w-full h-full bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                            <i data-lucide="layout-template" class="w-16 h-16 text-white/30"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/90 dark:bg-slate-800/90 rounded-full shadow backdrop-blur-sm text-cyan-600 dark:text-cyan-400">
                             <i data-lucide="monitor-smartphone" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
                             <span data-i18n="p6Cat">フロントエンド・UX企画</span>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors" data-i18n="p6Title">IT資産管理・分析ダッシュボード</h3>
-                        <p class="text-cyan-50 text-sm mb-6 leading-relaxed line-clamp-2 md:line-clamp-none" data-i18n="p6Desc">...</p>
-                        <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
-                            <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors" data-i18n="p6Title">IT資産管理・分析ダッシュボード</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4" data-i18n="p6Desc">...</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end text-slate-400 group-hover:text-cyan-500 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </button>
 
-                <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200 h-full min-h-[200px]" style="transition-delay: 300ms;">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
-                            <span class="text-xs font-medium text-slate-400">Python / Flask</span>
+                <button onclick="openModal('project-3')" class="reveal tilt-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-lg transition-all text-left flex flex-col group focus:outline-none w-full h-full" style="transition-delay: 250ms;">
+                    <div class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-900 shrink-0">
+                        <img src="https://i.postimg.cc/4d1hm7ry/yeyagsiseutem.png" loading="lazy" alt="Project 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/90 dark:bg-slate-800/90 rounded-full shadow backdrop-blur-sm text-indigo-500">
+                            <i data-lucide="calendar-clock" class="w-4 h-4"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="p3Title">社内備品・施設予約システム</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p3Desc">...</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2 text-indigo-500 text-xs font-bold uppercase tracking-wider">
+                            <span data-i18n="p3Cat">Webアプリ開発</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="p3Title">社内備品・施設予約システム</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4" data-i18n="p3Desc">...</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end text-slate-400 group-hover:text-indigo-500 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
                 </button>
 
-                <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-orange-200 h-full min-h-[200px]" style="transition-delay: 350ms;">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
-                            <span data-i18n="p5Cat" class="text-xs font-bold text-orange-500 uppercase">組織開発</span>
+                <button onclick="openModal('project-5')" class="reveal tilt-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-lg transition-all text-left flex flex-col group focus:outline-none w-full h-full" style="transition-delay: 300ms;">
+                    <div class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-900 shrink-0">
+                        <img src="https://i.postimg.cc/9XbfSCNT/hwamyeon-kaebcheo-2026-01-12-225809.png" loading="lazy" alt="Project 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/90 dark:bg-slate-800/90 rounded-full shadow backdrop-blur-sm text-orange-500">
+                            <i data-lucide="trophy" class="w-4 h-4"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p5Desc">...</p>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
-                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
+                            <span data-i18n="p5Cat">組織開発</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4" data-i18n="p5Desc">...</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end text-slate-400 group-hover:text-orange-500 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
                     </div>
                 </button>
+
             </div>
         </section>
 
