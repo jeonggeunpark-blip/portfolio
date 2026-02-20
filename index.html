@@ -276,30 +276,34 @@
                         <span data-i18n="skillsTitle">Skills & Tools</span>
                     </h3>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full pointer-events-none">
-                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                    <div class="flex flex-wrap gap-3 w-full pointer-events-none">
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
                             <div class="flex items-center gap-2 text-emerald-400 mb-1"><i data-lucide="smartphone" class="w-3 h-3"></i><span class="font-bold text-xs">AppSheet</span></div>
                             <span class="text-[10px] text-slate-400 block" data-i18n="skill1Desc">Gold相当 / UI</span>
                         </div>
-                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
                             <div class="flex items-center gap-2 text-blue-400 mb-1"><i data-lucide="code-2" class="w-3 h-3"></i><span class="font-bold text-xs">GAS / JS</span></div>
                             <span class="text-[10px] text-slate-400 block" data-i18n="skill2Desc">API連携 / SPA</span>
                         </div>
-                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-cyan-400 mb-1"><i data-lucide="layout" class="w-3 h-3"></i><span class="font-bold text-xs">Frontend</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill7Desc">UI/UX・HTML/CSS</span>
+                        </div>
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
                             <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="bar-chart-2" class="w-3 h-3"></i><span class="font-bold text-xs">Data Viz</span></div>
                             <span class="text-[10px] text-slate-400 block" data-i18n="skill3Desc">Looker / Sheets</span>
                         </div>
-                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-rose-400 mb-1"><i data-lucide="package" class="w-3 h-3"></i><span class="font-bold text-xs">Logistics</span></div>
-                            <span class="text-[10px] text-slate-400 block" data-i18n="skill4Desc">倉庫運営 / 在庫</span>
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-yellow-400 mb-1"><i data-lucide="server" class="w-3 h-3"></i><span class="font-bold text-xs">Python</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill6Desc">Flask / Backend</span>
                         </div>
-                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
                             <div class="flex items-center gap-2 text-purple-400 mb-1"><i data-lucide="sparkles" class="w-3 h-3"></i><span class="font-bold text-xs">Gen-AI</span></div>
                             <span class="text-[10px] text-slate-400 block" data-i18n="skill5Desc">Prompt Eng.</span>
                         </div>
-                        <div class="group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
-                            <div class="flex items-center gap-2 text-yellow-400 mb-1"><i data-lucide="server" class="w-3 h-3"></i><span class="font-bold text-xs">Python</span></div>
-                            <span class="text-[10px] text-slate-400 block" data-i18n="skill6Desc">Flask / Backend</span>
+                        <div class="flex-grow md:w-[calc(33%-0.5rem)] lg:w-[calc(25%-0.5rem)] group p-2 rounded-xl bg-slate-800/50 border border-slate-700 dark:bg-slate-900/50">
+                            <div class="flex items-center gap-2 text-rose-400 mb-1"><i data-lucide="package" class="w-3 h-3"></i><span class="font-bold text-xs">Logistics</span></div>
+                            <span class="text-[10px] text-slate-400 block" data-i18n="skill4Desc">倉庫運営 / 在庫</span>
                         </div>
                     </div>
                 </div>
@@ -338,7 +342,7 @@
                 </div>
             </button>
 
-            <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-rose-200 h-full min-h-[200px]" style="transition-delay: 200ms;">
+            <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-rose-200 h-full min-h-[200px]" style="transition-delay: 150ms;">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-500 dark:text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i data-lucide="bot" class="w-5 h-5"></i></div>
@@ -352,7 +356,48 @@
                 </div>
             </button>
 
-             <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-orange-200 h-full min-h-[200px]" style="transition-delay: 250ms;">
+            <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200 h-full min-h-[200px]" style="transition-delay: 200ms;">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
+                        <span class="text-xs font-medium text-slate-400">KPI Visualization</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" data-i18n="p4Title">長期滞留在庫・督促ダッシュボード</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
+            </button>
+
+            <button onclick="openModal('project-6')" class="reveal tilt-card col-span-1 md:col-span-2 bg-gradient-to-br from-cyan-600 to-blue-800 dark:from-cyan-900 dark:to-slate-900 rounded-3xl p-6 md:p-8 text-white shadow-lg shadow-cyan-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group h-full min-h-[240px]" style="transition-delay: 250ms;">
+                <div class="absolute right-0 top-0 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                    <i data-lucide="layout-template" class="w-48 h-48 -mr-10 -mt-10"></i>
+                </div>
+                <div class="relative z-10 text-left w-full md:w-2/3">
+                    <div class="flex items-center gap-2 mb-3 text-cyan-200 text-xs font-bold uppercase tracking-wider">
+                        <i data-lucide="monitor-smartphone" class="w-4 h-4"></i>
+                        <span data-i18n="p6Cat">フロントエンド・UX企画</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors" data-i18n="p6Title">IT資産管理・分析ダッシュボード</h3>
+                    <p class="text-cyan-50 text-sm mb-6 leading-relaxed line-clamp-2 md:line-clamp-none" data-i18n="p6Desc">...</p>
+                    <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
+                        <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            </button>
+
+            <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200 h-full min-h-[200px]" style="transition-delay: 300ms;">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
+                        <span class="text-xs font-medium text-slate-400">Python / Flask</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="p3Title">社内備品・施設予約システム</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p3Desc">...</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
+            </button>
+
+            <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-orange-200 h-full min-h-[200px]" style="transition-delay: 350ms;">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
@@ -364,30 +409,6 @@
                 <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
                     <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors"></i>
                 </div>
-            </button>
-
-            <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200 h-full min-h-[200px]" style="transition-delay: 300ms;">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
-                        <span class="text-xs font-medium text-slate-400">Python / Flask</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="p3Title">社内備品・施設予約</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p3Desc">...</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
-            </button>
-
-            <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200 h-full min-h-[200px]" style="transition-delay: 400ms;">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
-                        <span class="text-xs font-medium text-slate-400">KPI Visualization</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" data-i18n="p4Title">長期滞留在庫・督促</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
             </button>
 
         </div>
@@ -560,7 +581,6 @@
         let currentLang = localStorage.getItem('userLang') || 'ja';
         let isDark = localStorage.getItem('theme') === 'dark';
 
-        // --- Dark Mode Init ---
         if (isDark) {
             document.documentElement.classList.add('dark');
         } else {
@@ -581,7 +601,7 @@
             ja: {
                 badge: "Career Portfolio",
                 visaStatus: "就労制限なし (Visa Verified)",
-                heroSubtitle: "ROIを最大化するDX人材", // Static Subtitle
+                heroSubtitle: "ROIを最大化するDX人材", 
                 heroDesc: "システム開発における最大の失敗は「現場で使われないこと」です。<br>私は<span class='text-slate-800 dark:text-slate-200 font-bold'>業務プロセスの解像度</span>と<span class='text-slate-800 dark:text-slate-200 font-bold'>エンジニアリング</span>の両輪で、<span class='text-pro-700 dark:text-pro-400 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>投資対効果(ROI)の高いDX</span>を実現する実利追求型コンサルタントです。",
                 ctaButton: "面談・連絡先をコピー",
                 impactLabel: "Value Delivered (提供価値)",
@@ -599,6 +619,7 @@
                 skill4Desc: "倉庫運営 / 在庫管理",
                 skill5Desc: "Prompt Engineering / AI Coding",
                 skill6Desc: "Web App / Backend",
+                skill7Desc: "UI/UX・HTML/CSS/JS",
 
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "課題解決のプロセスと成果 (Portfolio)",
@@ -624,6 +645,10 @@
                 p5Cat: "組織開発",
                 p5Title: "カイゼン提案・活性化ボード",
                 p5Desc: "ゲーミフィケーションによる組織文化変革の実践。提案数を倍増させた実績。",
+
+                p6Cat: "フロントエンド・UX企画",
+                p6Title: "IT資産管理・分析ダッシュボード",
+                p6Desc: "管理者の手作業を削減し、データに基づく意思決定を支援する業務改革UI/UXデモ。",
 
                 expTitle: "職務経歴 (Professional Experience)",
                 exp1Company: "株式会社LIXIL (業務改善G)",
@@ -659,12 +684,13 @@
                 project2: { title: '担当者不明品・統合管理プラットフォーム', approach: '・廃棄判断プロセスのフローチャート再設計(BPR)\n・AppSheet APIを活用したデータ連携基盤の構築\n・回答率向上のためのUX改善(写真カードUI)', problem: '倉庫内の「所有者不明品」の確認作業において、文字リストだけでは判別が困難で回答率が低迷。督促や廃棄管理に多大な工数を要していた。', solution: 'GAS×Tailwind製Webアプリで物品を写真付きカード化。AppSheet連携で閲覧から廃棄指示までをワンストップで完結させ、棚卸し期間を半減させた。', voice: '「写真で一覧表示されるため、一瞬で判別できるようになりました。アプリ連携で回答もスムーズになり、棚卸しが大幅に楽になりました。」（現場スタッフ）' },
                 project3: { title: '社内備品・施設予約システム (Reservation App)', approach: '・Flaskによる軽量かつ高速なWebアプリケーション開発\n・FullCalendarライブラリを用いた直感的なUI設計\n・APSchedulerによる「予約自動キャンセル」機能の実装', problem: '台車や確認スペースの予約が紙やExcelで行われており、重複予約や「予約したのに使われない（No Show）」問題が多発。物理的な移動による確認の手間も課題だった。', solution: 'Python(Flask)で独自の予約システムを構築。スマホからリアルタイムで空き状況が確認可能になり、重複をシステムで防止。開始10分経過で自動キャンセルするロジックで稼働率を最大化した。', voice: '「わざわざ現場に行かなくても空き状況がわかるので助かっています。自動キャンセル機能のおかげで、予約の空き待ちストレスが解消されました。」' },
                 project4: { title: '保管期限管理ダッシュボード・自動督促', approach: '・重要KPI(滞留期間・未処理数)の定義と可視化設計\n・各部門長へのダッシュボード活用トレーニング\n・自動督促ロジックの実装による業務負荷軽減', problem: '入荷予定のない不明品が散乱。各担当者がバラバラのExcelで管理しており、検索と持ち主特定に時間がかかっていた。', solution: '期限超過状況を可視化するダッシュボードを開発。「未処理数ランキング」で競争意識を醸成し、放置期間の長い順に表示させるロジックで回転率を改善。', voice: '「ダッシュボードでの可視化効果は絶大でした。各部署が自主的に整理に動き出し、倉庫スペースが有効活用できるようになりました。」（センター長）' },
-                project5: { title: '改善提案・ポイント管理ボード', approach: '・組織活性化のためのゲーミフィケーション要素設計\n・ランキングロジックの構築とフィードバックループ設計\n・経営層向けの成果報告レポート自動化', problem: '現場の改善活動がマンネリ化し、提案数が減少。Excel管理では個人の貢献度が見えにくく、評価につながらない課題があった。', solution: '個人の獲得ポイントと提案件数をランキング表示するダッシュボードを構築。「ゲーミフィケーション」要素で競争心を刺激し、提案数を倍増させた。', voice: '「順位が見えることでゲーム感覚で取り組めるようになり、若手からの提案が増えました。組織活性化に繋がっています。」（部門長）' }
+                project5: { title: '改善提案・ポイント管理ボード', approach: '・組織活性化のためのゲーミフィケーション要素設計\n・ランキングロジックの構築とフィードバックループ設計\n・経営層向けの成果報告レポート自動化', problem: '現場の改善活動がマンネリ化し、提案数が減少。Excel管理では個人の貢献度が見えにくく、評価につながらない課題があった。', solution: '個人の獲得ポイントと提案件数をランキング表示するダッシュボードを構築。「ゲーミフィケーション」要素で競争心を刺激し、提案数を倍増させた。', voice: '「順位が見えることでゲーム感覚で取り組めるようになり、若手からの提案が増えました。組織活性化に繋がっています。」（部門長）' },
+                project6: { title: 'IT資産管理・分析ダッシュボード', approach: '・Chart.jsを活用した直感的なダッシュボード実装\n・インライン・ステータス編集によるCRUD体験の最適化\n・ユーザーの疲労を軽減するダークモードとCSS変数設計', problem: '既存のシステムはUIが古く、現場のIT担当者が直感的に操作できないため、ステータスの入力漏れやデータ更新の遅延が頻繁に発生していた。', solution: 'モダンなWebフロントエンド技術(HTML/CSS/JS)を用いて、一覧性の高い表と一括アップロード(Drag&Drop)機能を備えたプロトタイプを構築。', voice: '「とても直感的で使いやすいです。ダッシュボードで期限切れ資産がひと目で分かるため、管理の抜け漏れが防げそうです。」' }
             },
             ko: {
                 badge: "Career Portfolio",
                 visaStatus: "비자 문제 없음 (Visa Verified)",
-                heroSubtitle: "ROI를 극대화하는 DX 인재", // Static Subtitle
+                heroSubtitle: "ROI를 극대화하는 DX 인재", 
                 heroDesc: "시스템 개발의 최대 실패는 '현장에서 쓰이지 않는 것'입니다.<br>저는 <span class='text-slate-800 dark:text-slate-200 font-bold'>업무 프로세스의 해상도</span>와 <span class='text-slate-800 dark:text-slate-200 font-bold'>엔지니어링</span>의 양륜으로, <span class='text-pro-700 dark:text-pro-400 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>투자대비효과(ROI) 높은 DX</span>를 실현하는 실리추구형 컨설턴트입니다.",
                 ctaButton: "면담 요청 · 연락처 복사",
                 impactLabel: "Value Delivered (제공 가치)",
@@ -682,6 +708,7 @@
                 skill4Desc: "창고 운영 / 재고 관리",
                 skill5Desc: "Prompt Engineering / AI Coding",
                 skill6Desc: "Web App / Backend",
+                skill7Desc: "UI/UX・HTML/CSS/JS",
 
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "과제 해결 프로세스와 성과 (Portfolio)",
@@ -707,6 +734,10 @@
                 p5Cat: "조직 개발",
                 p5Title: "카이젠 제안・활성화 보드",
                 p5Desc: "게이미피케이션을 통한 조직 문화 변혁의 실천. 제안 건수를 2배로 증가시킨 실적.",
+
+                p6Cat: "프론트엔드・UX 기획",
+                p6Title: "IT 자산 관리・분석 대시보드",
+                p6Desc: "관리자의 수작업을 줄이고, 데이터 기반의 의사결정을 지원하는 업무 혁신 UI/UX 데모.",
 
                 expTitle: "직무 경력 (Professional Experience)",
                 exp1Company: "주식회사 LIXIL (업무개선G)",
@@ -742,21 +773,19 @@
                 project2: { title: '담당자 불명품・통합 관리 플랫폼', approach: '・폐기 판단 프로세스의 흐름도 재설계 (BPR)\n・AppSheet API를 활용한 데이터 연동 기반 구축\n・회답률 향상을 위한 UX 개선 (사진 카드 UI)', problem: '창고 내 「소유자 불명품」 확인 작업에서, 문자 리스트만으로는 판별이 어려워 회답률이 저조. 독촉이나 폐기 관리에 막대한 공수가 소요됨.', solution: 'GAS×Tailwind 기반 웹 앱으로 물품을 사진 카드화. AppSheet 연동으로 열람부터 폐기 지시까지 원스톱으로 완결시켜, 재고조사 기간을 반으로 줄임.', voice: '「사진으로 목록이 표시되어, 한눈에 판별할 수 있게 되었습니다. 앱 연동으로 회답도 원활해져 재고조사가 대폭 편해졌습니다.」 (현장 스태프)' },
                 project3: { title: '사내 설비・비품 예약 시스템 (Reservation App)', approach: '・Flask를 활용한 경량 고속 웹 애플리케이션 개발\n・FullCalendar 라이브러리를 이용한 직관적인 UI 설계\n・APScheduler를 통한 「예약 자동 취소」 기능 구현', problem: '대차나 확인 공간의 예약이 종이나 Excel로 이루어져, 중복 예약이나 「예약하고 쓰지 않는(No Show)」 문제가 다발. 물리적인 이동에 의한 확인 수고도 과제였음.', solution: 'Python(Flask)으로 독자적인 예약 시스템을 구축. 스마트폰으로 실시간 공석 확인이 가능해져 중복을 시스템으로 방지. 개시 10분 경과 시 자동 취소하는 로직으로 가동률을 최대화함.', voice: '「일일이 현장에 가지 않아도 공석 상황을 알 수 있어 도움이 됩니다. 자동 취소 기능 덕분에 예약 대기 스트레스가 해소되었습니다.」' },
                 project4: { title: '보관 기한 관리 대시보드・자동 독촉', approach: '・중요 KPI(체류 기간・미처리 수)의 정의 및 시각화 설계\n・각 부문장에 대한 대시보드 활용 트레이닝\n・자동 독촉 로직 구현을 통한 업무 부하 경감', problem: '입하 예정이 없는 불명품이 산재. 각 담당자가 제각각 Excel로 관리하고 있어, 검색과 주인 특정에 시간이 걸림.', solution: '기한 초과 상황을 시각화하는 대시보드 개발. 「미처리 수 랭킹」으로 경쟁 의식을 조성하고, 방치 기간이 긴 순서대로 표시하는 로직으로 회전율 개선.', voice: '「대시보드를 통한 시각화 효과는 절대적이었습니다. 각 부서가 자발적으로 정리에 나서, 창고 공간을 유효하게 활용할 수 있게 되었습니다.」 (센터장)' },
-                project5: { title: '개선 제안・포인트 관리 보드', approach: '・조직 활성화를 위한 게이미피케이션 요소 설계\n・랭킹 로직 구축 및 피드백 루프 설계\n・경영층 대상 성과 보고 리포트 자동화', problem: '현장의 개선 활동이 매너리즘에 빠져 제안 수 감소. Excel 관리로는 개인의 공헌도가 잘 보이지 않아 평가로 이어지지 않는 과제가 있었음.', solution: '개인 획득 포인트와 제안 건수를 랭킹으로 표시하는 대시보드 구축. 「게이미피케이션」 요소로 경쟁심을 자극하여 제안 수를 2배로 증가시킴.', voice: '「순위가 보임으로써 게임 감각으로 임할 수 있게 되어, 젊은 직원들의 제안이 늘었습니다. 조직 활성화로 이어지고 있습니다.」 (부문장)' }
+                project5: { title: '개선 제안・포인트 관리 보드', approach: '・조직 활성화를 위한 게이미피케이션 요소 설계\n・랭킹 로직 구축 및 피드백 루프 설계\n・경영층 대상 성과 보고 리포트 자동화', problem: '현장의 개선 활동이 매너리즘에 빠져 제안 수 감소. Excel 관리로는 개인의 공헌도가 잘 보이지 않아 평가로 이어지지 않는 과제가 있었음.', solution: '개인 획득 포인트와 제안 건수를 랭킹으로 표시하는 대시보드 구축. 「게이미피케이션」 요소로 경쟁심을 자극하여 제안 수를 2배로 증가시킴.', voice: '「순위가 보임으로써 게임 감각으로 임할 수 있게 되어, 젊은 직원들의 제안이 늘었습니다. 조직 활성화로 이어지고 있습니다.」 (부문장)' },
+                project6: { title: 'IT 자산 관리・분석 대시보드', approach: '・Chart.js를 활용한 실시간 시각화\n・인라인 상태 편집을 통한 CRUD 경험 최적화\n・사용자 피로를 줄이는 다크모드 및 CSS 변수 설계', problem: '기존 자산 관리 시스템은 UI가 낙후되어 현장 담당자가 직관적으로 조작하기 어려웠으며, 이로 인해 입력 누락 및 데이터 갱신 지연이 발생함.', solution: '모던 웹 프론트엔드 기술(HTML/CSS/JS)을 활용하여, 한눈에 파악하기 쉬운 대시보드와 일괄 업로드(Drag&Drop) 기능을 갖춘 프로토타입 구축.', voice: '「매우 직관적이고 사용하기 편합니다. 대시보드에서 기한이 만료된 자산을 한눈에 볼 수 있어 관리 누락을 방지할 수 있을 것 같습니다.」' }
             }
         };
 
-        // --- Init ---
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage(currentLang);
-            // initTypewriter removed
         });
 
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('userLang', lang);
             
-            // UI Switcher
             const btnJa = document.getElementById('btn-ja');
             const btnKo = document.getElementById('btn-ko');
             if(lang === 'ja') {
@@ -767,7 +796,6 @@
                 btnKo.className = 'lang-active transition-all';
             }
 
-            // Update DOM Text
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -777,7 +805,6 @@
             });
         }
 
-        // --- Toast Notification Logic ---
         function copyEmail() {
             const email = "jeonggeun.park0416@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
@@ -792,12 +819,12 @@
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        // --- Projects Data & Modal ---
         const projects = {
             'project-1': { tag: 'Mobile Solution', link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec', stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'], images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'] },
             'project-2': { tag: 'Process Automation', link: 'https://script.google.com/macros/s/AKfycbwHWgT8mFfTuD1Zk2UGYZz_gK6vzpkWPQyuqIDzDF4oyZFxnDerLRJO5S-AXz8TMVn1Jg/exec', stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Automation'], images: ['https://i.postimg.cc/MGcC02vn/damdangja-bulmyeong.png', 'https://i.postimg.cc/SNNt7FPk/damdangja-bulmyeong2.png'] },
-            'project-3': { tag: 'Web App / Automation', link: 'https://jeonggeunpark.pythonanywhere.com', stack: ['Python', 'Flask', 'SQLite', 'FullCalendar', 'APScheduler'], images: ['https://i.postimg.cc/4d1hm7ry/yeyagsiseutem.png'] },
             'project-4': { tag: 'KPI Dashboard', link: 'https://script.google.com/macros/s/AKfycbyhbiYNWJ3noPU2Ztxh2BSwuHXSSLA8Ne6C5vHRcHrGKNIaOY2OaQgg5oErAQgk5HnX/exec', stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'], images: ['https://i.postimg.cc/8Ct9hXzt/bogwangihan.png', 'https://i.postimg.cc/2yPmvkxB/diteil.png', 'https://i.postimg.cc/0yvjHnpy/diteil2.png'] },
+            'project-6': { tag: 'UI/UX Demo', link: 'https://jeonggeunpark-blip.github.io/it-asset-management-demo/', stack: ['HTML5', 'CSS3', 'Vanilla JS', 'Chart.js'], images: [] }, // 新規プロジェクト
+            'project-3': { tag: 'Web App / Automation', link: 'https://jeonggeunpark.pythonanywhere.com', stack: ['Python', 'Flask', 'SQLite', 'FullCalendar', 'APScheduler'], images: ['https://i.postimg.cc/4d1hm7ry/yeyagsiseutem.png'] },
             'project-5': { tag: 'Gamification & Dashboard', link: 'https://script.google.com/macros/s/AKfycbwLrS2DYe3ltTYX7ftEnJrLxxAa7DJHVT4hmTcFrSdhlUHbRTqsMlm-E4j0AHj91Nrj/exec', stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA'], images: ['https://i.postimg.cc/9XbfSCNT/hwamyeon-kaebcheo-2026-01-12-225809.png', 'https://i.postimg.cc/KjRCJPHn/hwamyeon-kaebcheo-2026-01-12-230036.png'] }
         };
 
@@ -886,7 +913,8 @@
             container.innerHTML = '';
             indicators.innerHTML = '';
             if (currentImages.length === 0) {
-                container.innerHTML = '<div class="w-full h-full flex items-center justify-center text-slate-400">No Image</div>';
+                container.innerHTML = '<div class="w-full h-full flex flex-col items-center justify-center text-slate-400 bg-slate-800"><i data-lucide="image-off" class="w-12 h-12 mb-2 opacity-50"></i><span class="text-sm font-medium">デモサイト内で画面をご確認ください</span></div>';
+                lucide.createIcons();
                 return;
             }
             currentImages.forEach((src, index) => {
@@ -920,9 +948,7 @@
             currentIndex = index;
         }
 
-        // --- Animations ---
         function onScroll() {
-            // Reveal
             var reveals = document.querySelectorAll(".reveal");
             var windowHeight = window.innerHeight;
             for (var i = 0; i < reveals.length; i++) {
@@ -930,13 +956,11 @@
                 if (elementTop < windowHeight - 50) reveals[i].classList.add("active");
             }
             
-            // Progress
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById("scroll-progress").style.width = scrolled + "%";
 
-            // Scroll Spy
             const sections = ['home', 'projects', 'experience'];
             const navItems = document.querySelectorAll('.nav-item');
             
@@ -961,7 +985,6 @@
         window.addEventListener("scroll", onScroll);
         onScroll();
 
-        // --- Mobile Swipe ---
         let touchStartX = 0;
         let touchEndX = 0;
         const carouselContainer = document.getElementById('carousel-container');
@@ -972,7 +995,6 @@
             if (touchEndX > touchStartX + 50) moveCarousel(-1);
         }
 
-        // --- 3D Tilt ---
         document.querySelectorAll('.tilt-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
