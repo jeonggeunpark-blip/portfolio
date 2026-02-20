@@ -17,9 +17,9 @@
       "@type": "Person",
       "name": "Jeonggeun Park",
       "jobTitle": "IT Consultant / DX Specialist",
-      "url": "https://jeonggeunpark.pythonanywhere.com",
+      "url": "https://jeonggeunpark-blip.github.io/it-asset-management-demo/",
       "email": "jeonggeun.park0416@gmail.com",
-      "knowsAbout": ["DX Consulting", "Python", "AppSheet", "Logistics", "Process Automation"]
+      "knowsAbout": ["DX Consulting", "Python", "AppSheet", "Logistics", "Process Automation", "Frontend"]
     }
     </script>
 
@@ -210,7 +210,6 @@
                 </h1>
                 <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed font-medium" data-i18n="heroDesc">
                     </p>
-
             </div>
             
             <div class="flex flex-col items-start md:items-end gap-3">
@@ -225,7 +224,7 @@
             </div>
         </header>
 
-        <div id="projects" class="grid grid-cols-1 md:grid-cols-2 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12 scroll-mt-24">
+        <div id="stats" class="grid grid-cols-1 md:grid-cols-2 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6 mb-12 scroll-mt-24">
 
             <div class="reveal tilt-card col-span-1 md:col-span-1 bg-gradient-to-br from-pro-600 to-pro-800 dark:from-pro-900 dark:to-slate-900 rounded-3xl p-6 text-white shadow-lg shadow-pro-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute -right-6 -bottom-6 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform duration-500">
@@ -237,18 +236,15 @@
                         <span data-i18n="impactLabel">Value Delivered</span>
                     </div>
                     <div>
-                        <div class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-2">
-                            95<span class="text-2xl">%</span>
-                            <span class="text-xl">Reduced</span>
-                        </div>
+                        <div class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-2" data-i18n="impactBig"></div>
                         <div class="space-y-2">
-                            <p class="text-pro-100 text-sm font-medium opacity-90 leading-snug" data-i18n="impactMain">資産・在庫の差異率を極小化</p>
+                            <p class="text-pro-100 text-sm font-medium opacity-90 leading-snug" data-i18n="impactMain"></p>
                             <div class="pt-3 mt-3 border-t border-white/20">
                                 <div class="flex justify-between items-end mb-1">
-                                    <span class="text-xs text-pro-200" data-i18n="impactSubLabel">コスト削減効果</span>
+                                    <span class="text-xs text-pro-200" data-i18n="impactSubLabel"></span>
                                     <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-mono whitespace-nowrap">ROI Case</span>
                                 </div>
-                                <p class="text-xl font-bold text-white" data-i18n="impactSubValue">約 120万円 / 年</p>
+                                <p class="text-xl font-bold text-white" data-i18n="impactSubValue"></p>
                             </div>
                         </div>
                     </div>
@@ -262,10 +258,8 @@
                         <i data-lucide="user-check" class="w-5 h-5"></i>
                         <span class="uppercase text-xs tracking-wider" data-i18n="whyMeLabel">Why Me?</span>
                     </div>
-                    <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 leading-snug" data-i18n="whyMeTitle">
-                        「開発だけ」の人材ではありません。
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed" data-i18n="whyMeDesc">...</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 leading-snug" data-i18n="whyMeTitle"></h2>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed" data-i18n="whyMeDesc"></p>
                 </div>
             </div>
 
@@ -308,8 +302,86 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-span-1 md:col-span-2 mt-8 mb-2 flex items-end justify-between border-b border-slate-200 dark:border-slate-700 pb-4 reveal">
+        <section id="process" class="mt-16 mb-16 reveal scroll-mt-24">
+            <div class="mb-8 border-b border-slate-200 dark:border-slate-700 pb-4">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i data-lucide="git-merge" class="w-6 h-6 text-pro-500"></i>
+                    <span data-i18n="processTitle">Consulting & Dev Process</span>
+                </h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-2" data-i18n="processSubtitle">現場で確実に使われるDXを実現するための4ステップ</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                <div class="hidden md:block absolute top-6 left-[10%] right-[10%] h-0.5 bg-slate-200 dark:bg-slate-700 z-0"></div>
+                
+                <div class="relative z-10 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-soft flex flex-col items-center text-center group hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold mb-4 border-4 border-white dark:border-slate-800 group-hover:bg-pro-500 group-hover:text-white transition-colors">1</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="step1Title"></h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="step1Desc"></p>
+                </div>
+                <div class="relative z-10 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-soft flex flex-col items-center text-center group hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold mb-4 border-4 border-white dark:border-slate-800 group-hover:bg-pro-500 group-hover:text-white transition-colors">2</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="step2Title"></h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="step2Desc"></p>
+                </div>
+                <div class="relative z-10 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-soft flex flex-col items-center text-center group hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold mb-4 border-4 border-white dark:border-slate-800 group-hover:bg-pro-500 group-hover:text-white transition-colors">3</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="step3Title"></h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="step3Desc"></p>
+                </div>
+                <div class="relative z-10 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-emerald-200 dark:border-emerald-800/50 shadow-glow flex flex-col items-center text-center group hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold mb-4 border-4 border-white dark:border-slate-800 group-hover:bg-emerald-500 group-hover:text-white transition-colors">4</div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2" data-i18n="step4Title"></h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n="step4Desc"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="mt-8 mb-16 reveal scroll-mt-24">
+            <div class="mb-8 border-b border-slate-200 dark:border-slate-700 pb-4">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i data-lucide="network" class="w-6 h-6 text-indigo-500"></i>
+                    <span data-i18n="archTitle">Standard Architecture</span>
+                </h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-2" data-i18n="archSubtitle">スケーラブルで保守性の高いシステム構成</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-6 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-inner overflow-x-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 min-w-[600px]">
+                    <div class="w-full md:w-1/3 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-soft border-t-4 border-emerald-500 flex flex-col items-center text-center hover:scale-105 transition-transform">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-emerald-500 mb-2"></i>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="archUi">ユーザー層 (UI)</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">AppSheet / Web App</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center text-slate-400 dark:text-slate-500 shrink-0">
+                        <i data-lucide="arrow-right-left" class="w-6 h-6 rotate-90 md:rotate-0"></i>
+                        <span class="text-[10px] font-mono mt-1">REST API</span>
+                    </div>
+
+                    <div class="w-full md:w-1/3 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-soft border-t-4 border-blue-500 flex flex-col items-center text-center hover:scale-105 transition-transform">
+                        <i data-lucide="server-cog" class="w-8 h-8 text-blue-500 mb-2"></i>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="archLogic">ビジネスロジック</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">GAS / Python (Flask)</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-slate-400 dark:text-slate-500 shrink-0">
+                        <i data-lucide="arrow-right-left" class="w-6 h-6 rotate-90 md:rotate-0"></i>
+                        <span class="text-[10px] font-mono mt-1">JSON</span>
+                    </div>
+
+                    <div class="w-full md:w-1/3 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-soft border-t-4 border-amber-500 flex flex-col items-center text-center hover:scale-105 transition-transform">
+                        <i data-lucide="database" class="w-8 h-8 text-amber-500 mb-2"></i>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1" data-i18n="archData">データ基盤 (DB/BI)</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Google Sheets / Looker</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mt-8 mb-16 scroll-mt-24">
+            <div class="mb-8 flex items-end justify-between border-b border-slate-200 dark:border-slate-700 pb-4 reveal">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white" data-i18n="portfolioTitle">Project Case Study</h2>
                     <p class="text-slate-500 dark:text-slate-400 text-sm mt-1" data-i18n="portfolioSubtitle">課題解決のプロセスと成果</p>
@@ -321,97 +393,98 @@
                 </div>
             </div>
 
-            <button onclick="openModal('project-1')" class="reveal tilt-card col-span-1 md:col-span-2 bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border-2 border-transparent hover:border-emerald-400/50 shadow-soft dark:shadow-none flex flex-col md:flex-row group focus:outline-none h-full min-h-[280px]" style="transition-delay: 100ms;">
-                <div class="relative w-full md:w-1/2 h-48 md:h-auto overflow-hidden">
-                    <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors"></div>
-                    <div class="absolute top-4 left-4 z-20">
-                        <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">廃棄ゼロ化</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6">
+                <button onclick="openModal('project-1')" class="reveal tilt-card col-span-1 md:col-span-2 bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border-2 border-transparent hover:border-emerald-400/50 shadow-soft dark:shadow-none flex flex-col md:flex-row group focus:outline-none h-full min-h-[280px]" style="transition-delay: 100ms;">
+                    <div class="relative w-full md:w-1/2 h-48 md:h-auto overflow-hidden">
+                        <img src="https://i.postimg.cc/QtHHkPh0/daeswibodeu.png" loading="lazy" alt="Stock Rescue" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors"></div>
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg border border-emerald-400/50" data-i18n="p1Badge">廃棄ゼロ化</span>
+                        </div>
                     </div>
-                </div>
-                <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center text-left bg-slate-900">
-                    <div class="flex items-center gap-2 mb-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                        <i data-lucide="image-plus" class="w-4 h-4"></i>
-                        <span data-i18n="p1Category">現場DX・UXデザイン</span>
+                    <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center text-left bg-slate-900">
+                        <div class="flex items-center gap-2 mb-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                            <i data-lucide="image-plus" class="w-4 h-4"></i>
+                            <span data-i18n="p1Category">現場DX・UXデザイン</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed line-clamp-3" data-i18n="p1Desc">...</p>
+                        <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
+                            <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors" data-i18n="p1Title">廃棄ロスゼロ・滞留防止</h3>
-                    <p class="text-slate-300 text-sm mb-6 leading-relaxed line-clamp-3" data-i18n="p1Desc">...</p>
-                    <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
-                        <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </div>
-                </div>
-            </button>
+                </button>
 
-            <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-rose-200 h-full min-h-[200px]" style="transition-delay: 150ms;">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-500 dark:text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i data-lucide="bot" class="w-5 h-5"></i></div>
-                        <span data-i18n="p2Cat" class="text-xs font-bold text-rose-500 uppercase">業務効率化</span>
+                <button onclick="openModal('project-2')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-rose-200 h-full min-h-[200px]" style="transition-delay: 150ms;">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-full bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-500 dark:text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors"><i data-lucide="bot" class="w-5 h-5"></i></div>
+                            <span data-i18n="p2Cat" class="text-xs font-bold text-rose-500 uppercase">業務効率化</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n="p2Title">不明品管理プラットフォーム</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p2Desc">...</p>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n="p2Title">不明品管理プラットフォーム</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p2Desc">...</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-rose-500 transition-colors"></i>
-                </div>
-            </button>
+                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-rose-500 transition-colors"></i>
+                    </div>
+                </button>
 
-            <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200 h-full min-h-[200px]" style="transition-delay: 200ms;">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
-                        <span class="text-xs font-medium text-slate-400">KPI Visualization</span>
+                <button onclick="openModal('project-4')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-amber-200 h-full min-h-[200px]" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></div>
+                            <span class="text-xs font-medium text-slate-400">KPI Visualization</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" data-i18n="p4Title">長期滞留在庫・督促ダッシュボード</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" data-i18n="p4Title">長期滞留在庫・督促ダッシュボード</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p4Desc">...</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
-            </button>
+                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p4Cat">データ可視化</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-amber-500"></i></div>
+                </button>
 
-            <button onclick="openModal('project-6')" class="reveal tilt-card col-span-1 md:col-span-2 bg-gradient-to-br from-cyan-600 to-blue-800 dark:from-cyan-900 dark:to-slate-900 rounded-3xl p-6 md:p-8 text-white shadow-lg shadow-cyan-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group h-full min-h-[240px]" style="transition-delay: 250ms;">
-                <div class="absolute right-0 top-0 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
-                    <i data-lucide="layout-template" class="w-48 h-48 -mr-10 -mt-10"></i>
-                </div>
-                <div class="relative z-10 text-left w-full md:w-2/3">
-                    <div class="flex items-center gap-2 mb-3 text-cyan-200 text-xs font-bold uppercase tracking-wider">
-                        <i data-lucide="monitor-smartphone" class="w-4 h-4"></i>
-                        <span data-i18n="p6Cat">フロントエンド・UX企画</span>
+                <button onclick="openModal('project-6')" class="reveal tilt-card col-span-1 md:col-span-2 bg-gradient-to-br from-cyan-600 to-blue-800 dark:from-cyan-900 dark:to-slate-900 rounded-3xl p-6 md:p-8 text-white shadow-lg shadow-cyan-500/20 dark:shadow-none dark:border dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group h-full min-h-[240px]" style="transition-delay: 250ms;">
+                    <div class="absolute right-0 top-0 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="layout-template" class="w-48 h-48 -mr-10 -mt-10"></i>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors" data-i18n="p6Title">IT資産管理・分析ダッシュボード</h3>
-                    <p class="text-cyan-50 text-sm mb-6 leading-relaxed line-clamp-2 md:line-clamp-none" data-i18n="p6Desc">...</p>
-                    <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
-                        <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <div class="relative z-10 text-left w-full md:w-2/3">
+                        <div class="flex items-center gap-2 mb-3 text-cyan-200 text-xs font-bold uppercase tracking-wider">
+                            <i data-lucide="monitor-smartphone" class="w-4 h-4"></i>
+                            <span data-i18n="p6Cat">フロントエンド・UX企画</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors" data-i18n="p6Title">IT資産管理・分析ダッシュボード</h3>
+                        <p class="text-cyan-50 text-sm mb-6 leading-relaxed line-clamp-2 md:line-clamp-none" data-i18n="p6Desc">...</p>
+                        <div class="inline-flex items-center gap-2 text-white font-bold text-sm bg-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-all">
+                            <span data-i18n="viewDetails">プロジェクト詳細</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
-                </div>
-            </button>
+                </button>
 
-            <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200 h-full min-h-[200px]" style="transition-delay: 300ms;">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
-                        <span class="text-xs font-medium text-slate-400">Python / Flask</span>
+                <button onclick="openModal('project-3')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-indigo-200 h-full min-h-[200px]" style="transition-delay: 300ms;">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div>
+                            <span class="text-xs font-medium text-slate-400">Python / Flask</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="p3Title">社内備品・施設予約システム</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p3Desc">...</p>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" data-i18n="p3Title">社内備品・施設予約システム</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p3Desc">...</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
-            </button>
+                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs text-slate-400"><span data-i18n="p3Cat">Webアプリ開発</span><i data-lucide="external-link" class="w-3 h-3 group-hover:text-indigo-500"></i></div>
+                </button>
 
-            <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-orange-200 h-full min-h-[200px]" style="transition-delay: 350ms;">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
-                        <span data-i18n="p5Cat" class="text-xs font-bold text-orange-500 uppercase">組織開発</span>
+                <button onclick="openModal('project-5')" class="reveal tilt-card col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-soft dark:shadow-none flex flex-col justify-between text-left group hover:border-orange-200 h-full min-h-[200px]" style="transition-delay: 350ms;">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"><i data-lucide="trophy" class="w-5 h-5"></i></div>
+                            <span data-i18n="p5Cat" class="text-xs font-bold text-orange-500 uppercase">組織開発</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p5Desc">...</p>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" data-i18n="p5Title">カイゼン提案・活性化ボード</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n="p5Desc">...</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors"></i>
-                </div>
-            </button>
-
-        </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors"></i>
+                    </div>
+                </button>
+            </div>
+        </section>
 
          <section id="experience" class="mt-16 reveal scroll-mt-24">
             <h3 class="font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-2 text-xl">
@@ -604,13 +677,16 @@
                 heroSubtitle: "ROIを最大化するDX人材", 
                 heroDesc: "システム開発における最大の失敗は「現場で使われないこと」です。<br>私は<span class='text-slate-800 dark:text-slate-200 font-bold'>業務プロセスの解像度</span>と<span class='text-slate-800 dark:text-slate-200 font-bold'>エンジニアリング</span>の両輪で、<span class='text-pro-700 dark:text-pro-400 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>投資対効果(ROI)の高いDX</span>を実現する実利追求型コンサルタントです。",
                 ctaButton: "面談・連絡先をコピー",
+                
                 impactLabel: "Value Delivered (提供価値)",
-                impactMain: "資産・在庫の差異率を極小化<br>決算業務工数を1/3へ短縮",
-                impactSubLabel: "コスト削減効果 (1案件/年)",
-                impactSubValue: "約 120万円 / 年",
+                impactBig: "2,000+<span class='text-2xl'>h</span> <span class='text-xl'>Saved</span>",
+                impactMain: "代表アプリ単体で年間1,600時間削減。<br>複数アプリの全社展開で累計2,000時間超を創出",
+                impactSubLabel: "想定コスト削減効果 (人件費換算)",
+                impactSubValue: "約 500万円以上 / 年",
+                
                 whyMeLabel: "Why Me? (差別化要因)",
-                whyMeTitle: "「開発だけ」の人材ではありません。<br>「課題発見〜定着化」までを一気通貫で担います。",
-                whyMeDesc: "多くのDXプロジェクトが失敗する理由は技術力不足ではなく、「現場への理解不足」です。私は<span class='font-bold text-slate-800 dark:text-slate-200'>物流センター長としてのマネジメント経験</span>を基に、ITリテラシーが高くない現場作業員でも<span class='font-bold text-pro-700 dark:text-pro-400 bg-pro-50 dark:bg-pro-900/30 px-1'>「抵抗なく使えるUI/UX」</span>を設計し、組織全体の行動変容（Change Management）までをリードします。",
+                whyMeTitle: "「作るだけ」で終わらせない。<br>160名が毎日使うシステムへ定着させます。",
+                whyMeDesc: "多くのDXが失敗する原因は「現場への理解不足」です。私は物流センター長としての実務経験を基に、ITリテラシーが高くない現場作業員でも<span class='font-bold text-pro-700 dark:text-pro-400 bg-pro-50 dark:bg-pro-900/30 px-1'>「説明書なしで使えるUI/UX」</span>を設計します。実際に開発した代表アプリは160名規模の組織に定着し単体で年間1,600時間削減を達成。他の開発アプリ群と合わせ、全体で2,000時間以上の「実利」を生み出しています。",
                 
                 skillsTitle: "Skills & Tools",
                 skill1Desc: "Gold相当 / Advanced UI",
@@ -620,6 +696,23 @@
                 skill5Desc: "Prompt Engineering / AI Coding",
                 skill6Desc: "Web App / Backend",
                 skill7Desc: "UI/UX・HTML/CSS/JS",
+
+                processTitle: "Consulting & Dev Process",
+                processSubtitle: "現場で確実に使われるDXを実現するための4ステップ",
+                step1Title: "課題抽出 (As-Is分析)",
+                step1Desc: "現場の作業員へのヒアリングを通じて、アナログ業務（Excel・紙）のボトルネックと真の課題を特定します。",
+                step2Title: "プロトタイプ (MVP) 構築",
+                step2Desc: "AppSheet等のローコードを活用し、要件定義から1週間以内に操作可能なデモ画面を構築・提示します。",
+                step3Title: "アジャイル改善",
+                step3Desc: "現場に実際に触ってもらい、フィードバックを即座に反映。ITリテラシーを問わず「迷わず使えるUI」を完成させます。",
+                step4Title: "現場定着・効果創出",
+                step4Desc: "マニュアル動画の作成や導入説明会を実施。行動変容（Change Management）を促し、投資対効果(ROI)を最大化します。",
+
+                archTitle: "Standard Architecture",
+                archSubtitle: "スケーラブルで保守性の高いシステム構成",
+                archUi: "ユーザー層 (UI)",
+                archLogic: "ビジネスロジック (API)",
+                archData: "データ基盤 (DB/BI)",
 
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "課題解決のプロセスと成果 (Portfolio)",
@@ -664,7 +757,7 @@
                                     <li>全社カイゼン提案・ナレッジ共有ポータル</li>
                                     <li>アプリ内操作マニュアル・動画解説機能実装 (Google Vids)</li>
                                   </ul>
-                                  <p class="mt-2 font-bold text-pro-700 dark:text-pro-400">GAS/API活用による年間400時間の工数削減を達成</p>`,
+                                  <p class="mt-2 font-bold text-pro-700 dark:text-pro-400">アプリ群全体で累計2,000時間超の工数削減（約500万円/年のコスト削減）を達成</p>`,
                 exp2Company: "有利株式会社",
                 exp2Role: "センター長（物流倉庫長）",
                 exp2Detail1: "スタッフ25名のマネジメントと現場指揮",
@@ -693,13 +786,16 @@
                 heroSubtitle: "ROI를 극대화하는 DX 인재", 
                 heroDesc: "시스템 개발의 최대 실패는 '현장에서 쓰이지 않는 것'입니다.<br>저는 <span class='text-slate-800 dark:text-slate-200 font-bold'>업무 프로세스의 해상도</span>와 <span class='text-slate-800 dark:text-slate-200 font-bold'>엔지니어링</span>의 양륜으로, <span class='text-pro-700 dark:text-pro-400 font-bold underline decoration-pro-300 decoration-2 underline-offset-2'>투자대비효과(ROI) 높은 DX</span>를 실현하는 실리추구형 컨설턴트입니다.",
                 ctaButton: "면담 요청 · 연락처 복사",
+                
                 impactLabel: "Value Delivered (제공 가치)",
-                impactMain: "자산/재고 차이율 극소화<br>결산 업무 공수 1/3로 단축",
-                impactSubLabel: "비용 절감 효과 (연간)",
-                impactSubValue: "약 1200만원 / 년",
+                impactBig: "2,000+<span class='text-2xl'>h</span> <span class='text-xl'>Saved</span>",
+                impactMain: "대표 앱 단일 연간 1,600시간 절감.<br>다수 앱 전사 전개로 누적 2,000시간 이상 창출",
+                impactSubLabel: "예상 누적 비용 절감 효과 (인건비 환산)",
+                impactSubValue: "약 500만 엔 이상 / 연",
+                
                 whyMeLabel: "Why Me? (차별화 요소)",
-                whyMeTitle: "개발만 하는 인재가 아닙니다.<br>「과제 발견부터 정착」까지 원스톱으로 책임집니다.",
-                whyMeDesc: "많은 DX 프로젝트가 실패하는 이유는 기술력 부족이 아닌 '현장에 대한 이해 부족'입니다. 저는 <span class='font-bold text-slate-800 dark:text-slate-200'>물류 센터장으로서의 매니지먼트 경험</span>을 바탕으로, IT 리터러시가 높지 않은 현장 작업자도 <span class='font-bold text-pro-700 dark:text-pro-400 bg-pro-50 dark:bg-pro-900/30 px-1'>「거부감 없이 사용할 수 있는 UI/UX」</span>를 설계하고, 조직 전체의 행동 변용(Change Management)까지 리드합니다.",
+                whyMeTitle: "「만들고 끝」이 아닙니다.<br>160명이 매일 사용하는 시스템으로 정착시킵니다.",
+                whyMeDesc: "많은 DX 프로젝트가 실패하는 원인은 '현장에 대한 이해 부족'입니다. 저는 물류 센터장으로서의 실무 경험을 바탕으로, IT 리터러시가 높지 않은 현장 작업자도 <span class='font-bold text-pro-700 dark:text-pro-400 bg-pro-50 dark:bg-pro-900/30 px-1'>「설명서 없이 쓸 수 있는 UI/UX」</span>를 설계합니다. 실제로 개발한 대표 앱은 160명 규모의 조직에 성공적으로 정착하여 단일 앱만으로 연간 1,600시간을 삭감했습니다. 그 외 여러 앱을 포함해 전체 2,000시간 이상의 '실질적 이익'을 창출해 내고 있습니다.",
                 
                 skillsTitle: "Skills & Tools",
                 skill1Desc: "Gold 상당 / Advanced UI",
@@ -709,6 +805,23 @@
                 skill5Desc: "Prompt Engineering / AI Coding",
                 skill6Desc: "Web App / Backend",
                 skill7Desc: "UI/UX・HTML/CSS/JS",
+
+                processTitle: "Consulting & Dev Process",
+                processSubtitle: "현장에 확실히 정착하는 DX를 실현하기 위한 4단계",
+                step1Title: "과제 추출 (As-Is 분석)",
+                step1Desc: "현장 작업자와의 인터뷰를 통해 아날로그 업무(엑셀/종이)의 병목 현상과 진짜 문제점을 파악합니다.",
+                step2Title: "프로토타입 (MVP) 구축",
+                step2Desc: "AppSheet 등 로우코드 툴을 활용하여, 요건 정의 후 1주일 내에 실제 조작 가능한 데모 화면을 개발해 제시합니다.",
+                step3Title: "애자일 피드백 및 개선",
+                step3Desc: "현장 실무자가 직접 사용해보게 한 뒤 피드백을 즉각 반영하여, 누구나 '헤매지 않고 쓸 수 있는 UI'를 완성합니다.",
+                step4Title: "현장 정착 및 효과 창출",
+                step4Desc: "매뉴얼 영상 제작 및 도입 교육을 실시합니다. 조직의 행동 변용(Change Management)을 유도하여 ROI를 극대화합니다.",
+
+                archTitle: "Standard Architecture",
+                archSubtitle: "확장 가능하고 유지보수가 용이한 시스템 구성",
+                archUi: "사용자 계층 (UI)",
+                archLogic: "비즈니스 로직 (API)",
+                archData: "데이터 기반 (DB/BI)",
 
                 portfolioTitle: "Project Case Study",
                 portfolioSubtitle: "과제 해결 프로세스와 성과 (Portfolio)",
@@ -753,7 +866,7 @@
                                     <li>전사 카이젠(개선) 제안・지식 공유 포털</li>
                                     <li>앱 내 조작 매뉴얼・동영상 해설 기능 구현 (Google Vids)</li>
                                   </ul>
-                                  <p class="mt-2 font-bold text-pro-700 dark:text-pro-400">GAS/API 활용을 통해 연간 400시간 공수 절감 달성</p>`,
+                                  <p class="mt-2 font-bold text-pro-700 dark:text-pro-400">앱 생태계 전체 누적 2,000시간 이상의 공수 절감 (약 500만 엔/년) 달성</p>`,
                 exp2Company: "주식회사 유리",
                 exp2Role: "센터장 (물류창고장)",
                 exp2Detail1: "스태프 25명의 매니지먼트 및 현장 지휘",
@@ -823,7 +936,7 @@
             'project-1': { tag: 'Mobile Solution', link: 'https://script.google.com/macros/s/AKfycbwNug1RdKWHLvQvZFk2m9mbcDsD4sNIT3sRP7cynl45Psh_VC-ChUzzwvId5awUl35NeA/exec', stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'Canvas API', 'jsQR'], images: ['https://i.postimg.cc/QtHHkPh0/daeswibodeu.png', 'https://i.postimg.cc/tggTpf1K/inpus.png', 'https://i.postimg.cc/Ss2cNjXH/inpus.png'] },
             'project-2': { tag: 'Process Automation', link: 'https://script.google.com/macros/s/AKfycbwHWgT8mFfTuD1Zk2UGYZz_gK6vzpkWPQyuqIDzDF4oyZFxnDerLRJO5S-AXz8TMVn1Jg/exec', stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'AppSheet', 'Automation'], images: ['https://i.postimg.cc/MGcC02vn/damdangja-bulmyeong.png', 'https://i.postimg.cc/SNNt7FPk/damdangja-bulmyeong2.png'] },
             'project-4': { tag: 'KPI Dashboard', link: 'https://script.google.com/macros/s/AKfycbyhbiYNWJ3noPU2Ztxh2BSwuHXSSLA8Ne6C5vHRcHrGKNIaOY2OaQgg5oErAQgk5HnX/exec', stack: ['Google Apps Script', 'HTML5/Tailwind CSS', 'Chart.js', 'AppSheet'], images: ['https://i.postimg.cc/8Ct9hXzt/bogwangihan.png', 'https://i.postimg.cc/2yPmvkxB/diteil.png', 'https://i.postimg.cc/0yvjHnpy/diteil2.png'] },
-            'project-6': { tag: 'UI/UX Demo', link: 'https://jeonggeunpark-blip.github.io/it-asset-management-demo/', stack: ['HTML5', 'CSS3', 'Vanilla JS', 'Chart.js'], images: [] }, // 新規プロジェクト
+            'project-6': { tag: 'UI/UX Demo', link: 'https://jeonggeunpark-blip.github.io/it-asset-management-demo/', stack: ['HTML5', 'CSS3', 'Vanilla JS', 'Chart.js'], images: [] }, 
             'project-3': { tag: 'Web App / Automation', link: 'https://jeonggeunpark.pythonanywhere.com', stack: ['Python', 'Flask', 'SQLite', 'FullCalendar', 'APScheduler'], images: ['https://i.postimg.cc/4d1hm7ry/yeyagsiseutem.png'] },
             'project-5': { tag: 'Gamification & Dashboard', link: 'https://script.google.com/macros/s/AKfycbwLrS2DYe3ltTYX7ftEnJrLxxAa7DJHVT4hmTcFrSdhlUHbRTqsMlm-E4j0AHj91Nrj/exec', stack: ['GAS', 'HTML5/Tailwind CSS', 'Chart.js', 'SPA'], images: ['https://i.postimg.cc/9XbfSCNT/hwamyeon-kaebcheo-2026-01-12-225809.png', 'https://i.postimg.cc/KjRCJPHn/hwamyeon-kaebcheo-2026-01-12-230036.png'] }
         };
