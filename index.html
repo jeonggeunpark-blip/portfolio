@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -41,10 +42,8 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ─── Layout ─── */
     .page { max-width: var(--max); margin: 0 auto; padding: 0 32px 100px; }
 
-    /* ─── Top Bar ─── */
     .topbar {
       display: flex;
       align-items: center;
@@ -76,7 +75,6 @@
     }
     .topbar-nav a:hover { color: var(--text); }
 
-    /* ─── Hero ─── */
     .hero {
       padding: 72px 0 60px;
       border-bottom: 1px solid var(--line);
@@ -110,7 +108,6 @@
       margin-bottom: 48px;
     }
 
-    /* Impact numbers */
     .impact-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -140,7 +137,6 @@
       line-height: 1.5;
     }
 
-    /* ─── Section ─── */
     .section {
       padding: 56px 0;
       border-bottom: 1px solid var(--line);
@@ -174,18 +170,16 @@
     .sec-desc {
       font-size: 14px;
       color: var(--muted);
-      max-width: 580px;
+      max-width: 620px;
       line-height: 1.75;
     }
 
-    /* Two-col content area */
     .sec-body {
       display: grid;
       grid-template-columns: 200px 1fr;
       gap: 48px;
     }
 
-    /* ─── Strengths ─── */
     .strength-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -209,7 +203,6 @@
       line-height: 1.65;
     }
 
-    /* ─── Process ─── */
     .process-list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -242,7 +235,6 @@
       line-height: 1.65;
     }
 
-    /* ─── Projects ─── */
     .project {
       padding: 40px 0;
       border-bottom: 1px solid var(--line-light);
@@ -255,6 +247,7 @@
       align-items: center;
       gap: 12px;
       margin-bottom: 16px;
+      flex-wrap: wrap;
     }
     .proj-index {
       font-size: 11px;
@@ -297,7 +290,7 @@
       color: var(--muted);
       line-height: 1.7;
       margin-bottom: 24px;
-      max-width: 520px;
+      max-width: 560px;
     }
 
     .proj-detail-title {
@@ -325,6 +318,7 @@
       color: var(--text);
       font-weight: 600;
     }
+    .proj-list li::before {
       content: "";
       position: absolute;
       left: 0;
@@ -339,7 +333,6 @@
     }
     .proj-section:last-child { margin-bottom: 0; }
 
-    /* Impact highlight */
     .proj-impact {
       background: var(--white);
       border: 1px solid var(--line);
@@ -354,7 +347,6 @@
       line-height: 1.6;
     }
 
-    /* Right panel */
     .proj-panel {
       position: sticky;
       top: 32px;
@@ -431,7 +423,6 @@
       margin-top: 10px;
     }
 
-    /* Roles */
     .role-list {
       display: flex;
       flex-wrap: wrap;
@@ -446,7 +437,6 @@
       background: var(--bg);
     }
 
-    /* ─── Skills ─── */
     .skill-highlight {
       display: flex;
       align-items: center;
@@ -455,11 +445,13 @@
       border: 1px solid var(--blue-light);
       background: var(--blue-faint);
       margin-bottom: 24px;
+      gap: 16px;
     }
     .skill-highlight-left {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .skill-highlight-tool {
       font-size: 15px;
@@ -478,6 +470,7 @@
       display: flex;
       align-items: baseline;
       gap: 4px;
+      flex-wrap: wrap;
     }
     .skill-highlight-num {
       font-family: var(--font-display);
@@ -510,7 +503,6 @@
       background: var(--white);
       color: var(--text);
     }
-
     .skill-tag-category {
       font-size: 11px;
       font-weight: 600;
@@ -518,13 +510,15 @@
       letter-spacing: 0.06em;
     }
 
-    /* ─── Other work ─── */
     .other-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
       background: var(--line);
       border: 1px solid var(--line);
+    }
+    .other-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
     }
     .other-item {
       background: var(--white);
@@ -542,7 +536,6 @@
       line-height: 1.65;
     }
 
-    /* ─── Contribution ─── */
     .contrib-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -576,7 +569,6 @@
     }
     .contrib-list li:last-child { border-bottom: 0; }
 
-    /* ─── Contact / Profile ─── */
     .profile-block {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -597,7 +589,6 @@
     }
     .profile-info dd:last-child { margin-bottom: 0; }
 
-    /* ─── Footer ─── */
     footer {
       padding: 28px 32px;
       max-width: var(--max);
@@ -612,7 +603,11 @@
       color: var(--faint);
     }
 
-    /* ─── Responsive ─── */
+    @media (max-width: 980px) {
+      .other-grid,
+      .other-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 880px) {
       .page { padding: 0 20px 60px; }
       .hero { padding: 48px 0 40px; }
@@ -630,72 +625,45 @@
       .strength-grid, .contrib-grid { grid-template-columns: repeat(2, 1fr); }
       .contrib-col { border-right: 0; border-bottom: 1px solid var(--line); }
       .contrib-col:last-child { border-bottom: 0; }
-      .other-grid { grid-template-columns: repeat(2, 1fr); }
       .topbar-nav { display: none; }
-      .skill-highlight { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .skill-highlight-left { flex-wrap: wrap; }
+      .skill-highlight { flex-direction: column; align-items: flex-start; }
     }
 
     @media (max-width: 480px) {
       .page { padding: 0 16px 48px; }
       .hero { padding: 36px 0 32px; }
       .section { padding: 36px 0; }
-
-      /* Typography */
       .hero-eyebrow { font-size: 10px; letter-spacing: 0.1em; }
       .hero-lead { font-size: 14px; }
       .sec-title { font-size: 20px; }
       .project-title { font-size: 18px; }
-
-      /* Impact row → 1 col */
       .impact-row { grid-template-columns: repeat(2, 1fr); }
       .impact-cell { padding: 18px 16px; }
       .impact-num { font-size: 24px; }
       .impact-label { font-size: 11px; }
-
-      /* Process → 1 col */
       .process-list { grid-template-columns: 1fr; }
       .process-item { border-right: 0 !important; border-top: 1px solid var(--line); }
       .process-item:first-child { border-top: 0; }
-
-      /* KPI */
       .kpi-mini-grid { grid-template-columns: repeat(2, 1fr); }
       .kpi-mini-num { font-size: 16px; }
-
-      /* Project meta tags — wrap nicely */
-      .project-meta { flex-wrap: wrap; gap: 8px; }
       .proj-tag { font-size: 10px; }
-
-      /* Skill tags */
       .skill-tag { font-size: 12px; padding: 5px 10px; }
       .skill-highlight-num { font-size: 24px; }
       .skill-highlight-denom { font-size: 11px; }
-
-      /* Topbar */
       .topbar { padding-top: 20px; padding-bottom: 16px; }
       .topbar-name { font-size: 12px; }
-
-      .strength-grid { grid-template-columns: 1fr; }
-      .contrib-grid { grid-template-columns: 1fr; }
+      .strength-grid, .contrib-grid, .other-grid, .other-grid.cols-3 { grid-template-columns: 1fr; }
       .diagram-pre { font-size: 10px; }
       .proj-panel-block { overflow-x: auto; }
-
-      /* Demo links */
       .demo-link { font-size: 12px; padding: 10px 12px; }
-
-      /* Proj list */
       .proj-list li { font-size: 13px; }
-
-      /* Footer */
       footer { flex-direction: column; gap: 4px; text-align: center; padding: 20px 16px; }
     }
   </style>
 </head>
 <body>
-
   <div class="page">
 
-    <!-- Top Bar -->
     <nav class="topbar">
       <div class="topbar-name">Jeonggeun Park</div>
       <div class="topbar-nav">
@@ -705,9 +673,8 @@
       </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
-      <div class="hero-eyebrow">LIXIL 業務改善G · AppSheet社内検定 Gold ランク取得（全社約1,400名中 14番目）· GAS · Google Workspace</div>
+      <div class="hero-eyebrow">LIXIL 業務改善G ・ AppSheet社内検定 Gold ランク取得（全社約1,400名中 14番目） ・ GAS ・ Google Workspace</div>
       <h1 class="hero-headline">
         現場を知るから、<br>
         <em>現場で使われる仕組み</em>がつくれる。
@@ -736,7 +703,6 @@
       </div>
     </section>
 
-    <!-- Profile -->
     <section class="section">
       <div class="sec-header">
         <div class="sec-label">Profile</div>
@@ -750,8 +716,7 @@
           <dt>所属</dt>
           <dd>株式会社LIXIL 業務改善グループ</dd>
           <dt>Email</dt>
-          <dd>
-  <a href="mailto:jeonggeun.park0416@gmail.com">jeonggeun.park0416@gmail.com</a></dd>
+          <dd><a href="mailto:jeonggeun.park0416@gmail.com">jeonggeun.park0416@gmail.com</a></dd>
           <dt>Focus</dt>
           <dd>業務設計 / 運用定着 / Google技術連携</dd>
           <dt>Portfolio</dt>
@@ -760,92 +725,76 @@
       </div>
     </section>
 
-    <!-- Skills -->
     <section class="section">
       <div class="sec-header">
         <div class="sec-label">Skills</div>
         <div>
           <h2 class="sec-title">技術スキル</h2>
-          <p class="sec-desc">実務で繰り返し使ってきたスキルです。</p>
+          <p class="sec-desc">業務設計から自動化・運用定着まで、一貫して実務で活用してきたスキルです。</p>
         </div>
       </div>
       <div class="sec-body">
         <div></div>
         <div>
-          <!-- AppSheet highlight -->
           <div class="skill-highlight">
-            <div class="skill-highlight-left">
-              <div class="skill-highlight-tool">AppSheet</div>
-              <div class="skill-highlight-badge">社内検定 Gold ランク</div>
-              <div class="skill-highlight-badge" style="background:#f0f8f2;border-color:#b6dfc4;color:#1a6e34;">開始1年で取得</div>
+  <div class="skill-highlight-left">
+    <div class="skill-highlight-tool">AppSheet</div>
+    <div class="skill-highlight-badge">社内検定 Gold ランク</div>
+    <div class="skill-highlight-badge" style="background:#f0f8f2;border-color:#b6dfc4;color:#1a6e34;">開始1年で取得</div>
+  </div>
+  <div class="skill-highlight-stat" style="display:block;">
+    <div class="skill-highlight-num" style="font-size:22px;">14番目の初期取得者</div>
+    <div class="skill-highlight-denom" style="margin-top:6px;">全社約1,400名 / 現在 Gold 26名・Silver 約200名・Bronze その他</div>
+  </div>
+</div>
+          
+
+          <div class="other-grid cols-3">
+            <div class="other-item">
+              <div class="other-title">AppSheet</div>
+              <div class="other-body">業務アプリ設計・開発・運用</div>
             </div>
-            <div class="skill-highlight-stat">
-              <span class="skill-highlight-num">14番目</span>
-              <span class="skill-highlight-denom">に取得 / 全社約1,400名</span>
+            <div class="other-item">
+              <div class="other-title">GAS</div>
+              <div class="other-body">自動化・Webアプリ・API連携</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">Google Workspace</div>
+              <div class="other-body">管理・業務改善</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">Google Calendar API</div>
+              <div class="other-body">予定登録・スケジュール自動化</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">Google Chat Webhook</div>
+              <div class="other-body">通知自動化・アラート設計</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">Google Sheets</div>
+              <div class="other-body">QUERY・データ処理・運用設計</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">SQL（実務レベル）</div>
+              <div class="other-body">QUERYベースのデータ抽出・加工</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">ChatGPT / Gemini / Claude</div>
+              <div class="other-body">業務自動化・文書作成・コード補助</div>
+            </div>
+            <div class="other-item">
+              <div class="other-title">AWS（学習中）</div>
+              <div class="other-body">Lambda / API Gateway の基礎理解</div>
             </div>
           </div>
 
-          <!-- GAS -->
-          <div class="skill-block-title">Google Apps Script（GAS）</div>
-          <div class="skill-tag-row">
-            <span class="skill-tag">Webアプリ開発</span>
-            <span class="skill-tag">スプレッドシート自動化</span>
-            <span class="skill-tag">データ自動処理</span>
-            <span class="skill-tag">アラート・通知設計</span>
-            <span class="skill-tag">Google Calendar API連携</span>
-            <span class="skill-tag">Slides連携</span>
-            <span class="skill-tag">トリガー設定</span>
-            <span class="skill-tag">カスタムUI（HTMLサービス）</span>
-          </div>
-
-          <!-- Languages -->
-          <div class="skill-block-title" style="margin-top:20px;">使用言語</div>
-          <div class="skill-tag-row">
-            <span class="skill-tag">JavaScript（GAS・V8ランタイム）</span>
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-          </div>
-
-          <!-- Other -->
-          <div class="skill-block-title" style="margin-top:20px;">その他 Google Workspace</div>
-          <div class="skill-tag-row">
-            <span class="skill-tag">Google Sheets 設計・運用</span>
-            <span class="skill-tag">Google Forms</span>
-            <span class="skill-tag">Looker Studio</span>
-            <span class="skill-tag">Google Vids</span>
-            <span class="skill-tag">NotebookLM</span>
-            <span class="skill-tag">権限・共有設計</span>
-          </div>
-
-          <!-- AI Tools -->
-          <div class="skill-block-title" style="margin-top:20px;">AI ツール活用</div>
-          <div class="skill-tag-row" style="margin-bottom:8px;">
-            <span class="skill-tag-category">コード作成・レビュー補助</span>
-          </div>
-          <div class="skill-tag-row" style="margin-bottom:14px;">
-            <span class="skill-tag">Claude Code</span>
-            <span class="skill-tag">ChatGPT</span>
-          </div>
-          <div class="skill-tag-row" style="margin-bottom:8px;">
-            <span class="skill-tag-category">情報収集・リサーチ</span>
-          </div>
-          <div class="skill-tag-row" style="margin-bottom:14px;">
-            <span class="skill-tag">Perplexity</span>
-            <span class="skill-tag">Gemini</span>
-          </div>
-          <div class="skill-tag-row" style="margin-bottom:8px;">
-            <span class="skill-tag-category">業務文書・アイデア整理</span>
-          </div>
-          <div class="skill-tag-row">
-            <span class="skill-tag">ChatGPT</span>
-            <span class="skill-tag">Gemini</span>
-            <span class="skill-tag">Claude</span>
-          </div>
+          <p class="note-text" style="margin-top:14px;">
+            Google Workspaceを軸に、業務設計から自動化・運用定着まで一貫して対応可能です。
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Strengths -->
     <section class="section">
       <div class="sec-header">
         <div class="sec-label">Strengths</div>
@@ -875,7 +824,7 @@
           </div>
           <div class="strength-item">
             <div class="strength-title">Google連携</div>
-            <div class="strength-body">Calendar API、Sheets、Webアプリ、Slidesなどを用途に応じて接続します。</div>
+            <div class="strength-body">Calendar API、Chat Webhook、Sheets、Webアプリ、Slidesなどを用途に応じて接続します。</div>
           </div>
           <div class="strength-item">
             <div class="strength-title">導入後の運用改善まで</div>
@@ -885,7 +834,6 @@
       </div>
     </section>
 
-    <!-- Process -->
     <section class="section" id="process">
       <div class="sec-header">
         <div class="sec-label">Process</div>
@@ -921,7 +869,6 @@
       </div>
     </section>
 
-    <!-- Projects -->
     <section class="section" id="projects">
       <div class="sec-header">
         <div class="sec-label">Projects</div>
@@ -931,19 +878,19 @@
         </div>
       </div>
 
-      <!-- Project 01 -->
       <div class="project">
         <div class="project-meta">
           <span class="proj-index">01</span>
           <span class="proj-tag">在庫管理</span>
           <span class="proj-tag green">160名運用</span>
           <span class="proj-tag">再構築主導</span>
+          <span class="proj-tag">他部門展開</span>
           <span class="proj-tag">LIXIL 業務改善G</span>
         </div>
         <div class="project-layout">
           <div>
             <h3 class="project-title">入荷・保管・廃棄を一本化した<br>現場管理アプリ再構築</h3>
-            <p class="project-summary">既存DB運用を見直し、AppSheet・Google Sheets・GAS・Webアプリを組み合わせて、現場で回り続ける在庫管理フローへ再設計。</p>
+            <p class="project-summary">既存DB運用を見直し、AppSheet・Google Sheets・GAS・Webアプリを組み合わせて、現場で回り続ける在庫管理フローへ再設計。他事業部2部門でも複製利用される形まで展開。</p>
 
             <div class="proj-impact">
               <div class="proj-impact-text">担当者不明品の処理率を30%から90%へ改善。160名が使う現場アプリとして定着し、月100件超の保管期限処理と複数案件の集約通知を実現。</div>
@@ -965,6 +912,7 @@
                 <li>160名規模の現場運用を前提に、動画マニュアル配布とフィードバック反映を実施しました。</li>
                 <li>文字サイズ調整、ボタン中心UI、音声入力、QR検索を導入しました。</li>
                 <li>GASで通知条件を整理し、単一案件と複数案件で通知方法を分岐しました。</li>
+                <li>再利用しやすい構成に整備し、他事業部2部門へ横展開しました。</li>
               </ul>
             </div>
 
@@ -974,7 +922,7 @@
                 <li>担当者不明品の処理率が <strong>30% → 90%</strong> へ改善しました。</li>
                 <li>保管期限の月次処理は <strong>100件以上</strong> の運用に対応しました。</li>
                 <li>複数案件時はメール <strong>1通</strong> に集約し、確認負荷を軽減しました。</li>
-                <li>入力時間・問い合わせ・対応漏れの削減につながりました。</li>
+                <li>他部門でも活用される運用モデルへ展開しました。</li>
               </ul>
             </div>
 
@@ -1021,7 +969,6 @@
         </div>
       </div>
 
-      <!-- Project 02 -->
       <div class="project">
         <div class="project-meta">
           <span class="proj-index">02</span>
@@ -1111,8 +1058,6 @@
         </div>
       </div>
 
-      <!-- Project 03 -->
-
       <div class="project">
         <div class="project-meta">
           <span class="proj-index">03</span>
@@ -1198,10 +1143,47 @@
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- Other work -->
+    <section class="section">
+      <div class="sec-header">
+        <div class="sec-label">Additional Projects</div>
+        <div>
+          <h2 class="sec-title">追加実績</h2>
+          <p class="sec-desc">主要プロジェクト以外にも、複数部門で利用される業務アプリを継続的に構築しています。</p>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div></div>
+        <div class="other-grid">
+          <div class="other-item">
+            <div class="other-title">木枠施工依頼アプリ</div>
+            <div class="other-body">月80名が利用。施工依頼から受付までの承認ワークフローを構築し、申請状況の可視化と処理時間の削減を実現。</div>
+          </div>
+          <div class="other-item">
+            <div class="other-title">形材管理アプリ</div>
+            <div class="other-body">月30名が利用。GASとQRコード連携により、スキャンしたバーコードから品名・色・長さを自動入力し、手入力削減と入力ミス防止に貢献。</div>
+          </div>
+          <div class="other-item">
+            <div class="other-title">サンプル発注依頼アプリ</div>
+            <div class="other-body">月15名が利用。営業部のサンプル発注から発送までの流れをアプリ化し、承認ワークフローを含めた業務の標準化を実現。</div>
+          </div>
+          <div class="other-item">
+            <div class="other-title">社用電子署名台帳</div>
+            <div class="other-body">月10名が利用。契約書の保管と承認フローをデジタル化し、確認状況の可視化と管理の効率化を実現。</div>
+          </div>
+          <div class="other-item">
+            <div class="other-title">社用捺印署名台帳</div>
+            <div class="other-body">月10名が利用。捺印が必要な書類の管理と承認フローをアプリ化し、紙ベース運用の負荷を軽減。</div>
+          </div>
+          <div class="other-item">
+            <div class="other-title">防火部品測定アプリ（開発中）</div>
+            <div class="other-body">防火部品の測定データをデジタルで記録・管理する仕組みを構築中。品質管理の可視化と記録の標準化を目指しています。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="sec-header">
         <div class="sec-label">Other Work</div>
@@ -1219,7 +1201,7 @@
           </div>
           <div class="other-item">
             <div class="other-title">承認ワークフロー構築</div>
-            <div class="other-body">木枠施工依頼から受付までの承認フローをアプリ化。約80名が利用し、従来比25分の時間削減を実現。</div>
+            <div class="other-body">申請から受付までの承認フローを複数業務へ展開し、標準化と処理時間の削減を実現。</div>
           </div>
           <div class="other-item">
             <div class="other-title">ダッシュボード設計</div>
@@ -1233,7 +1215,6 @@
       </div>
     </section>
 
-    <!-- Contribution -->
     <section class="section" id="contribution">
       <div class="sec-header">
         <div class="sec-label">Contribution</div>
@@ -1265,29 +1246,40 @@
       </div>
     </section>
 
-    <!-- Career Goal -->
     <section class="section">
       <div class="sec-header">
         <div class="sec-label">Career Goal</div>
         <div>
           <h2 class="sec-title">目指すキャリア</h2>
-          <p class="sec-desc">現場改善の経験を、組織全体のGoogle Workspace管理へつなげていきたいと考えています。</p>
+          <p class="sec-desc">現場改善の経験を、組織全体のDX設計やより広い業務基盤づくりへつなげていきたいと考えています。</p>
         </div>
       </div>
       <div class="sec-body">
         <div></div>
         <div>
           <div class="proj-impact" style="margin-bottom:24px;">
-            <div class="proj-impact-text">現場の業務改善で培ったGoogle Workspace活用の経験を活かし、今後はGoogle管理コンソールの運用・アカウント管理・部門別権限設計・2段階認証などのセキュリティ設定を担う<strong>Workspace管理者</strong>としてのキャリアを築いていきたいと考えています。現場を知るエンジニアだからこそ、利用者視点に立ったセキュリティ設計と運用ができると考えています。</div>
+            <div class="proj-impact-text">Google Workspaceを基盤とした業務自動化の経験を活かし、
+AppSheet・GAS・API連携・生成AIを組み合わせたDX推進に取り組んでいます。
+今後はAWSなどのサーバーレス技術も活用し、
+業務プロセス全体を最適化できるエンジニアを目指しています。</div>
           </div>
           <div class="skill-block-title">関心領域</div>
           <div class="skill-tag-row">
-            <span class="skill-tag">Google管理コンソール運用</span>
-            <span class="skill-tag">アカウント管理</span>
-            <span class="skill-tag">部門別権限設計</span>
-            <span class="skill-tag">2段階認証 / セキュリティ設定</span>
+            <span class="skill-tag">Google Workspace運用</span>
+            <span class="skill-tag">業務アプリ設計</span>
+            <span class="skill-tag">API連携</span>
+            <span class="skill-tag">サーバーレス構成</span>
+            <span class="skill-tag">生成AI活用</span>
             <span class="skill-tag">組織全体のDX推進</span>
           </div>
         </div>
       </div>
-    </sec
+    </section>
+  </div>
+
+  <footer>
+    <p>Portfolio of Jeonggeun Park</p>
+    <p>Built for practical business DX and field operations</p>
+  </footer>
+</body>
+</html>
